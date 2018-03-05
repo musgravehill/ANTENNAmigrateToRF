@@ -1,0 +1,234 @@
+/* http://chemandy.com/_themes/pompey/pompeye.css */
+/* Use the reference number series 0 to 9 */
+
+body { background-color: #eee; color: #000; font: 500 100% Georgia, Verdana, Tahoma, Sans-Serif
+}
+@media print {body {background-color: #fff
+}
+}
+.ac { text-align:center
+}
+.al { text-align: left
+}
+.aoc1 { text-align:center; margin-left: 1%
+}
+.aoc2 { text-align:center; margin-left: 2%
+}
+.aoc3 { text-align:center; margin-left: 3%
+}
+.aoc4 { text-align:center; margin-left: 4%
+}
+.aoc5 { text-align:center; margin-left: 5%
+}
+.aoc6 { text-align:center; margin-left: 6%
+}
+.aoc7 { text-align:center; margin-left: 7%
+}
+.aoc8 { text-align:center; margin-left: 8%
+}
+.aoc9 { text-align:center; margin-left: 9%
+}
+.aoc10 { text-align:center; margin-left: 10%
+}
+.aoc11 { text-align:center; margin-left: 11%
+}
+.aoc12 { text-align:center; margin-left: 12%
+}
+.aoc13 { text-align:center; margin-left: 13%
+}
+.aoc14 { text-align:center; margin-left: 14%
+}
+.aoc15 { text-align:center; margin-left: 15%
+}
+.aoc17 { text-align:center; margin-left: 17%
+}
+.aoc18 { text-align:center; margin-left: 18%
+}
+.aoc20 { text-align:center; margin-left: 20%
+}
+.aoc23 { text-align:center; margin-left: 23%
+}
+.aoc29 { text-align:center; margin-left: 29%
+}
+.ar { text-align: right
+}
+.data { margin-left: 10%; font-weight: 600
+}
+.f0 { margin: 0 3%
+}
+.f1 {font-weight: bold
+}
+.f2 { background-color: #eee; font-size: 100%; font-weight: 600; color: #a33; 
+} 
+.f3 { font-size: 200%;
+}
+.f4 { font-size: 80%;
+}
+.f5 { font-size: 120%;
+}
+.f6 { background-color: #eee; font-size: 100%; font-weight: 600; color: #936;
+}
+.f7 {font-size: 100%; font-weight: bold; text-decoration: underline
+}
+.f8 { background-color: #eee; font: 100% Georgia, Verdana, Tahoma, Sans-Serif
+}
+.f9 { background-color: transparent; font-size: 100%;  font-weight: bold; color: #909; text-decoration: underline
+}
+.fl { float: left;
+}
+.footer { background-color: #eee; font: 500 75% arial, helvetica, sans-serif; color: #a33
+}
+.footer a:link {color: #00f
+}
+.footer a:visited { color: #909
+}
+.fr { float: right;
+}
+h1 { padding: 1% 0; font: 600 110% "Times New Roman", Garamond, Verdana, Serif; color: #00e
+}
+h2 { padding: 1% 0 2% 0; font-size: 175%; color: #a33
+}
+h3 { font-size: 120%; color: #600; text-decoration: underline
+}
+h4 { color: #a33; font: bold 120% "Times New Roman", Garamond, Verdana, Serif
+}
+h1, h2, h3, h5 { text-align: center; font-weight: bold
+}
+.indent { margin-left: 10%; font-weight: 400
+}
+.index { margin-left: 20%; font-weight: 400
+}
+input.greyed { background: #EEE repeat scroll; color: #000; font: 500 100% "Times New Roman", Garamond, Verdana, Serif; text-align: center
+}
+.mar10 { margin-left: 10%
+}
+.pac { text-align: center; padding: 1%
+}
+.par { text-align: right; padding: 1% 0
+}
+.para { color: #a33; font: 600 120% Georgia, Verdana, Tahoma, Sans-Serif
+}
+.parb { text-align: right; font-weight: bold; padding: 1%
+}
+sub {	font-size: 75%; vertical-align: sub
+}
+sup {	font-size: 75%; vertical-align: super
+}
+table { background-color: #eee; width:100%; border-collapse:collapse;
+}
+table.blue {
+  width:50%;
+  margin:3% 25%;
+  background-color:#EEE;
+  border:2px solid #00E;
+  padding:15px;
+}
+table.raised {
+  table-layout: fixed;
+  background-color:#000;
+  border: 5px ridge #ddd;
+ }
+table.shopping {
+  table-layout: fixed;
+  background-color:#FFF;
+  border: 5px ridge #DDD;
+}
+table.shoppingnarrow {
+  margin-left: 20%;
+  width: 60%;
+  table-layout: fixed;
+  text-align: center;
+  background-color:#FFF;
+  border: 5px ridge #DDD;
+  padding:2px;
+}
+table.customerdetails {
+  margin-left: 15%;
+  width: 70%;
+  table-layout: auto;
+  text-align: center;
+  background-color:#FFF;
+  border: 5px ridge #DDD;
+  padding:2px;
+}
+td.blue {
+  border: 2px solid #00E;
+  text-align: center;
+  padding:4px;
+}
+td.blueblue {
+  background-color:#BCF;
+  border: 2px solid #00E;
+  text-align: center;
+  padding:4px;
+}
+td.bluepink {
+  background-color:#FDD;
+  border: 2px solid #00E;
+  text-align: center;
+  padding:4px;
+}
+td.raised {
+  background-color:#EEE;
+  border: 5px ridge #FFF;
+  text-align: center;
+  padding:1%;
+}
+td.customerdetails {
+  background-color:#FFF;
+  text-align: center;
+  font-weight: 600;
+  padding:2%;
+}
+td.shoppingheading {
+  background-color:#BFB;
+  border: 3px ridge #DDD;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+}
+td.shoppingheadinglarge {
+  width: 15%;
+  background-color:#BFB;
+  border: 3px ridge #DDD;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+}
+td.shoppingheadingmedium {
+  width: 10%;
+  background-color:#BFB;
+  border: 3px ridge #DDD;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+}
+td.shoppingheadingnarrow {
+  width: 7%;
+  background-color:#BFB;
+  border: 3px ridge #DDD;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+}
+td.shoppingheadingextralarge {
+  width: 20%;
+  background-color:#BFB;
+  border: 3px ridge #DDD;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+}
+  td.shoppingrows {
+  background-color:#EEE;
+  border: 3px ridge #DDD;
+  font-weight: 500;
+  text-align: center;
+  padding: 1% 1%;
+}
+  td.shoppingtotalrows {
+  background-color:#EEE;
+  border: 3px ridge #DDD;
+  font-weight: 500;
+  text-align: center;
+}

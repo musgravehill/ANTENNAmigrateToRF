@@ -1,0 +1,81 @@
+document.write('</div>');
+document.write('<div id="_u_ablock_bottomlink" style="margin: 0;padding: 0;background: none;"></div>');
+document.write('</td>'+
+(u_data[2]=="1" ? b_v2 : '')+
+'</tr>'+
+'</table>');
+
+function addUcozWrapperLink(place , html) {
+	place = place=='top' ? 'top' : 'bottom' ;
+	var wrelem = document.getElementById('wrapperY'+u_data[1]) ;
+	var linkelem = document.getElementById('_u_ablock_'+place+'link');
+	if(!wrelem || !linkelem) return ;
+	linkelem.innerHTML = html ;
+	var wrH = parseInt(wrelem.value) ;
+	wrelem.value = wrH<50 ? wrH+25 : wrH ;
+	uOnDomOrLater(resizeDiv);
+
+	//считаем показы и клики
+	var atag = linkelem.getElementsByTagName('a')[0] ;
+	if(atag) {
+		atag.addEventListener('click' , function() {
+			new Image().src = "//counter.yadro.ru/hit;wrp_"+(u_data[0]=='RU' ? '240':'300')+"_"+place+"_click?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+		});
+	}
+}
+function addUcozWrappers(){
+	if(window.addUcozWrappers_done) return;
+	window.addUcozWrappers_done = true ;
+
+	if(u_data[0]=='US') {
+		addUcozWrapperLink('top' , '<a target="_blank" title="Advertising" class="a-buttons green-but "><span>Advertising</span></a>');
+		addUcozWrapperLink('bottom' , '<a href="http://www.ucoz.com/?pguid=2901615790" target="_blank" class="a-buttons blue-but a-check"><span><span>Create free website</span></span></a>');
+	} else {
+		var isChrome = (window.navigator && navigator.userAgent
+			&& navigator.userAgent.indexOf('Chrome') >= 0
+			&& navigator.userAgent.indexOf('YaBrowser') < 0
+			&& navigator.userAgent.indexOf('Mobile') < 0
+			&& navigator.userAgent.indexOf('Android') < 0
+			&& navigator.userAgent.indexOf('iPhone') < 0
+			&& navigator.userAgent.indexOf('iPad') < 0
+			&& navigator.userAgent.indexOf('iPod') < 0
+			&& navigator.userAgent.indexOf('OPR') < 0
+			&& navigator.userAgent.indexOf('UCBrowser') < 0
+			&& navigator.userAgent.indexOf('Amigo') < 0
+		) ? true : false ;
+
+		if(isChrome && Math.random() < 0.5) {
+			addUcozWrapperLink('top' , '<a href="javascript://" onclick="uClickPluginPopup()" title="Отключить рекламу на всех сайтах системы uCoz" class="a-buttons green-but a-clock"><span><span>Отключить рекламу</span></span></a>');
+			window.uClickPluginPopup = function() {
+				var W = 590 , H = 440 ;
+				var close = function() {
+					$('.uNewPopup_bg , .uNewPopup_frame , .uNewPopup_close').remove();
+				};
+				$('body').append('<div class="uNewPopup_bg"></div><iframe class="uNewPopup_frame" frameborder="0"></iframe><div class="uNewPopup_close"><div class="uNewPopup_close_stick uNewPopup_close_stick_left"></div><div class="uNewPopup_close_stick uNewPopup_close_stick_right"></div></div><style>.uNewPopup_bg {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.25);z-index: 2147483645;}.uNewPopup_frame {position: fixed;top: 50%;left: 50%;z-index: 2147483645;background: #2e3040;border-radius: 10px;box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);}.uNewPopup_close {position: fixed;top: 50%;left: 50%;width: 32px;height: 32px;z-index: 2147483645;cursor:pointer;}.uNewPopup_close_stick {background: #838087;width: 100%;height: 1px;position: absolute;top: 50%;left: 0;transform-origin: center;}.uNewPopup_close_stick_left {transform: rotate(45deg);}.uNewPopup_close_stick_right {transform: rotate(-45deg);}</style>');
+				$('.uNewPopup_frame').css({
+					'width': W+'px' ,
+					'height': H+'px' ,
+					'margin': '-'+(H/2)+'px -'+(W/2)+'px' ,
+				}).attr('src' , '//'+(ucoz_server=='s55555' ? 'sdev022.ucozmedia.com' : ucoz_server+'.ucoz.net')+'/img/bnr/popup_uran/plugin2_1.html');
+				$('.uNewPopup_close').css({
+					'margin': '-'+(H/2-16)+'px 0 0 '+(W/2-48)+'px' ,
+				});
+				$('.uNewPopup_bg , .uNewPopup_close').click(close) ;
+			} ;
+		} else {
+			addUcozWrapperLink('top' , '<a href="javascript://" onclick="new _uWnd('+"'SMSPAYFORM','Отключить рекламу',-550,-400,{popup:1,modal:1,resize:0,autosize:0,align:'justify'},'&lt;div id=&quot;ads_window&quot; class=&quot;ads_window&quot;>"+"&lt;/div>&lt;style type=&quot;text/css&quot;>.xw-active, .x-sh{display:none;} div.myWinGrid{z-index:2147483642!important;height:100%!important;}div.uwnd-uran-br{z-index:2147483643!important;}div.uwnd-uran-br div.xw-plain{width: auto !important;}div#_umenu0{z-index:2147483644!important;} &lt;/style>&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.uranupdates.com/popup2/uadsoff6.js&quot;>&lt;/script>');return false;"+'" title="Отключить рекламу на всех сайтах системы uCoz" class="a-buttons green-but a-clock"><span><span>Отключить рекламу</span></span></a>');
+		}
+
+		if(user_country == 'ge' && Math.random() < 0.5) {
+			addUcozWrapperLink('bottom' , '<a href="https://ukit.com/en/lp/adaptive/?utm_source=ucoz-advnet&utm_medium=banner-cover&utm_campaign=innerads-georgia-banner-cover" target="_blank" class="a-buttons blue-but a-check"><span><span>Создать сайт</span></span></a>');
+		} else {
+			if(Math.random() < 1/3) {
+				addUcozWrapperLink('bottom' , '<a href="https://ukit.com/ru/lp/convert-vk?utm_source=ucoz-advnet&utm_medium=banner-bottom-wrap&utm_campaign=converter" target="_blank" class="a-buttons vk-but a-vk"><span><span>Создать сайт из ВКонтакте</span></span></a>');
+			} else {
+				addUcozWrapperLink('bottom' , '<a href="http://ucoz.ru/?pguid=3775280749" target="_blank" class="a-buttons blue-but a-check"><span><span>Создать сайт</span></span></a>');
+			}
+		}
+	}
+
+	new Image().src = "//counter.yadro.ru/hit;wrp_"+(u_data[0]=='RU' ? '240':'300')+"_show?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+}

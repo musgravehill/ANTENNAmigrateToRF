@@ -1,0 +1,97 @@
+.nativelpad-title {
+font-weight: bold;
+}
+.nativelpad-title a {
+color: #d51628;
+padding: 3px 0;
+}
+.nativelpad-content { 
+margin-top: 13px;
+}
+.nativelpad-wrapper {
+min-height: 200px;
+padding: 1% 0;
+width: 297px;
+}
+.nativelpad-thumbnail img {
+border: 1px solid #b6b6b6 !important;
+padding: 2px;
+width: 95%;
+}
+.nativelpad-sponsor {
+text-align: right;
+font-size:16px;
+	color: #999;
+}
+.nativelpad-reset {
+clear: both;
+}
+
+/* Article CSS */
+#dfp_native {
+padding-bottom: 10px;
+}
+.wide-nativead-wrapper {
+max-width: 400px;
+width:100%;
+margin:0 auto 10px;
+}
+.wide-nativead-header {
+background-image: url("http://twimgs.com/ddj/phpelectronics/edn/images/edn/css-sprite-12.png"), url("http://twimgs.com/ddj/phpelectronics/edn/images/edn/css-sprite-12.png"), url("http://twimgs.com/ddj/phpelectronics/edn/images/edn/css-sprite-12.png");
+background-position: left -297px, left -309px, left -285px;
+background-repeat: repeat-x;
+letter-spacing: 1px; 
+padding: 5px 0 5px 10px;
+color: #fff;
+font-family: "PT Sans",sans-serif;
+font-size: 15px;
+text-transform: uppercase;
+}
+.wide-nativead-thumbnail img  {
+border: 1px solid #b6b6b6 !important;
+padding: 0;
+width: 100%;
+}   
+.wide-nativead-thumbnail  {
+float: left;
+margin: 0 8px 0 0;
+width:50%;
+}
+.wide-nativead-content{
+border:solid #d3d3d3;
+border-width: 1px 1px 1px;
+padding: 8px;
+background-color: #fafafa;
+}
+.wide-nativead-post a {
+font-weight: bold;
+font-size: 14px;
+line-height: 1.25em;
+text-decoration: none;
+color:#000;
+margin: 2px 0;
+}
+.wide-nativead-reset {
+    clear: both;
+}
+.wide-nativead-post a:hover {
+text-decoration: underline;
+font-weight: bold;
+font-size: 14px;
+line-height: 1.25em;
+color:#000;
+margin: 2px 0;
+}
+.wide-nativead-post p {
+display: block;
+margin: 5px 0;
+}
+.wide-nativead-sponsor {
+padding-bottom: 0.5em;
+padding-top: 0.5em;
+text-align: right;
+}
+.wide-nativead-sponsor small {
+color: #999;
+font-size: 12px;
+}

@@ -1,0 +1,43 @@
+BODY { background-color: #FBF9EE; color: black; FONT-SIZE: 14px; 
+       FONT-FAMILY: Arial, Helvetica, sans-serif; }
+
+A { color: navy; text-decoration: none; font-family: Arial, Helvetica,
+    sans-serif; font-size: 14px; }
+A:HOVER { text-decoration: underline; color: #EA0000; }
+
+TABLE { border: none; }
+
+LI { color: black; FONT-SIZE: 14px; margin: 1px; list-style-type: square; }
+
+<!-- заголовок странички, большие, красные буквы -->
+.z1 { color: #EA0000; font-size: 15pt ; font-weight: 200; }
+
+<!-- заголовок раздела, светлые буквы на сером фоне -->
+.tb2  { width: 100%; background-color: gray; }
+.txt2 { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+        font-weight: bold; color: #FBF9EE; text-align: center; }
+
+<!-- подзаголовки разделов, выделенные жирным шрифтом -->
+.txt3 { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+        font-weight: bold; color: black; text-align: center; }
+
+<!-- подзаголовки разделов, желтые буквы на черном фоне -->
+.tb3  { width: 100%; background-color: #000000; }
+.txt4 { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+        font-weight: bold; color: #ffff00; text-align: center; }
+
+<!-- подзаголовки разделов, желтые буквы на черном фоне -->
+.tb6  { width: 100%; background-color: #99ff00; }
+.txt6 { FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif;
+        font-weight: bold; color: #ff0000; text-align: center; }
+		
+<!-- шапка на главной страничке -->
+.text-zagolovok { FONT-SIZE: 17px; letter-spacing: 2pt; FONT-FAMILY: Arial, Helvetica, sans-serif; font-weight: 600; }
+.text-zagolovok2 { font-weight: 600 ;FONT-SIZE: 22px; letter-spacing: 2pt; font-style: italic; }
+
+<!-- маленький текст в конце главной странички -->
+.text0 { FONT-SIZE: 10px; FONT-FAMILY: Arial, Helvetica, sans-serif; }
+
+<!-- текст в news/index.html -->
+.text1a { FONT-SIZE: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif; line-height: 150%; }
+.tx1 {FONT-SIZE: 14px; text-align: justify;}

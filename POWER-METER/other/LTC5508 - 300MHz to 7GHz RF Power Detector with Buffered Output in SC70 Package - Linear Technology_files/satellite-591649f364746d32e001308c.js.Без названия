@@ -1,0 +1,31 @@
+$('.doclink').filter(function() {return this.href.match(/\/docs\/[0-9]+/);}).on( "click", function(e) { 
+
+  _satellite.notify('DTM: Document Download - Redirect Override', 1);
+
+  var docid = $( e.target ).attr( "href" ).split('/docs/')[1];
+  var url = "http://www.linear.com/rest/document/" + docid;
+
+  $.ajax({ 
+    type: "GET",
+    dataType: "JSON",
+    url: url,
+    success: function(data){        
+
+      s.linkTrackVars="events,prop11,eVar8,eVar32";
+      s.linkTrackEvents="event1";
+
+      s.events="event1";
+
+      prop11=s.eVar8=$( e.target ).attr( "href" );
+      s.eVar32=data.file_name.split('.')[1];       
+
+      s.tl(e.target,'d',data.title);
+
+      window.location.href = e.target.href;
+
+    }
+  });  
+
+  return false; 
+  window.stop();
+}); 

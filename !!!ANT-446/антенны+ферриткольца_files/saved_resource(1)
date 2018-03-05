@@ -1,0 +1,76 @@
+
+		var ucoz_rndid = 'aMOzTSFX';
+		function uLiruCounter(counter){
+			new Image().src = "//counter.yadro.ru/hit;"+counter+"?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+		}
+		function uNewMyCounter(counter , unique , dT) {
+			var add = '' ;
+			if(unique) add += '&uq='+encodeURIComponent(unique) ;
+			if(dT) add += '&dt='+encodeURIComponent(dT) ;
+			new Image().src="http://188.120.226.43/stat/pixel.gif?host=ucoz&event="+counter+add+"&r="+Math.random();
+		}
+		function uOnDomOrLater(f){
+			if(document.readyState == 'loading') {
+				if(document.addEventListener) {
+					document.addEventListener('DOMContentLoaded',f);
+				} else {
+					window.attachEvent('onload',f);
+				}
+			} else {
+				setTimeout(f,0);
+			}
+		}
+	
+		    document.write('<div style="width:0px;height:0px;position:fixed;right:0px;top:0px;display:none;overflow:hidden;z-index:2147483640;margin:0;padding:0;background:none;" id="dVaMOzTSFX"><scr'+'ipt type="text/javascript" src="/abnl/?adsdata=zINj18Gb0Tp89jfRZ8Xcmq5JQyazDmPp7CPi5a544hPIbjjyIS5^m!uEwUKUIxWK73Ge3SxS3p1cAwUfbl8AF0CHrEi;awwLJl!j6!unEYa81qSuU6eGpsFTYQvC6FfhmKeaRU8sCrg2Cj3YIIvPSjsmZLCSln;L;s4QBONC2W0QVVhdMtHtSeEcAX6uU3EwTiiPhpGVFeLvLCUyyDw5Q6P^HRGh;;mhS2;zWBuv8gm!8fivYDn7WiTb5!jFAm4Sj1pyN;oo"></scr'+'ipt></div>');
+		    function resizeDiv(islasttry){
+		
+		        var WX,WY,BX,BY;
+		        var o=document.getElementById("dVaMOzTSFX"),t,d;
+		        if (!o) return;
+		        if(typeof window.self_getsizes == 'function'){
+		            var s=self_getsizes();
+		            if(s.err==1 && !islasttry) return;
+		            if(isNaN(s.BX)) s.BX==0;
+		            if(isNaN(s.BY)) s.BY==0;
+		            if(s.err==1){
+		                if (!(t=document.getElementById("bannerXaMOzTSFX"))) return;
+		                else s.BX=t.value;
+		                if (!(t=document.getElementById("bannerYaMOzTSFX"))) return;
+		                else s.BY=t.value;
+		            }
+		            BX=s.BX;
+		            BY=s.BY;
+		        }else{
+		            if (!(t=document.getElementById("bannerXaMOzTSFX"))) return;
+		            else BX=t.value;
+		            if (!(t=document.getElementById("bannerYaMOzTSFX"))) return;
+		            else BY=t.value;
+		        }
+		        if (!(t=document.getElementById("wrapperXaMOzTSFX"))) WX=0;
+		        else WX=t.value;
+		        if (!(t=document.getElementById("wrapperYaMOzTSFX"))) WY=0;
+		        else WY=t.value;
+		        d=document.getElementById("mainadsdvaMOzTSFX");
+		        if(d){
+		            if (BX<0) d.style.width="100%";
+		            else if (BX>0) d.style.width=BX+"px";
+		            if (BY<0) d.style.height="100%";
+		            else if (BY>0) d.style.height=BY+"px";
+		        }
+		        BX=parseInt(BX)+parseInt(WX);
+		        BY=parseInt(BY)+parseInt(WY);
+		        if (BX<0) o.style.width="100%";
+		        else if (BX>0) o.style.width=BX+"px";
+		        if (BY<0) o.style.height="100%";
+		        else if (BY>0) o.style.height=BY+"px";
+		        o.style.display='';
+		
+		        return true;
+		    }
+		
+		    function waitForIframe(triesCount){
+		        if(triesCount>10) return;
+		        if(typeof resizeDiv == 'function' && !resizeDiv(triesCount==10 ? 1 : 0)) return setTimeout(function() { waitForIframe(triesCount + 1); }, 500);
+		    };
+		    document.write('<scr'+'ipt type="text/javascript">waitForIframe(0);</scr'+'ipt>');
+		new Image().src = "//counter.yadro.ru/hit;narodadst2?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();new Image().src = "//counter.yadro.ru/hit;narod_abandoned_test?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();

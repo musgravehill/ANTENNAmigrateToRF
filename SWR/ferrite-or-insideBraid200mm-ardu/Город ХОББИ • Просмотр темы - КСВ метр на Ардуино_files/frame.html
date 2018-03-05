@@ -1,0 +1,36 @@
+
+<!-- saved from url=(0043)https://static.bumlam.com/helper/frame.html -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex">
+</head>
+
+<body style="margin:0;">
+<script>
+    var globalID, times = 0,
+        initTime = Date.now(),
+        runTime, count = 5;
+
+    function repeatOften() {
+        runTime = Date.now();
+        var bt = runTime - initTime;
+        if (bt < 100) {
+            if (count <= 0) {
+                window.parent.postMessage('visible', '*');
+                return;
+            } else {
+                count--;
+            }
+        }
+
+        initTime = runTime;
+        times += 1;
+        if (times > 1000) return;
+        globalID = requestAnimationFrame(repeatOften);
+    }
+
+    globalID = requestAnimationFrame(repeatOften);
+</script>
+
+
+</body></html>

@@ -1,0 +1,672 @@
+//udata: 0=>RU, 1=>idval, 2=>banpos, 3=>server, 4=>curcluster, 5=>showWorkWrapper, 6=>childcat, 7=>politiccat, 8=>warezcat, 9=>allowNativeRoll, 10=>is_doubtful, 11=>is_abandoned, 12=>allowCriteo970, 13=>iabcat, 14=>religioncat, 15=>warncat, 16=>show_google
+var crtads=0;
+var crtads970=0;
+if(typeof(criteo_response) == 'object' && criteo_response.length) {
+	for(var i =0 ;i<criteo_response.length;i++) {
+		if(criteo_response[i].impressionId == "ad-unit-0") {
+			crtads970 = criteo_response[i] ;
+		}
+		if(criteo_response[i].impressionId == "ad-unit-1") {
+			crtads = criteo_response[i] ;
+		}
+	}
+}
+
+//определяю номер показа
+var ucoz_show = 1 ;
+var ucoz_show_time = 0 ;
+try{
+	ucoz_show_time = parseInt(localStorage.getItem('ucoz_show_time'));
+	if(!ucoz_show_time || Date.now() - ucoz_show_time > 24*3600*1000) {
+		ucoz_show = 0 ;
+		ucoz_show_time = Date.now() ;
+		localStorage.setItem('ucoz_show_time' , ucoz_show_time);
+	} else {
+		ucoz_show = parseInt(localStorage.getItem('ucoz_show'));
+		if(!ucoz_show) ucoz_show = 0 ;
+	}
+	ucoz_show++ ;
+	localStorage.setItem('ucoz_show' , ucoz_show);
+}catch(e){};
+
+if(u_data[10]=='1') {
+	//adult banner
+	document.getElementById('bannerY'+ucoz_rndid).value=435;
+	document.getElementById('bannerX'+ucoz_rndid).value=240;
+	var script_ads = document.createElement("script");
+	script_ads.src = 'http://rot.spotsniper.ru/?src=ujs1&s_subid=adlt';
+	document.head.appendChild(script_ads);
+	uShowFloatBanner() ;
+	uOnDomOrLater(addUcozWrappers) ;
+} else if(u_data[16]==1) { //google
+	document.getElementById('wrapperX'+ucoz_rndid).value=0;
+	document.getElementById('wrapperY'+ucoz_rndid).value=0;
+	var style = document.createElement('style');
+	style.id = "hideAdBlock240x400" ;
+	style.innerHTML = '#'+ucoz_rndid+' .a-buttons.green-but.a-clock, #'+ucoz_rndid+' .a-buttons.blue-but.a-check, #'+ucoz_rndid+' td[valign="top"]{display: none!important}' ;
+	document.body.appendChild(style);
+
+	uOnDomOrLater(function() {
+		console.log('show google');
+		ucoz_body_rndbart = ucoz_rndid ;
+		ucoz_is_mobile = 0 ;
+		if($('#nativeroll_video_cont').length > 0) {
+			$('#nativeroll_video_cont').show();
+			$('#nativeroll_video_cont').parents().show();
+			$('#nativeroll_video_cont').append('<div id="wprdv'+ucoz_body_rndbart+'" style="text-align: center; overflow:hidden;"><div id="ads_games_parent'+ucoz_body_rndbart+'" style="display: inline-block;line-height:0;"><div id="ads_cont_'+ucoz_body_rndbart+'"></div></div></div>');
+			$.getScript('//'+(ucoz_server=='s55555' ? 'sdev022.ucozmedia.com' : ucoz_server+'.ucoz.net')+'/bnr/blocks/criteo_google.js' , function() {
+				if(Math.random() < 0.6) {
+					console.log('split google: criteo first');
+					u_google_ads.criteo_google();
+				} else {
+					console.log('split google: no criteo');
+					u_google_ads.ad_google({
+						'client':'ca-pub-7652081594934001',
+						'slot':'4363281816',
+					});
+				}
+			});
+		} else {
+			uNewMyCounter('google_nodiv');
+		}
+	});
+} else if(u_data[12]=='1' && crtads970 && u_data[6]!='1' && crtads970.cpm >= 20) {
+	//970x250 criteo rtb banner
+	(function(){
+		//обертка
+		var style = document.createElement('style');
+		style.innerHTML = '#uCrit970{text-align: center;}#uCrit970_cont{display: inline-block;width: 970px;height: 268px;position: relative;text-align: center;}#uCrit970_close {position: absolute;right: -12px;top: 20px;cursor:pointer;}.adv-remove {display: block;text-align: center !important;background: url(//'+ucoz_server+'.ucoz.net/ucoz/img/uads/a-buttons-logged.gif) repeat-x !important;padding: 0 10px !important;margin: 0 !important;font: bold 9px/18px \'Tahoma\', \'Arial\' !important;color: #fff !important;text-decoration: none !important;text-transform: uppercase;border-radius: 0 0 3px 3px;}' ;
+		document.body.appendChild(style);
+		var uCrit970 = document.createElement('div');
+		uCrit970.id = 'uCrit970';
+		document.body.insertBefore(uCrit970 , document.body.firstChild) ;
+		var uCrit970_cont = document.createElement('div');
+		uCrit970_cont.id = 'uCrit970_cont';
+		uCrit970.appendChild(uCrit970_cont);
+		uCrit970_cont.innerHTML = '<img src="//'+ucoz_server+'.ucoz.net/img/ma/cv.gif" id="uCrit970_close" />'+
+			'<div style="position:absolute;bottom:0px;left:0px;text-align:left;width: 100%;z-index: 1;cursor:pointer;" onclick="event.stopPropagation();"><a href="javascript://" onclick="new _uWnd(\'UBROWSERDOWNLOAD\',\'Отключение рекламы\',-550,-400,{popup:1,modal:1,resize:0,autosize:0,align:\'justify\'},\'<div id=&quot;ads_window&quot; class=&quot;ads_window&quot;></div><style type=&quot;text/css&quot;>.xw-active, .x-sh{display:none;} div.myWinGrid{z-index:2147483642!important;height:100%!important;}div.uwnd-uran-br{z-index:2147483643!important;}div.uwnd-uran-br div.xw-plain{width: auto !important;}div#_umenu0{z-index:2147483644!important;}</style><script type=&quot;text/javascript&quot; src=&quot;http://cdn.uranupdates.com/popup2/uadsoff6.js&quot;></scr\'+\'ipt>\');return false;" title="Отключить рекламу на всех сайтах системы uCoz" class="adv-remove"><span>Убрать рекламный баннер</span></a></div>' ;
+		document.getElementById('uCrit970_close').addEventListener('click' , function(){
+			document.getElementById('uCrit970').remove();
+		});
+		document.getElementById(ucoz_rndid).style.display='none';
+		uLiruCounter('criteo_970_250');
+
+		//adtags
+		var adtags_div = document.createElement('div');
+		adtags_div.id = 'adtagsParams_d9e43de7' ;
+		adtags_div.style.margin = '0px';
+		window.adtagsParams_d9e43de7 = {"domainId":7320,"description":"","pid":75,"size":{"width":970,"height":250}} ;
+		uCrit970_cont.appendChild(adtags_div);
+		var adtags_script = document.createElement('script');
+		adtags_script.src = 'https://cdn.adtags.pro/adtagsLoader.js' ;
+		adtags_script.onload = function() {
+			setTimeout(function(){
+				adtagsLoader('adtagsParams_d9e43de7', adtagsParams_d9e43de7) ;
+			} , 100) ;
+		} ;
+		uCrit970_cont.appendChild(adtags_script);
+
+		//сам баннер
+		var bnr_iframe = document.createElement('iframe');
+		bnr_iframe.setAttribute('frameborder', '0');
+		bnr_iframe.setAttribute('style', 'width:970px;height:250px;');
+		adtags_div.appendChild(bnr_iframe);
+		bnr_iframe.contentWindow.document.open();
+		bnr_iframe.contentWindow.document.write('<html><head>');
+		bnr_iframe.contentWindow.document.write('<style>body{margin:0;}</style>');
+		bnr_iframe.contentWindow.document.write('</head><body>');
+		bnr_iframe.contentWindow.document.write('<script src="'+crtads970.displayUrl+'"></script>');
+		bnr_iframe.contentWindow.document.write('</body></html>');
+		bnr_iframe.contentWindow.document.close();
+		window.uad_criteo_done = true ; //для ру-цепочки
+	})();
+} else if(user_country == 'ru') {
+	//перехватываю с этого места весь росийский траф - на переписанную цепочку
+	var u_show_ruad = true ;
+} else if(crtads && crtads.cpm >= 16){
+	//criteo rtb banner
+	if(u_data[6]=='1') crtads970 = 0 ;
+	document.getElementById('bannerY'+ucoz_rndid).value=400;
+	document.getElementById('bannerX'+ucoz_rndid).value=240;
+
+	//adtags
+	var adtags_div = document.createElement('div');
+	adtags_div.id = 'adtagsParams_65989dea' ;
+	adtags_div.style.margin = '0px';
+	window.adtagsParams_65989dea = {"domainId":74,"description":"criteo_240","pid":75,"size":{"width":240,"height":400}} ;
+	document.getElementById('mainadsdv' + ucoz_rndid).appendChild(adtags_div);
+	var adtags_script = document.createElement('script');
+	adtags_script.src = 'https://cdn.adtags.pro/adtagsLoader.js' ;
+	adtags_script.onload = function() {
+		setTimeout(function(){
+			adtagsLoader('adtagsParams_65989dea', adtagsParams_65989dea) ;
+		} , 100) ;
+	} ;
+	document.getElementById('mainadsdv' + ucoz_rndid).appendChild(adtags_script);
+
+	window.uIfrAdBanner_placement = 'adtagsParams_65989dea' ;
+	uIfrAdBanner('<script src="'+crtads.displayUrl+'"></scr'+'ipt>') ;
+	uLiruCounter(ucoz_site_type == 'ucoz' ? 'criteo_rta':'audit_criteo_narod');
+	uOnDomOrLater(addUcozWrappers) ;
+	window.uad_criteo_done = true ; //для ру-цепочки
+} else if(ucoz_prerollenable) {
+	//preroll
+	// document.getElementById('wrapperX'+ucoz_rndid).value=0;
+	// document.getElementById('wrapperY'+ucoz_rndid).value=0;
+	document.getElementById('dV'+ucoz_rndid).style.overflow='';
+	var style = document.createElement('style');
+	style.id = "hideAdBlock240x400" ;
+	style.innerHTML = '#'+ucoz_rndid+' .a-buttons.green-but.a-clock, #'+ucoz_rndid+' .a-buttons.blue-but.a-check, #'+ucoz_rndid+' td[valign="top"]{display: none!important}' ;
+	document.getElementsByTagName('head')[0].appendChild(style);
+
+	var script_wrapper = document.createElement("script");
+	script_wrapper.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid='+(u_data[5] ? 'videobtmwrpwork' : 'videobtmwrp');
+	script_wrapper.onload = script_wrapper.onerror = function(){
+		if(uPreroll.init_gae_done) {
+			uPreroll.init_btm_wrapper();
+		} else {
+			uPreroll.init_btm_wrapper_ready = true ;
+		}
+	};
+	document.head.appendChild(script_wrapper);
+
+	var script_video = document.createElement("script");
+	if(user_country == 'ru') {
+		script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=ru_video' ;
+		uLiruCounter('preroll_total_ru');
+	} else {
+		if(u_data[15]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=warn' ;
+		else if(u_data[8]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=trrnt' ;
+		else if(u_data[7]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=pltcs' ;
+		else if(u_data[14]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=rlgn' ;
+		else if(u_data[6]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=kids' ;
+		else if(u_data[11]=='1')
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=abnd' ;
+		else //нормальное видео
+			script_video.src = 'http://rot.spotsniper.ru/?src=ucfs' ;
+	}
+	document.head.appendChild(script_video);
+
+	uLiruCounter(ucoz_site_type == 'ucoz' ? 'preroll_total_ucoz':'preroll_total_narod');
+	uNewMyCounter('preroll_all');
+	uPreroll_setcookie() ;
+
+	//плавающий формат вместе с фулскрином
+	// if(u_data[11]!='1' && u_data[6]!='1') {
+	// 	var script_additional = document.createElement("script");
+	// 	if(u_data[7]=='1' || u_data[8]=='1' || u_data[14]=='1' || u_data[15]=='1') {
+	// 		script_additional.src = "http://rot.spotsniper.ru/?src=ujs1&s_subid=plusfull2" ;
+	// 	} else {
+	// 		script_additional.src = "http://rot.spotsniper.ru/?src=ujs1&s_subid=plusfull1" ;
+	// 	}
+	// 	document.head.appendChild(script_additional);
+	// }
+} else {
+	//banner
+	document.getElementById('bannerY'+ucoz_rndid).value=400;
+	document.getElementById('bannerX'+ucoz_rndid).value=240;
+	if(user_country == 'ru'){
+		// этот код недоступен, русская цепочка пока отдельно переписанная
+		if(ucoz_site_type == 'ucoz') {
+			uOnDomOrLater(function(){
+				setTimeout('uShowRuAdBanner();',0);
+			}) ;
+		} else {
+			uIfrAdBanner('<script>var adtagsParams_64ac0d5d = {"domainId":197,"description":"","pid":75,"size":{"width":240,"height":400}}</script><div id="adtagsParams_64ac0d5d"><script type="text/javascript" id="__sspicy__placement_init_558">(function(w, d, a, c, i) {(w[a] = w[a] || []).push({id: 558,params: {u_age: 0,u_gen: 0},extra_params: {},noiframe: false});if (d.getElementById(i)) {return;}var s, f;s = d.createElement(c);s.id = i;s.type = \'text/javascript\';s.async = true;s.src = "//static.sspicy.ru/theme/sspicy/adload_async.js";f = d.getElementsByTagName(c)[0];f.parentNode.insertBefore(s, f);})(window, document, \'__sspicy__placements\', \'script\', \'__sspicy__adload_lib\')</script></div><script src="https://cdn.adtags.pro/adtagsLoader.js" onload="adtagsLoader(\'adtagsParams_64ac0d5d\', adtagsParams_64ac0d5d)"></script>');
+			if(ads_relap_toster_avail()) ads_relap_toster('relap_nrd_vidtoster');
+		}
+		uShowFloatBanner();
+	} else if(user_country == 'ua' || user_country == 'by' || user_country == 'kz'){
+		var adcode ;
+		if(ucoz_site_type == 'ucoz') {
+			adcode = '<script>var adtagsParams_f22d7a6e = {"domainId":196,"description":"spicy id 622","pid":75,"size":{"width":240,"height":400}}</script><div id="adtagsParams_f22d7a6e"><script type="text/javascript" id="__sspicy__placement_init_622">(function(w, d, a, c, i) {(w[a] = w[a] || []).push({id: 622,params: {u_age: 0,u_gen: 0},extra_params: {},noiframe: false});if (d.getElementById(i)) {return;}var s, f;s = d.createElement(c);s.id = i;s.type = \'text/javascript\';s.async = true;s.src = "//static.sspicy.ru/theme/sspicy/adload_async.js";f = d.getElementsByTagName(c)[0];f.parentNode.insertBefore(s, f);})(window, document, \'__sspicy__placements\', \'script\', \'__sspicy__adload_lib\')</script></div><script src="https://cdn.adtags.pro/adtagsLoader.js" onload="adtagsLoader(\'adtagsParams_f22d7a6e\', adtagsParams_f22d7a6e)"></script>' ;
+		} else {
+			adcode = '<script>var adtagsParams_e991520c = {"domainId":198,"description":"spicy id 626","pid":75,"size":{"width":240,"height":400}}</script><div id="adtagsParams_e991520c"><script type="text/javascript" id="__sspicy__placement_init_626">(function(w, d, a, c, i) {(w[a] = w[a] || []).push({id: 626,params: {u_age: 0,u_gen: 0},extra_params: {},noiframe: false});if (d.getElementById(i)) {return;}var s, f;s = d.createElement(c);s.id = i;s.type = \'text/javascript\';s.async = true;s.src = "//static.sspicy.ru/theme/sspicy/adload_async.js";f = d.getElementsByTagName(c)[0];f.parentNode.insertBefore(s, f);})(window, document, \'__sspicy__placements\', \'script\', \'__sspicy__adload_lib\')</script></div><script src="https://cdn.adtags.pro/adtagsLoader.js" onload="adtagsLoader(\'adtagsParams_e991520c\', adtagsParams_e991520c)"></script>' ;
+		}
+		uIfrAdBanner(adcode) ;
+	} else {
+		var code = '<script>var adtagsParams_a78cb6d9 = {"domainId":199,"description":"","pid":75,"size":{"width":240,"height":400}}</script><div id="adtagsParams_a78cb6d9"><div id="mainadsdv"></div></div><script src="https://cdn.adtags.pro/adtagsLoader.js" onload="adtagsLoader(\'adtagsParams_a78cb6d9\', adtagsParams_a78cb6d9)"></script><script>var user_country = "'+user_country+'";var ucoz_server = "'+ucoz_server+'";var ucoz_rndid = "";var ucoz_site_type = "'+ucoz_site_type+'" ;var ucoz_hostname = "'+location.hostname+'";var script_ads = document.createElement("script");script_ads.src = "http://rot.spotsniper.ru/?src=urt1&s_subid=b240x400_ru&s_w=240&s_h=400&s_subid1=show1&s_subid2=mainadsdv&s_dmn=" + ucoz_hostname ;document.head.appendChild(script_ads);</script>';
+		uIfrAdBanner(code) ;
+		uLiruCounter(ucoz_site_type == 'ucoz' ? 'supersniper_sng_ucoz':'supersniper_sng_narod') ;
+	}
+	uOnDomOrLater(addUcozWrappers) ;
+}
+if(u_show_ruad) {
+	//перехватываю с этого места весь росийский траф - на переписанную цепочку
+	var script_ads = document.createElement("script");
+	script_ads.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=uadlibjs';
+	document.getElementsByTagName('head')[0].appendChild(script_ads);
+} else {
+	uOnDomOrLater(resizeDiv);
+}
+
+//nativeroll
+//на россии только первые два показа (UPD: на россии не вызывается)
+if(u_data[9]=='1' && u_data[10]!='1' && u_data[16]!=1 && user_country!='ru') {
+	var script_inbody = document.createElement("script");
+	if(u_data[15]=='1')
+		script_inbody.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=inbodywarn' ;
+	else if(u_data[8]=='1')
+		script_inbody.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=inbodytrrnt' ;
+	else if(u_data[11]=='1')
+		script_inbody.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=inbodyabnd' ;
+	else //нормальное видео
+		script_inbody.src = 'http://rot.spotsniper.ru/?src=ucfs&s_subid=inbody' ;
+	document.head.appendChild(script_inbody);
+}
+
+/*
+/////////////////////////////////
+//тест вставки контента на народе
+//на россии только первые два показа
+if(ucoz_site_type == 'narod' && u_data[9]!='1' && (ucoz_show <= 2 || user_country!='ru')) {
+	var cunrd_checkfunc = function() {
+		var maxTop = 0 ;
+		var goodElem = null ;
+		$('div , p , td').each(function(i,el){
+			var offset = $(el).offset() ;
+			if(
+				$(el).width() >= 600
+				&& $(el).height() >= 400
+				&& offset && offset.top < innerHeight
+				&& offset.top > maxTop
+				&& $(el).css('position') != 'absolute'
+				&& $(el).css('position') != 'relative'
+				&& $(el).css('position') != 'fixed'
+			) {
+				var notAbsolute = true ;
+				$(el).parents().each(function(ip , elp){
+					if(
+						$(elp).css('position') == 'absolute'
+						|| $(elp).css('position') == 'relative'
+						|| $(elp).css('position') == 'fixed'
+					) {
+						notAbsolute = false ;
+					}
+				});
+
+				if(notAbsolute) {
+					maxTop = offset.top ;
+					goodElem = el ;
+				}
+			}
+		});
+		if(goodElem) {
+			if(u_data[7]!='1' && u_data[8]!='1' && u_data[10]!='1' && u_data[13]!='3' && u_data[14]!='1' && u_data[15]!='1' && u_data[16]!=1 && !uIsStopWord()) {
+				uLiruCounter('unrd_inbody_check_mgg');
+			} else {
+				uLiruCounter('unrd_inbody_check');
+			}
+
+			if(u_data[10]!='1' && u_data[16]!=1 && user_country=='ru') {
+				$(goodElem).prepend('<div id="nativeroll_video_cont"></div>');
+				$.getScript('http://rot.spotsniper.ru/?src=ucfs&s_subid=inbody_narodtest');
+			}
+		}
+	};
+	var unrdCheckJqueryInterval = setInterval(function(){
+		if(window.jQuery) {
+			clearInterval(unrdCheckJqueryInterval);
+			cunrd_checkfunc();
+		}
+	} , 100);
+}
+*/
+
+function uShowFloatBanner(){
+	if(u_data[11]!='1') {
+		var script_additional = document.createElement("script");
+		if(u_data[10]=='1' || u_data[7]=='1' || u_data[8]=='1' || u_data[14]=='1' || u_data[15]=='1') { //адалт, политика, варез и проч
+			script_additional.src = 'http://rot.spotsniper.ru/?src=ujs1&s_subid=plus2402';
+		} else if(u_data[6]=='1') { //детские
+			script_additional.src = 'http://rot.spotsniper.ru/?src=ujs1&s_subid=plus2403';
+		} else { //нормальные
+			script_additional.src = 'http://rot.spotsniper.ru/?src=ujs1&s_subid=plus2401';
+		}
+		document.head.appendChild(script_additional);
+	}
+}
+
+function uShowRuAdBanner() {
+	window.catsplit_data = {} ;
+	catsplit_data.all_codes = { //коды спайси в зависимости от РТБ-категории
+		'1':{sspicy_code:'564',adtags_code:'45bf2b23',domainid:'167'} /*Arts & Entertainment*/ , '2':{sspicy_code:'567',adtags_code:'412017e9',domainid:'168'} /*Automotive*/ , '3':{sspicy_code:'569',adtags_code:'02570028',domainid:'169'} /*Business*/ ,
+		'4':{sspicy_code:'570',adtags_code:'3fea1f63',domainid:'170'} /*Careers*/ , '5':{sspicy_code:'571',adtags_code:'f98c7522',domainid:'171'} /*Education*/ , '6':{sspicy_code:'572',adtags_code:'a1aa4dc1',domainid:'172'} /*Family & Parenting*/ ,
+		'7':{sspicy_code:'573',adtags_code:'b897393e',domainid:'173'} /*Health & Fitness*/ , '8':{sspicy_code:'574',adtags_code:'b3e84fe3',domainid:'174'} /*Food & Drink*/ , '9':{sspicy_code:'575',adtags_code:'ad6a1c33',domainid:'175'} /*Hobbies & Interests*/ ,
+		'10':{sspicy_code:'576',adtags_code:'c417d17a',domainid:'176'} /*Home & Garden = 10home*/ , '11':{sspicy_code:'577',adtags_code:'4923aeb4',domainid:'177'} /*Law, Government, & Politics*/ , '12':{sspicy_code:'578',adtags_code:'b6c72c7a',domainid:'178'} /*News*/ ,
+		'13':{sspicy_code:'579',adtags_code:'99734dc5',domainid:'179'} /*Personal Finance*/ , '14':{sspicy_code:'580',adtags_code:'36fa2145',domainid:'180'} /*Society*/ , '15':{sspicy_code:'581',adtags_code:'c48613b2',domainid:'181'} /*Science*/ ,
+		'16':{sspicy_code:'582',adtags_code:'e24f6b4b',domainid:'182'} /*Pets*/ , '17':{sspicy_code:'583',adtags_code:'a89d2388',domainid:'183'} /*Sports*/ , '18':{sspicy_code:'584',adtags_code:'bfed0d1e',domainid:'184'} /*Style & Fashion*/ ,
+		'19':{sspicy_code:'585',adtags_code:'a3c7ee0c',domainid:'185'} /*Technology & Computing*/ , '20':{sspicy_code:'586',adtags_code:'57bb8697',domainid:'186'} /*Travel*/ , '21':{sspicy_code:'587',adtags_code:'e81e0eeb',domainid:'187'} /*Real Estate*/ ,
+		'22':{sspicy_code:'588',adtags_code:'609eafba',domainid:'188'} /*Shopping*/ , '23':{sspicy_code:'589',adtags_code:'c1014afb',domainid:'189'} /*Religion & Spirituality*/ , '24':{sspicy_code:'590',adtags_code:'2851f161',domainid:'190'} /*Uncategorized*/ ,
+		'25':'591' /*Non-Standard Content*/ , '26':'592' /*Illegal Content*/
+	} ;
+	catsplit_data.cat = u_data[13] ;
+	if(catsplit_data.cat && catsplit_data.cat.indexOf('-')>=0) catsplit_data.cat = catsplit_data.cat.split('-')[0] ;
+	if(!catsplit_data.all_codes[catsplit_data.cat]) catsplit_data.cat = '24'; //uncategorized
+
+	if(typeof(catsplit_data.all_codes[catsplit_data.cat]) == "object") {
+		console.log('adtags wrapper');
+		window['adtagsParams_'+catsplit_data.all_codes[catsplit_data.cat].adtags_code] = {"domainId":catsplit_data.all_codes[catsplit_data.cat].domainid,"description":"","pid":75,"size":{"width":240,"height":400}} ;
+		window.uIfrAdBanner_placement = 'adtagsParams_'+catsplit_data.all_codes[catsplit_data.cat].adtags_code ;
+		var adtags_div = document.createElement('div');
+		adtags_div.id = 'adtagsParams_'+catsplit_data.all_codes[catsplit_data.cat].adtags_code ;
+		adtags_div.style.margin = '0px';
+		var adtags_script = document.createElement('script');
+		adtags_script.src = 'https://cdn.adtags.pro/adtagsLoader.js' ;
+		adtags_script.onload = function() {
+			setTimeout(function(){
+				adtagsLoader('adtagsParams_'+catsplit_data.all_codes[catsplit_data.cat].adtags_code, window['adtagsParams_'+catsplit_data.all_codes[catsplit_data.cat].adtags_code]) ;
+			} , 100) ;
+		} ;
+		document.getElementById('mainadsdv' + ucoz_rndid).appendChild(adtags_div);
+		document.getElementById('mainadsdv' + ucoz_rndid).appendChild(adtags_script);
+	}
+
+	ruAdbanner_sniper() ;
+}
+
+/*
+function ruAdbanner_targeterra() {
+	if(({'1':1,'6':1,'7':1,'8':1,'9':1,'10':1,'18':1,'20':1,'22':1})[catsplit_data.cat]) {
+		console.log('240 targeterra');
+		uIfrAdBanner('<iframe name="' + location.hostname + '" src="//cs.ssp.targeterra.com/ukz.html" style="width: 240px; height: 400px; border: none; outline: none;"></iframe>' , 1) ;
+		uNewMyCounter('targeterra');
+
+		addEventListener("message" , function(event){
+			if(event.data == 'banner_no_ads') {
+				console.log('targeterra_noads');
+				uNewMyCounter('targeterra_noads');
+				ruAdbanner_sspicy();
+			}
+		});
+	} else {
+		ruAdbanner_sspicy();
+	}
+}
+*/
+
+function ruAdbanner_sniper() {
+	var placement = window.uIfrAdBanner_placement ? window.uIfrAdBanner_placement : 'mainadsdv' + ucoz_rndid ;
+
+	if(uIsSniper21Site()) {
+		uNewMyCounter('ru_240_sniper21');
+		console.log('240 sniper');
+		var script_ads = document.createElement("script");
+		script_ads.src = "http://rot.spotsniper.ru/?src=urt1&s_subid=b240x400_ru&s_w=240&s_h=400&s_subid1=first21&s_subid2="+placement+"&s_dmn=" + location.hostname ;
+		document.head.appendChild(script_ads);
+	} else {
+		ruAdbanner_sspicy();
+	}
+}
+function ruAdbanner_sspicy() {
+	console.log('240 sspicy');
+	var adcode ;
+	if(typeof(catsplit_data.all_codes[catsplit_data.cat]) == "object") {
+		adcode = catsplit_data.all_codes[catsplit_data.cat].sspicy_code ;
+	} else {
+		adcode = catsplit_data.all_codes[catsplit_data.cat] ;
+	}
+	uIfrAdBanner('<script type="text/javascript" id="__sspicy__placement_init_'+adcode+'">(function(w, d, a, c, i) {(w[a] = w[a] || []).push({id: '+adcode+',params: {u_age: 0,u_gen: 0},extra_params: {},noiframe: false});if (d.getElementById(i)) {return;}var s, f;s = d.createElement(c);s.id = i;s.type = "text/javascript";s.async = true;s.src = "//static.sspicy.ru/theme/sspicy/adload_async.js";f = d.getElementsByTagName(c)[0];f.parentNode.insertBefore(s, f);})(window, document, "__sspicy__placements", "script", "__sspicy__adload_lib")</script>') ;
+
+	uNewMyCounter('ru_240_sspicy');
+	uLiruCounter('spicy_ucoz');
+}
+
+if(ucoz_site_type == 'narod' && user_country != 'ru') { //на россии не надо, там это делается в новой цепочке
+	uOnDomOrLater(function(){
+		//jQuery и uwnd на статику народа
+		if (typeof jQuery == 'undefined') {
+			var scrpt = document.createElement('script');
+			scrpt.src = '//'+ucoz_server+'.ucoz.net/src/jquery-1.7.2.js';
+			scrpt.onload = function(){
+				var scrpt2 = document.createElement('script');
+				scrpt2.src = '//'+ucoz_server+'.ucoz.net/src/uwnd.js';
+				document.head.appendChild(scrpt2);
+			}
+			document.head.appendChild(scrpt);
+		} else {
+			if (typeof _uWnd == 'undefined') {
+				var scrpt = document.createElement('script');
+				scrpt.src = '//'+ucoz_server+'.ucoz.net/src/uwnd.js';
+				document.head.appendChild(scrpt);
+			}
+		}
+	});
+}
+
+function ads_relap_toster_avail() {
+	return (
+			u_data[7]=='1' ||
+			u_data[8]=='1' ||
+			u_data[11]=='1' ||
+			u_data[14]=='1' ||
+			u_data[15]=='1' ||
+			u_data[13] == '1' ||
+			u_data[13] == '9' ||
+			u_data[13].indexOf('1-')==0 ||
+			u_data[13].indexOf('9-')==0
+		)
+		&& ucoz_show > 2 //только 3й показ и далее
+		&& user_country == 'ru'
+		? 1 : 0 ;
+}
+function ads_relap_toster(counter_prefix) {
+	if(window.relap_wait_interval) {
+		//два тостера на странице?
+		return ;
+	}
+
+	if(!counter_prefix) {
+		counter_prefix = 'relap_vidtoster' ;
+	}
+
+	console.log('ad: relap_toster');
+	uNewMyCounter(counter_prefix);
+	var src = document.createElement('script');
+	src.src='https://relap.io/api/v6/head.js?token=PEQ8jwuPA3CN0NPW';
+	document.head.appendChild(src);
+
+	window.relapV6WidgetNoSimilarPages = function(player_id){
+		if(window.relapOnNoRecommendations_done2) return ;
+		window.relapOnNoRecommendations_done2 = true ;
+		console.log('relap_toster_noads');
+		uNewMyCounter(counter_prefix+'_noads');
+	};
+
+	window.relap_wait_start = Date.now();
+	window.relap_wait_interval = setInterval(function() {
+		if( $('.relap-default__popup-container').length > 0 ) {
+			clearInterval(window.relap_wait_interval);
+			var time = Math.ceil((Date.now()-window.relap_wait_start)/1000) ;
+			uNewMyCounter(counter_prefix+'_hasads');
+		}
+	} , 100);
+
+	var u_ga_user_rnd = '' ;
+	try{
+		u_ga_user_rnd = localStorage.getItem('u_ga_user_rnd');
+		if(!u_ga_user_rnd) {
+			u_ga_user_rnd = Math.random() ;
+			localStorage.setItem('u_ga_user_rnd' , u_ga_user_rnd);
+		}
+	}catch(e){};
+	new Image().src="https://www.google-analytics.com/collect?v=1&t=event&tid=UA-82041661-1&cid=eb300383-96bd-4efe-8f29-baeb508a1fcf"+u_ga_user_rnd+"&ec=widget_toster&ea=show_toster&el=ucoz";
+	new Image().src="https://www.google-analytics.com/collect?v=1&t=event&tid=UA-82041661-1&cid=eb300383-96bd-4efe-8f29-baeb508a1fcf"+u_ga_user_rnd+"&ec=widget_toster&ea=view_toster&el=ucoz";
+}
+
+function uIfrAdBanner(code , msgs) {
+	var placement = window.uIfrAdBanner_placement ? window.uIfrAdBanner_placement : 'mainadsdv' + ucoz_rndid ;
+	var frames = document.getElementById(placement).getElementsByTagName('iframe');
+	if(frames[0]) frames[0].remove();
+	var bnr_iframe = document.createElement('iframe');
+	bnr_iframe.setAttribute('frameborder', '0');
+	bnr_iframe.setAttribute('style', 'width:240px;height:400px;');
+	document.getElementById(placement).appendChild(bnr_iframe);
+	bnr_iframe.contentWindow.document.open();
+	bnr_iframe.contentWindow.document.write('<html><head>');
+	bnr_iframe.contentWindow.document.write('<style>body{margin:0;}</style>');
+	bnr_iframe.contentWindow.document.write('</head><body>');
+	bnr_iframe.contentWindow.document.write(code);
+	if(msgs) bnr_iframe.contentWindow.document.write('<script>addEventListener("message" , function(event){parent.postMessage(event.data , "*");});</scr'+'ipt>');
+	bnr_iframe.contentWindow.document.write('</body></html>');
+	bnr_iframe.contentWindow.document.close();
+}
+function uIsStopWord() {
+	return location.hostname.search(
+		"elektromusic.clan.su|adult|allah|allah|anal|baptist|baptist|bdsm|bible|biblija|bisex|blowjob|bondage|brazzers|breast"+
+		"|buddhism|buddizm|catholic|catholicism|cekc|cerkov|chicks|christ|christian|church|clairvoyance|clitoris|copro|devstvennost"+
+		"|dick|divination|dojki|eblya|ecstasy|ekstas|elektromusic.clan.su|erotic|erotik|erotika|erect|fantasti|fetish|filestube"+
+		"|fisting|gadanie|gangbang|gay|gey|handjob|hardcore|hentai|hinduism|hram|hristianin|hristianstvo|hristos|iclam|iegova|iisus"+
+		"|induizm|intercourse|islam|iudaizm|iuedi|iuedi|jasnovid|jehovah|jekstasensornyj|jesus|judaism|katolicheskij|katolichestvo"+
+		"|kiss|koran|lesbian|lesby|lick|ljuteran|lolita|lutheran|lutheran|magomed|magomed|masturbacija|masturbation|messing|milf"+
+		"|minet|muhammad|muhammed|muslim|musulmanin|musulmanstvo|naked|nude|orgasm|orthodox|paranormalnyj|penetration|penetration"+
+		"|pisanie|pizda|pizdenka|porevo|porn|pornhub|porno|porntube|pornuha|potaskushka|pravoslavie|pravoslavnyj|prophet|prorok"+
+		"|prostitute|protestant|protestant|psalter|psaltyr|pussy|redtube|rectal|religija|religion|religious|religioznyj|sadism"+
+		"|saentologija|scientolog|seks|sekta|sex|sexual|sexuality|siski|slutload|spankwire|sperma|spiritualizm|striptease|svjashhen"+
+		"|telepat|temple|tits|torent|torrent|trah|trax|tserkov|vanga|virgin|whore|xhamster|xnxx|xvideos|xxx|intim|prostitut|sosut"+
+		"|iznasilovanie|zhop|junye_pisi|ehrotich|oralnij|13demons|13game|ehrotik|ehrotik|bilmed"
+	) >= 0 ;
+}
+
+function uIsSniper21Site() {
+	return ({'dev022.ucozmedia.com':1,
+		'1bankrot-59.ru':1,'2coffee.ucoz.com':1,'7minecraft-mods.ru':1,'555v.ru':1,'addfiles.ru':1,'afanasyevo.ucoz.ru':1,
+		'agros59.narod.ru':1,'alcheatscss-v34.ucoz.ru':1,'allsim.org':1,'almih.narod.ru':1,'altworld.ru':1,'amritav.at.ua':1,
+		'anamnes.ru':1,'anime-extreme.ru':1,'anime-srbija.ucoz.com':1,'aport.ru':1,'appleposts.ru':1,'arena-gg.ru':1,
+		'arhitektor.ucoz.com':1,'arma.at.ua':1,'armenianportal.com':1,'artecco.ru':1,'averina-school2.moy.su':1,'avgustina.moy.su':1,
+		'avtoseg.ru':1,'aydioknigi.moy.su':1,'baiker22-moto.narod.ru':1,'banakhevich.ucoz.ru':1,'bannerreklama.usite.pro':1,
+		'batura1.my1.ru':1,'best-free-games.ru':1,'beztrud.narod.ru':1,'bible.ucoz.com':1,'biserun.ucoz.com':1,'bit2bit.ucoz.com':1,
+		'bitcoin-bonus.ucoz.com':1,'bithouse.my1.ru':1,'bizvnete.do.am':1,'bosch-service.ucoz.com':1,'boxofhorror.ucoz.com':1,
+		'breastfeeding.narod.ru':1,'bu-tovar.ru':1,'buildermods.ru':1,'business-home.at.ua':1,'businessidea.ucoz.org':1,
+		'cars.clan.su':1,'charushina.tk':1,'cheat-worldoftanks.ru':1,'chess-turbobit.at.ua':1,'choirmaster.org':1,
+		'coffee-shop.do.am':1,'comics-fortress.ru':1,'cosite.do.am':1,'crosswords.ucoz.com':1,'cru-credit.ru':1,'cs-hlds.ru':1,
+		'css-play4fun.ru':1,'cxema.my1.ru':1,'d-mod.ru':1,'dasatu.ru':1,'defectus.ru':1,'delpos.ru':1,'dengionline.do.am':1,
+		'desene3d.com':1,'deseneshukre.ucoz.ro':1,'detishky.com':1,'device-world.tk':1,'devizy-krichalki.ru':1,'diza-74.ucoz.ru':1,
+		'dmrzn.ru':1,'dohodvseti.narod.ru':1,'domna.ucoz.com':1,'dota.my1.ru':1,'dpa.gdzua.org':1,'dragonballsuper.ucoz.net':1,
+		'dvkashirsky.narod.ru':1,'elektrikii.ru':1,'elza-68.ucoz.ru':1,'enbv.narod.ru':1,'epos.ucoz.net':1,'ets2map.ru':1,
+		'eurosimulator.ru':1,'evimturkiye.com':1,'evrabota.at.ua':1,'ezodiagnostika.space':1,'fan-mobile-legends.ru':1,
+		'fantazery.moy.su':1,'farm-mod.ru':1,'farma-cevt.ru':1,'fc.sumy.ua':1,'federacia-fk.at.ua':1,'flash-gonki-online.com':1,
+		'fng-3dn.ru':1,'for-ets2.ru':1,'for-writers.ru':1,'fortunamebel75.ru':1,'fortunov.ru':1,'g-alt.ru':1,'games-swf.ru':1,
+		'gamesdendy.ru':1,'gamessss.ucoz.net':1,'gdz-online.net':1,'gemeru.ru':1,'gifprikol.com':1,'gimnazy10.ru':1,'gohas.do.am':1,
+		'golosnaroda.usite.pro':1,'goup32441.narod.ru':1,'grand-craft.ru':1,'gta5-patch.com':1,'gta-gaming.ru':1,'gtail.ucoz.com':1,
+		'hideandseek.ucoz.org':1,'i-playgame.ru':1,'igor1962.ucoz.net':1,'igrul-ka.ru':1,'informatik.my1.ru':1,'inminecraft.ru':1,
+		'inve100r.at.ua':1,'jatekok.ucoz.com':1,'jatuporn.ucoz.com':1,'jonim.ucoz.net':1,'jurnal-arhiv.ru':1,'kachaet.my1.ru':1,
+		'kalinovsky-k.narod.ru':1,'kazantip-css.net':1,'kc13.ru':1,'kento.do.am':1,'koeimusou.ru':1,'konster.do.am':1,
+		'korzinochkablog.ru':1,'krok-m.narod.ru':1,'kurszop.ru':1,'ladypaty.ucoz.com':1,'laifgame.ru':1,'lavazza.at.ua':1,
+		'lendex.ru':1,'lgp1.ru':1,'linkgo.do.am':1,'lostfilmco.do.am':1,'lotoskay.ucoz.ru':1,'lurernews.ru':1,'m1nor.com':1,
+		'magazinegirl.at.ua':1,'mamapapa-arh.ru':1,'mamapapa-vrn.com':1,'mapcreators.clan.su':1,'mat-ege.ru':1,'matematicus.ru':1,
+		'math-rus.ru':1,'mcfc-fan.ru':1,'mebdom.my1.ru':1,'mediacenter2.clan.su':1,'medregistratura.su':1,'mgts-support.ru':1,
+		'mhaz.do.am':1,'mjj-club.com':1,'mkxmobile.ru':1,'mnevniki.info':1,'mobildi.narod.ru':1,'mobilis.name':1,'mod-game.ru':1,
+		'modgames.net':1,'modsanandroid.ru':1,'moisite.at.ua':1,'molytva.at.ua':1,'momonov.do.am':1,'mondvor.narod.ru':1,
+		'moneyback.do.am':1,'moneybreez.do.am':1,'moneymaker.clan.su':1,'moneywave.do.am':1,'monotop.do.am':1,'mousosh11.my1.ru':1,
+		'mow-portal.moy.su':1,'moymednogorsk.ru':1,'mugenmundo.ucoz.com':1,'music-one.my1.ru':1,'musical-sad.ru':1,
+		'muz-rukdou.ru':1,'mwerali.com':1,'my-sims.3dn.ru':1,'mysticism.ucoz.club':1,'nauka-nauka.ru':1,'ness-oksana.ucoz.ru':1,
+		'newangels.pw':1,'news-online-hd.ru':1,'nigma.ru':1,'nooneaboveus.pro':1,'notruefans.ucoz.net':1,'novospasskoe-city.ru':1,
+		'nukussat.clan.su':1,'oldogneupor.ru':1,'oldperm.clan.su':1,'olor.info':1,'onepager.ucoz.net':1,'online-gonki.ru':1,
+		'onlinemultik.net':1,'opisanieigr.ru':1,'orhidei.org':1,'otkrytkigif.ru':1,'pan-as.ru':1,'pan-poznavajka.ru':1,
+		'parfeya.com.ua':1,'partnerkinew.do.am':1,'partnerkireview.do.am':1,'pazanda.ucoz.com':1,'ped-konkurs.ru':1,
+		'pes-stars.co.ua':1,'phaz.do.am':1,'pocoriteli.clan.su':1,'poiskmo.ru':1,'polus51.ru':1,'posik.at.ua':1,'prazmav.ru':1,
+		'prime-clan.moy.su':1,'prime-kl.ucoz.ua':1,'prime-news.org':1,'programma-fgos.ru':1,'prometei.my1.ru':1,
+		'prosto-interesno.ru':1,'psb-energo.ru':1,'psychologvdou.ucoz.com':1,'raal100.narod.ru':1,'radioclock.narod.ru':1,
+		'radiolubitel.moy.su':1,'ragnarokhelp.ru':1,'rasteniya-doma.ucoz.org':1,'receptivtelefon.ucoz.ru':1,
+		'reclamaalexoff.moy.su':1,'renevaler.ml':1,'revmo.ucoz.com':1,'riane.ru':1,'rogatunfootball.at.ua':1,
+		'romanticfantasy.ru':1,'rpa.studz.ru':1,'ru-tattoo.ru':1,'rucrafter.tk':1,'rusgenealogy.clan.su':1,'rw6ase.narod.ru':1,
+		's-metall.com.ua':1,'saboq.org':1,'saeco.ucoz.net':1,'samodelnie.ru':1,'santez.info':1,'scenarii2014.ucoz.ru':1,
+		'scenarii-scenki.ru':1,'scenki-monologi.at.ua':1,'selfservice.ucoz.com':1,'semenova-klass.moy.su':1,'sev-electro.at.ua':1,
+		'shcool24.at.ua':1,'shik-igry.net':1,'sibirium-red.ga':1,'signedisos.narod.ru':1,'sinkrohr.com':1,'siteco.do.am':1,
+		'skazka.do.am':1,'skazkapro.net':1,'smotretonline.org':1,'soldati-russian.ru':1,'son-spi.narod.ru':1,'sorokaasb.ru':1,
+		'source-war.ru':1,'spisaly.ru':1,'spore-the-game.com':1,'stalker-gaming.ru':1,'stalker-gsc.ru':1,'stalker-mc.ru':1,
+		'staroe-video.ru':1,'stereotop.do.am':1,'sterling.ucoz.ua':1,'stihi-stihi.ru':1,'stixi-tebe.ru':1,'students.com.kg':1,
+		'supergif.do.am':1,'sztar-ring.ucoz.hu':1,'tanki-mody.ru':1,'tapemark.narod.ru':1,'tarot.my1.ru':1,'ternox.com':1,
+		'texnicoffe.do.am':1,'texnicoffe.ucoz.net':1,'texnicoffe.ucoz.ua':1,'thesims-world.my1.ru':1,'tishina.su':1,
+		'tmbagira.ucoz.ru':1,'tolstyh-tambov.clan.su':1,'toqueparacelular.com.br':1,'torgamez.com':1,'tour-rizm.ru':1,
+		'traffic.moy.su':1,'trigada.ucoz.com':1,'trmk.moy.su':1,'truckmods.ru':1,'trudovik45.ru':1,'trunost.moy.su':1,
+		'tv-sat.at.ua':1,'tvorcheskieidei.ucoz.ru':1,'tvsport.ucoz.net':1,'ubioskop.com':1,'uchltel-lstoria.ucoz.org':1,
+		'umc.ucoz.com':1,'uraxik.ru':1,'urok-cs.ru':1,'usehelp.org':1,'uwow-guide.ru':1,'uzbfilm.ru':1,'valerij.ucoz.ru':1,
+		'vcsgame.ru':1,'videobooms.ru':1,'vip-moscow-serv.ucoz.ru':1,'vkurs.ucoz.com':1,'vladivostok.fm':1,'voennizdat.ru':1,
+		'vohr.ucoz.org':1,'vorozheja.ru':1,'vzarabotke.do.am':1,'wanderer77724.my1.ru':1,'warcraft3ft.clan.su':1,'warenet.ru':1,
+		'warface-hack.my1.ru':1,'wavemoney.do.am':1,'webo4ka.ru':1,'wmstream.do.am':1,'worldofdragonage.ru':1,'worldvst.ru':1,
+		'wowgp.com':1,'x5z.ru':1,'xazon.ru':1,'xn----7sbbao2ali0aghq2c8b.xn--p1ai':1,'xn----7sbzjfhwjgdbg8bq8b.xn--p1ai':1,
+		'xn----8sbhepompdf.xn--p1ai':1,'xn----8sbirdcwdj7bl2hk.xn--p1ai':1,'xn----8sbjfr4acqcvpp.xn--p1ai':1,
+		'xn----jtbkliccqarf.xn--p1ai':1,'xn----ptbfbdrp4d3cf.xn--p1ai':1,'xydeidoma.ru':1,'ya-rukodelnitsa.ru':1,
+		'youthcanal.do.am':1,'za-day.narod.ru':1,'zaimudeneg.ru':1,'zarabotaywm.do.am':1,'zarabotokvnet.tk':1,'znanijamira.ru':1,'zombiebuki.ru':1
+	})[location.hostname] ? 1 : 0 ;
+}
+
+/*
+// тест видео-кнопки на списке сайтов
+(function() {
+	var sites = ['dev022.ucozmedia.com','ymka.tv','ua.at.ua','ani-3gp.3dn.ru','kinox-online.my1.ru','kinoglobus.at.ua','amour.3dn.ru',
+	'jetix-base.ucoz.com','kinosal.at.ua','fazik.ucoz.net','kino-forum.do.am','polkardana.ucoz.net','onliene-kino.at.ua',
+	'salambek.clan.su','sromline.my1.ru','ka.my1.ru','kino-onlaun.ucoz.ru','filmyonline.ucoz.com','kinokrit.ucoz.ru',
+	'film-online.3dn.ru','mixfilms.at.ua','netfilmi.ucoz.net','kinogolos.ucoz.ru','kinobos.ucoz.org','kinobum.ucoz.ua',
+	'kino-sib.ucoz.ru','atas.ucoz.com','talgar-cs.ucoz.kz','kinoshare.3dn.ru','me4-film.moy.su','kinosmotr.ucoz.net',
+	'on-movie.clan.su','terranova.do.am','lsbo.ucoz.ua','mobilesity.ucoz.ru','filmobum.clan.su','top-kino.3dn.ru',
+	'molodezhka-ctc.do.am','tabfilm.at.ua','igry-jopa.ucoz.ru','kinogoda.ucoz.net','www-kinomania.3dn.ru','xkino.at.ua',
+	'film-online-hd.3dn.ru','moetv.ucoz.ru','knigoweb.ucoz.com','kinosh.ucoz.com','lovedoram.ucoz.ru','kino1080.ucoz.ru',
+	'scyfilm.ucoz.ru','filmland.ucoz.ru','kinoshka.ucoz.net','worldcinema.at.ua','kinoteatr-1.ucoz.com','mobi-myvi.ucoz.ua',
+	'sahajka.ucoz.ru','uzdunyo.ucoz.net','adin.ucoz.ru','mirfilmov.ucoz.ru','sharatv.clan.su','cinema-hd.ucoz.co.uk','litbig.my1.ru',
+	'anime-online.ucoz.ua','tv-mania.ucoz.ru','multiashki.ucoz.ru','kinotavr.ucoz.ru','asus.ucoz.ua','hd720.at.ua','serialzone.3dn.ru',
+	'torent-sayt.ucoz.ru','nickelodeon-tv.ucoz.lv','heroes-nbc.ucoz.com','razvlekyxa-2008.ucoz.ru','nazarbek.ucoz.net',
+	'kinodrive.my1.ru','smallville.ucoz.ru','vitokstyle.ucoz.ru','kino-pro.3dn.ru','livekino.my1.ru','dvdbox.ucoz.ru',
+	'os-ment.moy.su','csi-miami.3dn.ru','ripfilm.ucoz.ru','south-park.ucoz.ru','film-uz.ucoz.net','olinee.ucoz.ru',
+	'lost-abc.clan.su','grejp.ucoz.ru','filmy-2012.ucoz.ru','horror-hd.ucoz.net','filmokos.ucoz.ru','tushkan.ucoz.ru',
+	'twilight-and-co.ucoz.ru','uzmega.ucoz.de','kinobus.do.am','pover.ucoz.com','novinky-filmov.ucoz.ru','seelisten.narod.ru',
+	'staroe-video.ucoz.ru','vkino-teleke.ucoz.ru','free-online.at.ua','jann.ucoz.com','fanton.3dn.ru','kinohouse.ucoz.ru',
+	'pro-zone.at.ua','maydayz.ucoz.net','litranobe.ucoz.com','lostsub.3dn.ru','liveonline.ucoz.ru','online24.my1.ru','gvs.ucoz.ru',
+	'winxlandia.ucoz.ru','kino-lux.at.ua','uzcinemauz.ucoz.net','closed-school.3dn.ru','online-serials.3dn.ru','online-24-7.at.ua',
+	'kinomasters.ucoz.ru','onserial.at.ua','buffyslayer.ucoz.ru','tv-online.at.ua','bad-wolf-tardis.ucoz.ru','firebit.at.ua',
+	'free-kino.ucoz.ru','white-wolf.my1.ru','onlimov.ucoz.ru','3aka4ay.3dn.ru','iptvonline.3dn.ru','indiafilms.clan.su',
+	'vsekino.ucoz.ru','new.at.ua','torrentfilm.ucoz.ru','imelo.at.ua','kino2014.ucoz.ru','bollivud.ucoz.ru','30rock.3dn.ru',
+	'video-redlion.ucoz.ru','vfilme.ucoz.net','ontv.clan.su','uzkinoonlayn.ucoz.com','latinocinema.3dn.ru','moby.at.ua','kinoclub.usite.pro',
+	'kino-new.at.ua','topfilm.ucoz.net','online-1.ucoz.ru','yablochko.my1.ru','fan-gamers.at.ua','melodramy.ucoz.ru','gudermes.clan.su',
+	'v6.at.ua','smotri-online.at.ua','bestportal.ucoz.ua','horrors.do.am','host1ng.ucoz.ru','uzideal.ucoz.com','gossip.ucoz.ru',
+	'clicksponsor.do.am','dokumentalka.ucoz.net','2255422.ucoz.ru','films-online777.ucoz.net','product-dvd.ucoz.net','3gp.moy.su',
+	'collection.ucoz.net','filmixru.ucoz.ru','dill.at.ua','besplatno-film.ucoz.ru','komedii.ucoz.ua','dinozebrik.at.ua',
+	'kinonline.at.ua','mobilvideo.ucoz.ru','eroticheskie.ucoz.net','ru-tv.ucoz.ru','manyfilms.3dn.ru','south-parkk.at.ua',
+	'filmobum.3dn.ru','lost2007.ucoz.ru','film-ff.my1.ru','megogo.ucoz.ru','android-free.my1.ru','divx-online.ucoz.com',
+	'kino-massa.ucoz.net','film-tyt.at.ua','kino-source.ucoz.ru','okolesica.ucoz.ru','ollserials.ucoz.ru','ussrfilms.ucoz.ru',
+	'vsetv.at.ua','filmi-rake.ucoz.ru','thebroadwayshow.3dn.ru','turkfilm.ucoz.com','islom93.ucoz.com','filmz.ucoz.kz',
+	'noxchi-berzloy.ucoz.com','kinogame.do.am','8clips.ucoz.ru','artkin.ucoz.ru','uz-onlaynkino.ucoz.net','kordonivka.ucoz.ru','site-lost.at.ua',
+	'lvenok.ucoz.ru','wow-onlinefilms.3dn.ru','banana.at.ua','bigbangtheory.ucoz.ru','uz-kinolar.moy.su','dezert.3dn.ru',
+	'uzkinomix.ucoz.net','murclub.usite.pro','akoe.ucoz.ru','tnt-tv.ucoz.com','anigid.ucoz.ru','vipmanija.at.ua','webbaron.ucoz.com',
+	'warehouse13.3dn.ru','kinonew.ucoz.com','interceptor.ucoz.ru','zona-multikov.ucoz.ru','timasco.ucoz.ru','true-kino.ucoz.net',
+	'pandafilm.ucoz.com','serial02.ucoz.ru','domkino.ucoz.ru','krypton-sons.ucoz.ua','edition.ucoz.ru','uatorrents.at.ua',
+	'newserials.moy.su','thebest-games.ucoz.ru','turkonline.3dn.ru','mobifilm.ucoz.net','armor.at.ua','about-potter.3dn.ru',
+	'onlain-film.my1.ru','freezone.ucoz.ua','hd-kinobar.moy.su','joyyy.ucoz.net','videobank.at.ua','eskinp.ucoz.ru',
+	'meeting.clan.su','kraft.ucoz.com','mytorrents.clan.su','zeus-portal.ucoz.ru','pod-stolom.3dn.ru','eafilm.ucoz.ru'] ;
+	if(sites.includes(location.hostname)) {
+		var script_additional = document.createElement("script");
+		script_additional.src = 'http://rot.spotsniper.ru/?src=ujs1&s_subid=vdbtn';
+		document.head.appendChild(script_additional);
+	}
+
+	/*
+		На УКР, после спайси и снайпера будет показан баннер
+		с передачей IAB-категории
+	* /
+	window.addEventListener('message' , function(e) {
+		if(e.data == 'show_gamblingbanner') {
+			setTimeout(function functionName() {
+				var imgver = '1';//['1','3','4'][Math.floor(Math.random()*3)] ;
+				var img = document.createElement('img');
+				img.src = '//'+(ucoz_server=='s55555' ? 'sdev022.ucozmedia.com' : ucoz_server+'.ucoz.net')+'/img/bnr/games240x400/'+imgver+'.gif' ;
+				var a = document.createElement('a');
+				a.setAttribute('target' , '_blank');
+				a.setAttribute('onclick' , 'new Image().src="//188.120.226.43/stat/pixel.gif?host=ucoz&event=gambl_click_'+imgver+'&r="+Math.random();');
+				a.href = "http://clickady.com/?wyZ8V9&utm_source="+u_data[13] ;
+				a.appendChild(img);
+
+				uIfrAdBanner(a.outerHTML);
+				uNewMyCounter('gambl_show_'+imgver);
+			} , 50);
+		}
+	});
+	* /
+})();
+*/

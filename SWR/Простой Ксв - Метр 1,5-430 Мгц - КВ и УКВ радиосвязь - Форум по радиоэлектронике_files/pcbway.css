@@ -1,0 +1,206 @@
+@media (max-width: 800px) {
+  .right_pcbway {
+    visibility: hidden;
+    display: none;
+  }
+  .pcbquote-main .pcb_cont {
+		left: 0px  !important;
+		position: relative !important;
+	}
+}
+
+.pcb_cont div ul ol li h3 form p input {
+	margin: 0;
+	padding: 0;
+}
+
+.pcbquote-main .pcb_cont {
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	z-index: 10;
+}
+.wcontainer {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+/* @media all and (min-width:1020px) */
+.wcontainer {
+	padding-left: 15px;
+	padding-right: 15px;
+	width: auto;
+}
+/* @media all and (min-width:1260px) */
+.wcontainer {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wcontainer::after, .wcontainer::before {
+	content: " ";
+	display: table;
+}
+.wcontainer::after {
+	clear: both;
+}
+
+.pcb_cont input button textarea {
+	font-size: 12px;
+}
+
+.pcb_cont .pcbquote_form {
+	padding: 5px;
+}
+.pcb_cont .flight-type-select {
+	margin-bottom: 5px;
+}
+.pcb_cont ul li {
+	list-style: none outside none;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix::after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+}
+.pcb_cont .s_list {
+	margin-left: -2%;
+	margin-top: 5px;
+}
+.pqFormSubmit {
+	margin-top: 12px;
+}
+.pcb_cont a {
+	text-decoration: none;
+	color: #00a63f;
+	cursor: pointer;
+}
+.ui-button-primary {
+	height: 24px;
+	text-align: center;
+	line-height: 26px;
+	cursor: pointer;
+	border: 0px;
+	font-size: 13px;
+	background: #32b051;
+	border-radius: 2px;
+	color: #fff;
+	padding: 0 10px;
+	font-weight: bold;
+}
+.ui-button {
+	display: inline-block;
+	*display: inline: ;
+	*zoom: 1: ;
+	position: relative;
+	overflow: visible;
+}
+.ui-button-normal.ui-button, .ui-button-primary.ui-button {
+	margin: 0;
+	font-family: inherit;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+}
+.pqFormSubmit .ui-button-primary.qsubmit {
+	background-color: #f58217;
+	padding: 1px 10px 5px 10px;
+	font-size: 14px;
+  color: #FFF;
+}
+.pqFormSubmit .hui-coupons {
+	color: #008a32;
+	margin-left: 80px;
+}
+
+.pcb_cont h3 em strong th {
+	font-weight: normal;
+	font-style: normal;
+}
+.pqFormSubmit .hui-coupons em {
+	font-size: 12px;
+	color: #ff6600;
+}
+
+.pcbquote-main .pcb_cont .s_list li {
+	float: left;
+	display: inline-block;
+	width: 30%;
+	min-width: 30%;
+	padding-left: 2%;
+	margin-bottom: 5px;
+	position: relative;
+}
+.pcbquote-main .pcb_cont .s_list li label {
+	display: block;
+	line-height: 20px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+.pcb_cont .s_list li select {
+	width: 100%;
+	height: 30px;
+	color: #333;
+	border: 1px solid #999;
+	background-color: #FFF;
+	outline: 0;
+}
+.pcb_cont option {
+	padding: 1px 2px;
+}
+.pcb_cont .s_list li option {
+	padding: 3px 0;
+}
+.pcb_cont .s_list li input[type=text] {
+	float: left;
+	width: 92%;
+	height: 28px;
+	text-indent: 5px;
+	border: 1px solid #999;
+	background-color: #FFF;
+	outline: 0;
+	line-height: 28px;
+	padding-left: 5px;
+}
+.left {
+	float: left;
+}
+.chicun {
+	font-size: 11px;
+	border-right: 1px solid #999;
+}
+.input-x-addon {
+	float: left;
+	background: #f2f5f8;
+	width: 22px;
+	height: 28px;
+	text-align: center;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	line-height: 28px;
+}
+.flight-type-select h3 {
+	color: #008a32;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+.flight-type-select p {
+	color: #999;
+	font-size: 12px;
+}

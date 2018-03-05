@@ -1,0 +1,12 @@
+_satellite.pushBlockingScript(function(event, target, $variables){
+  //Begin Demandbase Adobe Data Connector
+var dmbElement1 = document.createElement("script");
+dmbElement1.setAttribute("src", "//scripts.demandbase.com/adobeanalytics/cae72688.min.js");
+document.head.appendChild(dmbElement1);
+setTimeout( function (){
+var dmbElement2 = document.createElement("script");
+dmbElement2.setAttribute("src", "//api.demandbase.com/api/v2/ip.json?key=cc85c8e1e8cd95682aade667a12c7f0e&callback=Dmdbase_CDC.callback");
+document.head.appendChild(dmbElement2);
+//End Demandbase Adobe Data Connector
+}, 10); //delay the second element by 10ms to avoid timing issues
+});

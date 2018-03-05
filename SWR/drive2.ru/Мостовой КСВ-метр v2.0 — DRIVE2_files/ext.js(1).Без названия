@@ -1,0 +1,549 @@
+
+<!doctype html>
+<html class="d       ru" >
+<!-- X-Request-ID: dabe1bbd6b3c4fbd0bb8ffdb7c2c81ed -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <title>404 — Страница не найдена</title>
+    <meta name="description" content="Автомобильная социальная сеть">
+            <meta name="viewport" content="width=1228">
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="/assets/css/d/main(uYQCrHxdUPK5vWIC06kd9D7smQs).css" rel="stylesheet">
+    <link href="/assets/css/d/res(dZdhFXn_2NJMzki4vQjesvjbZ3A).css" rel="stylesheet">
+    
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','_ga');
+            _ga('create', 'UA-21235067-2', {'cookieDomain' : 'drive2.ru', 'userId': '490935241410609186'});
+            _ga('set', 'dimension1', 'Member');
+                _ga('set', 'dimension2', 'HasCar');
+            _ga('send', 'pageview');
+        </script>
+    <script>
+        var __d2_env = {
+            iconsUrl: '/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg',
+ userId: '490935241410609186',             formContext: {
+                '.FCTX': '_wfqzlwoyiseAAQcQnJ1LldlYi4xOjQ5MDkzNTI0MTQxMDYwOTE4Nojzmcc0P4xCt4pSPrztJtlvncEK'
+            },
+            uploadUrl: 'https://upload-www.drive2.ru/ajax/upload.cshtml?.AMET=YZQ8gQ946vM9aU_ihIW2DZOL_qvRb-Xsp-LrJ79Hdoye8bTZx6VS6-vW5n2LSPy5-8sg-T9oYWaFX1DHan3vF_kFV8vp0tqxPsqVi1acxl1y4SKB9xRS4yi1BXe8kRNG'
+        };
+    </script>
+    <script id="my-widget-script" src="https://www.drive2.ru/assets/_4d6be1b0704db4b58f8f4e27a18960be/widget.js" data-uid="5352d2962a0856f7e889e6ee28d14ea6" async></script>
+    <script src="/assets/js/bundle(tdI-tNr4Eyf9a-2_ZMK_jfhpHQo).js"></script>
+<script src="/assets/js/ru/main(CtdKnMwEtctmU8gEtHvGfBHUtpw).js"></script>            <script>
+            !function(e,t,n){function o(){var e=Number(new Date),n=new Date(e+36e5*c.time).toUTCString();t.cookie=c.cookie+"=1; expires="+n+"; path=/"}if(n.src){var c={};for(var a in n)n.hasOwnProperty(a)&&(c[a]=n[a]);c.cookie=c.cookie||"bltsr",c.time=c.time||3,c.context=c.context||{},c.callback=c.callback||function(){},function(e){function n(){t.removeEventListener("DOMContentLoaded",n),e()}"complete"===t.readyState||"loading"!==t.readyState&&!t.documentElement.doScroll?e():t.addEventListener&&t.addEventListener("DOMContentLoaded",n)}(function(){var a={blocked:!0,blocker:"UNKNOWN"},r=new(e.XDomainRequest||e.XMLHttpRequest);r.open("get",n.src,!0),r.onload=function(){try{new Function(r.responseText).call(c.context),c.context.init(e,t,c)}catch(e){o(),c.callback(a)}},r.onerror=function(){Number(new Date)-i<2e3&&(o(),c.callback(a))};var i=Number(new Date);r.send()})}}(window,document,{
+                src: 'https://static-mon.yandex.net/static/main.js?pid=drive2',
+                callback: d2.__dv
+            });
+        </script>
+    
+    <script src="/assets/js/ru/recommendations(I-0acBLy_Z7qH2vZxOptTaaBB0g).js"></script>
+
+        <script>
+            kvalues = [];
+            (function() {
+                try {
+                    var group = "BiyLdipgklLL6QBUxloz";
+                    var lsKey = "rtb_" + group;
+                    var xhr = new XMLHttpRequest(); if (!("withCredentials" in xhr)) return; xhr.withCredentials = true;
+                    xhr.open('GET', 'https://pubs2-eu.creativecdn.com/bidder/pubs/tagging?type=json&group=' + group);
+                    xhr.onload = function() {
+                        try {
+                            var json = JSON.parse(xhr.responseText); json._ts = new Date().getTime();
+                            localStorage.setItem(lsKey, JSON.stringify(json));
+                        } catch (e) {}
+                    };
+                    xhr.send();
+                    var json = localStorage.getItem(lsKey);
+                    if (json) {
+                        json = JSON.parse(json);
+                        for (var i=0; i<json.deals.length; i++) {
+                            var deal = json.deals[i];
+                            if (!deal.ttl || new Date().getTime() < json._ts + deal.ttl) {
+                                kvalues.push(deal.hash);
+                            }
+                        }
+                    }
+                } catch (e) {}
+            })()
+        </script>
+        <!-- ENDOF: Implement RTBx Script on all pages of the website where RTB House will deliver ads. Please put this below GPT header tag -->
+    
+            <script src="https://www.drive2.ru/assets/_6efeba770d2631ea4896fc299d98a21d/pcode/adfox/loader.js"></script>
+    
+</head>
+<body  ><div class="l-body">
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter = new Ya.Metrika({
+                        id:33911514,
+                        clickmap: false,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: false,
+                        ecommerce: "dataLayer",
+                        triggerEvent: true,
+                        params: {
+                            user: 'Member',
+                            business: false,
+                            car: 'HasCar',
+                            type: 'Desktop',
+                            standing: 'Member',
+                            segment: 'MDP_2236'                        }
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><img src="https://mc.yandex.ru/watch/33911514" style="position:absolute; left:-9999px;"></noscript>
+        <script>
+        var _comscore = _comscore || [];
+        _comscore.push({ c1: "2", c2: "20077035" });
+        (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=20077035&cv=2.0&cj=1" style="position:absolute;" />
+        </noscript>
+    
+            <div class="l-top">
+                <div class="l-alt">
+                    
+                    
+                    
+
+
+
+                </div>
+            </div>
+            <header class="l-header js-sticky">
+                
+
+<div class="c-top js-top">
+    <div class="c-top__container">
+        
+        
+    <a class="c-logo  " rel="home" href="/" >
+        <span>DRIVE2.RU</span>
+    </a>
+
+
+        <div class="c-top__wrapper"><div class="c-top__wrapper-i">
+            <div class="c-top__user">
+                <a class="c-top__userpic" href="/users/borisyar/">
+<div class="o-img" style="background-color: #A2652D;" data-size="60,60"><span style="display: block; padding-top: 100%"></span><img src="https://a.d-cd.net/db80175s-60.jpg" width="60" height="60"></div>
+                </a>
+            </div>
+            <div class="o-ibc c-top__main-nav js-top-main-nav">
+                <div class="c-top-nav">
+                    <a class="c-top-nav__link" id="feed-status" href="/my/feed">
+                        Лента
+                    </a>
+                </div>
+                <div class="c-top-nav">
+                    <a class="c-top-nav__link" href="/cars">
+                        Машины
+                    </a>
+                </div>
+                <div class="c-top-nav">
+                    <a class="c-top-nav__link" href="/experience">
+                        Личный опыт
+                    </a>
+                </div>
+                <div class="c-top-nav">
+                    <a class="c-top-nav__link" href="/communities">
+                        Сообщества
+                    </a>
+                </div>
+            </div>
+            <div class="c-top__sitesearch">
+                <form class="o-ibc c-top-sitesearch " action="/search/" onsubmit="d2.ssActive(this.text, true)">
+    <input type="hidden" name="searchid" value="2238849">
+    <svg class="c-top-sitesearch__icon">
+        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#search"></use>
+    </svg>
+    <input class="c-input c-top-sitesearch__q" type="search" name="text" placeholder="Поиск" data-placeholder="Поиск машин, отзывов, запчастей" onfocus="d2.ssActive(this, true)" onblur="d2.ssActive(this)">
+    <button class="c-button c-button--white c-top-sitesearch__button" type="submit">Найти</button>
+</form>
+
+            </div>
+            <div class="o-ibc c-top__side-nav js-top-nav">
+                <div class="c-top-nav">
+                    <a class="c-top-nav__link" id="messages-status" href="/my/messages/">
+                        <svg class="c-top-nav__icon c-top-nav__icon--wide">
+                            <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#messages"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="c-top-nav">
+                    <button class="r-button-unstyled c-top-nav__link js-notifications" id="notifications-status">
+                        <svg class="c-top-nav__icon js-notification-icon ">
+                            <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#bell"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="c-top-nav">
+                    <button class="r-button-unstyled c-top-nav__link js-top-nav-sub">
+                        <svg class="c-top-nav__icon">
+                            <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#settings"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <script>new d2.UpdateStatus;</script>
+            <div class="c-top__footer js-header-container">
+                <div class="c-top-dropdown js-top-nav-block" style="display: none;">
+                    <a class="c-top-dropdown__link " href="/my/profile/">Редактирование профиля</a>
+                    <a class="c-top-dropdown__link " href="/my/notifications/">Уведомления</a>
+                    <a class="c-top-dropdown__link " href="/my/blacklist/">Чёрный список</a>
+                    <a class="c-top-dropdown__link " href="/my/profile/social-connect.cshtml">Привязка к соцсетям</a>
+                    <a class="c-top-dropdown__link " href="/my/content/">Главная и Лента</a>
+                    <div class="c-top-dropdown__hr"><hr /></div>
+                    <a class="c-top-dropdown__link " href="/users/borisyar/carsfollowing">Подписки на машины</a>
+                    <a class="c-top-dropdown__link " href="/users/borisyar/following">Подписки на людей</a>
+                    <a class="c-top-dropdown__link " href="/my/feed/newcars/">Отслеживание новых машин</a>
+                    <div class="c-top-dropdown__hr"><hr /></div>
+                    <a class="c-top-dropdown__link " href="/my/premium/">Перейти на Премиум-аккаунт</a>
+                    <div class="c-top-dropdown__hr"><hr /></div>
+                    <a class="c-top-dropdown__link " href="/reception/logout.cshtml">Выход</a>
+                </div>
+            </div>
+        </div></div>
+    </div>
+</div>
+
+            </header>
+        <main>
+                        <div class="l-container">
+                    <div class="l-nav js-nav">
+
+<div class="c-nav">
+    
+    <nav class="c-nav-block ">
+        
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="https://auto.ru/?utm_source=drive2-ru&amp;utm_medium=special&amp;utm_campaign=left-menu_all-pages_user-login-all&amp;utm_content=obshie" rel="noopener" target="_blank"  data-action="mtrack.link;clickmod:mtrack.link" data-npd data-target="auto.ru_sum_menu"><b>Купить машину на auto.ru</b></a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/market"   ><b>Барахолка</b></a>
+                <a class="c-nav-block-icon" href="/market/offers/new" data-tt="Разместить объявление"  >
+                    <svg class="c-nav-block-icon__icon">
+                        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#add"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/election/"   ><b>Выборы Машины дня</b> <span class="c-notification-bubble c-notification-bubble--dot">&nbsp;</span></a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/games/quiz"   ><b>Викторина</b> <span class="c-notification-bubble c-notification-bubble--dot">&nbsp;</span></a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Моё</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/users/borisyar/#blog"   >Личный блог</a>
+                <a class="c-nav-block-icon" href="/users/borisyar/blog/add" data-tt="Написать в личный блог"  >
+                    <svg class="c-nav-block-icon__icon">
+                        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#add"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/s/s/BtAnAEAAACI"   >Альбомы</a>
+                <a class="c-nav-block-icon" href="/s/add" data-tt="Поделиться фотографией"  >
+                    <svg class="c-nav-block-icon__icon">
+                        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#add"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/my/r/"   >Мои машины</a>
+                <a class="c-nav-block-icon" href="/my/r/add" data-tt="Добавить машину"  >
+                    <svg class="c-nav-block-icon__icon">
+                        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#add"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link c-nav-block__link--truncated" href="/r/lada/492836571892941110/"   >Лада Гранта Лифтбек</a>
+                <a class="c-nav-block-icon" href="/r/lada/492836571892941110/logbook/add" data-tt="Написать в бортжурнал"  >
+                    <svg class="c-nav-block-icon__icon">
+                        <use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#add"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/my/guests"   >Гости</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/my/bookmarks/"   >Закладки</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Новое</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link c-nav-block__link--truncated" href="/experience/lada/g4532/"   >Про Лада Гранта лифтбек</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/editorial/"   >Новости и тест-драйвы</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/featured-topics/"   >Самое интересное</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/popular/"   >Популярное сегодня</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/life/"   >Прямой эфир</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Машины</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/cars/"   >Каталог машин</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/newcars/"   >Новые машины</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Лучшие машины</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link c-nav-block__link--truncated" href="/top/lada/g4532/"   >Топ Лада Гранта лифтбек</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link c-nav-block__link--truncated" href="/top/?city=147974"   >Топ Ярославль</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/top/"   >Топ 100</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Премиум-услуги</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/deposit/"   >Пополнить счёт (0&#160;кредитов)</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/promo-terms/"   >Продвижение машин</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/premium/"   >Премиум-аккаунт</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/communities/3070/"   >Советы, секреты, помощь</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <nav class="c-nav-block ">
+        <h3 class="c-nav-block__header">Поддержка</h3>
+        <ul>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/help/"   >Помощь</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/rules/"   >Правила сайта</a>
+                
+            </li>
+            <li class="c-nav-block__item ">
+                <a class="c-nav-block__link " href="/help/support"  onclick="if (window.zE) {zE.activate(); return false;}" >Обратиться в Поддержку</a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+                            <div class="totop js-totop">
+                                <svg class="totop__icon"><use xlink:href="/assets/images/map(KN4SfkntIwymwD0ZfsCkLoStJZE).svg#up-arrow"></use></svg>
+                                <span class="totop__caption">Наверх</span>
+                            </div>
+                    </div>
+                <div class="l-page js-page" >
+                                                <div class="l-page-header ">
+                                
+    <h1 class="c-header-main c-header-floating">404 — Страница не найдена</h1>
+
+                            </div>
+                    
+                                <div class="c-block c-block--content c-block--side-bg g-column-mid" data-role="pagebg">
+                                    
+
+
+<div class="text">
+    <p>Увы, такой страницы на сайте нет. Она была удалена, а&nbsp;может быть и&nbsp;вообще никогда не&nbsp;существовала.</p>
+<p>Возможно, вас заинтересует что-то другое:</p>
+<ul class="list-regular">
+    <li><a class="c-link" href="/">Главная страница</a></li>
+    <li><a class="c-link" href="/cars/">Машины</a></li>
+    <li><a class="c-link" href="/market/">Барахолка</a></li>
+    <li><a class="c-link" href="/featured-stories/">Почитать интересное</a></li>
+    <li><a class="c-link" href="/experience/">Опыт эксплуатации от автомобилистов</a></li>
+    <li><a class="c-link" href="/communities/">Сообщества по интересам</a></li>
+    <li><a class="c-link" href="/help/">Помощь</a></li>
+</ul>
+</div>
+
+
+                                </div>
+                    
+    <div class="js-recommendations js-scrolltracking" data-cid="f8e5e864b005d7419e37c52787845b68"  data-items="12" data-metrika="recomm" data-showids="{&quot;0&quot;:[&quot;_wfqzlwoyishAP8D4deUr0OD8ICtk-ba6gjFE6wuooCAgITgiegGAhKhA-EBxGhykxGbmSMcsN13gVNdBh1B&quot;]}" data-adkind="drivedirect">
+        <div class="js-teaser" style="display: none;">
+            <div class="c-post-card c-post-card--dv c-post-card--hoverable  " >
+                <div class="c-post-card__pic-container">
+                    <a href="https://d.drive.ru/z/click?go=_wfqzlwoyiuNAAPh15SvQ4PwgK2T5trqCMUTrC4BooCAgITgiegGAm5odHRwczovL2FkLmFkcml2ZXIucnUvY2dpLWJpbi9jbGljay5jZ2k_c2lkPTEmYnQ9MiZhZD02NDkxNzUmcGlkPTI3MDEzNjMmYmlkPTU0MzY5MjUmYm49NTQzNjkyNSZybmQ9MTQxMDcxMjczMyeuFxbJlf8kDAUB2hTvicGAIqpn&amp;co=_wfqzlwoyitVAGNhcjoxIDIwMTcgbGFkYStncmFudGFfbGlmdGJhY2srZ3JhbnRhX2xpZnRiYWNrO2xvYzrQr9GA0L7RgdC70LDQstC70YwsINCg0L7RgdGB0LjRjzvbg1lIAscMrlMZ_tYJb-9tnXIxvg&amp;pl=Recomm&amp;url=https%3a%2f%2fwww.drive2.ru%2fext.js" rel="nofollow" target="_blank"><div class="o-img" data-size="240,135"><span style="display: block; padding-top: 56.25%"></span><img src="https://d.drive.ru/i/?6092.jpeg" width="240" height="135"></div></a>
+                </div>
+                <div class="c-post-card__body">
+                    <div class="c-post-card__caption">
+                        <a href="https://d.drive.ru/z/click?go=_wfqzlwoyiuNAAPh15SvQ4PwgK2T5trqCMUTrC4BooCAgITgiegGAm5odHRwczovL2FkLmFkcml2ZXIucnUvY2dpLWJpbi9jbGljay5jZ2k_c2lkPTEmYnQ9MiZhZD02NDkxNzUmcGlkPTI3MDEzNjMmYmlkPTU0MzY5MjUmYm49NTQzNjkyNSZybmQ9MTQxMDcxMjczMyeuFxbJlf8kDAUB2hTvicGAIqpn&amp;co=_wfqzlwoyitVAGNhcjoxIDIwMTcgbGFkYStncmFudGFfbGlmdGJhY2srZ3JhbnRhX2xpZnRiYWNrO2xvYzrQr9GA0L7RgdC70LDQstC70YwsINCg0L7RgdGB0LjRjzvbg1lIAscMrlMZ_tYJb-9tnXIxvg&amp;pl=Recomm&amp;url=https%3a%2f%2fwww.drive2.ru%2fext.js" rel="nofollow" target="_blank">Ford Focus 2017 года с выгодой до 150 000 рублей</a>
+                        <div class="c-rel-label"><a class="c-link c-link--light-gray" href="https://www.drive.ru/ad#teasers">Реклама</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    <!--AdFox START-->
+    <!--drive.ru-->
+    <!--Площадка: DRIVE2 / * / *-->
+    <!--Тип баннера: 1x1js-->
+    <!--Расположение: <середина страницы>-->
+    <div id="adfox_151177845346968266_636532781441916285"></div>
+    <script>
+    window.Ya.adfoxCode.create({
+        ownerId: 59610,
+        containerId: 'adfox_151177845346968266_636532781441916285',
+        params: {
+            pp: 'h',
+            ps: 'nkx',
+            p2: 'eomx'
+        }
+    });
+    </script>
+
+
+
+                </div>
+            </div>
+        </main>
+            <footer class="l-footer">
+            <div class="footer ">
+                <div class="footer__content">
+                    <div class="footer__bg">
+                        <div class="footer__body">
+                                <div class="footer__links">
+                                        <p>
+                                            <a class="c-link c-link--gray" href="/help/">Помощь</a>
+                                                <a class="c-link c-link--gray" href="/communities/developers/">Новости сайта</a>
+                                            <a class="c-link c-link--gray" href="/symbols/">Символика</a>
+                                                <a class="c-link c-link--gray" href="http://vk.com/drive2" rel="noopener" target="_blank">ВКонтакте</a>
+                                            <a class="c-link c-link--gray" href="https://twitter.com/drive2" rel="noopener" target="_blank">Twitter</a>
+                                            <a class="c-link c-link--gray" href="/mobile/">Мобильный DRIVE2</a>
+                                        </p>
+                                        <p>
+                                            <a class="c-link c-link--gray" href="/about/">О проекте</a>
+                                            <a class="c-link c-link--gray" href="/jobs/">Вакансии</a>
+                                            <a class="c-link c-link--gray" href="/business/">Бизнес-аккаунт</a>
+                                            <a class="c-link c-link--gray" href="/promo/">Реклама и сотрудничество</a>
+                                        </p>
+                                        <p>
+                                            <a class="c-link c-link--gray" href="/rules/">Правила сайта</a>
+                                            <a class="c-link c-link--gray" href="/agreement/">Пользовательское соглашение</a>
+                                            <a class="c-link c-link--gray" href="/data-use/">Политика обработки персональных данных</a>
+                                        </p>
+                                </div>
+                            <div class="footer__copyrights">
+                                    © DRIVE2.RU, 2018
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+            <script>
+                (function(win, doc, cb){
+                    (win[cb] = win[cb] || []).push(function() {
+                        try {
+                            tnsCounterDrive_ru = new TNS.TnsCounter({
+                            'account':'drive_ru',
+                            'tmsec': 'drive2_total'
+                            });
+                        } catch(e){}
+                    });
+
+                    var tnsscript = doc.createElement('script');
+                    tnsscript.type = 'text/javascript';
+                    tnsscript.async = true;
+                    tnsscript.src = ('https:' == doc.location.protocol ? 'https:' : 'http:') +
+                        '//www.tns-counter.ru/tcounter.js';
+                    var s = doc.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(tnsscript, s);
+                })(window, this.document,'tnscounter_callback');
+            </script>
+            <noscript>
+                <img src="//www.tns-counter.ru/V13a****drive_ru/ru/UTF-8/tmsec=drive2_total/" width="0" height="0" alt="" />
+            </noscript>
+        <script>
+            new Image().src = "//counter.yadro.ru/hit;DRIVE?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+        </script>
+</div></body>
+</html>
+
+

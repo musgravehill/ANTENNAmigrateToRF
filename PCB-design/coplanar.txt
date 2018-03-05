@@ -1,0 +1,11 @@
+У меня полоска- компланар с подложкой.
+
+Толщина диэлектрика 1.60 - (0.035*2) = 1.53мм
+Диаэл.проницаемость на ГГц 4.2
+Полоска 2.1мм с зазорами 0.5мм дает Zo 50 Ом
+1.85мм   зазор=0.36мм
+
+НО! ШИРИНА ЗЕМЛИ СБОКОВ ДОЛЖНА БЫТЬ МИНИМУМ В 5 РАЗ БОЛЬШЕ, ЧЕМ ШИРИНА ПОЛОСКИ. А У МЕНЯ ОДНА ИЗ СТОРОН - УЗКАЯ.
+
+Coplanar Waveguide With Ground Characteristic Impedance Calculator
+http://chemandy.com/calculators/coplanar-waveguide-with-ground-calculator.htm

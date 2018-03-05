@@ -1,0 +1,8 @@
+function check(x){var i;var ret=true;for(i=0;i<x.length;i++){console.log(x[i].value=="Use numeric value");if(!x[i].value||x[i].value=="Use numeric value"){document.getElementById("errormsg").innerHTML="Input type error: Please fill all required fields";document.getElementsByClassName("error")[i].innerHTML="<<";ret=false;}
+else if(!checkValidity(x[i].tagName,x[i].value)){document.getElementById("errormsg").innerHTML="Input type error: Unexpected characters in input";document.getElementsByClassName("error")[i].innerHTML="<<";ret=false;}}
+return ret;}
+function checkValidity(type,n){var j;var numdot=0;if(type=="INPUT"){if(isNaN(n)){for(j=0;j<n.length;j++){if(n[j]=='-'&&j!=0){return false;}
+if(n[j]=='.'){if(numdot>0){return false;}else{numdot++;}}
+if((n[j]<'0'||n[j]>'9')&&n[j]!='.'&&n[j]!='-'){if(j!=n.length-1&&j!=0){return false;}else{return checkSIbool(n[j]);}}}}}
+return true;}
+function checkSIbool(n){if(n=='T'||n=='G'||n=='M'||n=='k'||n=='m'||n=='u'||n=='n'||n=='p'){return true;}else{return false;}}

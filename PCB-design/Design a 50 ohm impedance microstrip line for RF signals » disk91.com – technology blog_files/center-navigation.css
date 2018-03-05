@@ -1,0 +1,16 @@
+#access .menu, #access .menu-header {
+	float: left;
+	position: relative;
+	left: 50%;
+	margin-left: 0 !important;
+}
+#access .menu>ul, #access .menu-header>ul {
+	float: left;
+	position: relative;
+	left: -50%;
+	text-align: center;
+}
+#access .menu>ul li, #access .menu-header>ul li{
+	float: none;
+	display: inline-block;
+}

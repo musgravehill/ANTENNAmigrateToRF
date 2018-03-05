@@ -1,0 +1,25 @@
+function displayDefaultNativeAd( adObj ){
+
+ var innerNativeContentThumbanil = "";
+ if ( adObj.youtube_vid != "") {
+	innerNativeContentThumbanil = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/" + adObj.youtube_vid + "?rel=0&amp;showinfo=0\" frameborder=\"0\" allowfullscreen><\/iframe>";
+ } else {
+	innerNativeContentThumbanil = "<a target=\"_blank\" href=\"" + adObj.clickurl +  "\"><img src=\"" + adObj.img + "\"></a>";
+ }
+ 
+ var innerNativeHeader = "<div class=\"wide-nativead-wrapper\">";
+ innerNativeHeader += "<div class=\"wide-nativead-header\">" + unescape(adObj.headerlabel) + "</div>"
+ 
+ var innerNativeContent = "<div class=\"wide-nativead-content\">";
+ innerNativeContent += "<div class=\"wide-nativead-thumbnail\">"+ innerNativeContentThumbanil +"</div>";
+ innerNativeContent += "<div class=\"wide-nativead-post\"><a target=\"_blank\" href=\"" + adObj.clickurl +  "\">" + unescape(adObj.title) + "</a>";
+ innerNativeContent += "<p>" + unescape( adObj.description) + "</p>";
+ innerNativeContent += "<div class=\"wide-nativead-sponsor\"><small>" + unescape(adObj.sponsorlabel) +  "</small></div></div>";
+ innerNativeContent += "<div class=\"wide-nativead-reset\"></div></div>";
+ 
+ var innerNativeBottom  = "</div>";
+
+ document.getElementById("dfp_native").innerHTML = innerNativeHeader +
+ innerNativeContent +
+ innerNativeBottom; 
+}

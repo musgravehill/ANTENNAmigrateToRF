@@ -1,0 +1,55 @@
+A Microwave RF Bridge
+
+ http://www.vk4adc.com/web/microwave-projects/64-test-equipment/83-microwave-rf-bridge
+
+12 July 2011
+
+  
+
+Some of the other articles on this web site deal with microwave antennas ( 1.2, 2.4 & 3.4 GHz etc..) but making adjustments to them is difficult without some type of testing device capable of working at these frequencies.  Google search results will put up two technical terms for you to choose between : an RF impedance bridge and a SWR meter. You might well ask ‘How is a "RF bridge" different to an SWR meter' ???
+
+ An RF bridge is a piece of test equipment and is used only for testing and must be taken out-of-line for normal operations. The term "bridge" dates back to what was welll known as a "Wheatstone Bridge", although back then, it was mainly used at DC and low audio frequencies. The bridge is fed RF power at the desired frequency and if the termination impedance matches the design impedance, usually 50 ohms in RF work, then the detector device reads a minimal output value (usually called a ‘null'). In practice, the actual power that is fed to a ‘nominal 50 ohm load' is 6dB down from the level actually applied to the input terminal of the device. Having a 6dB attenuator in-line all of the time is not an efficient way to utilize an antenna. In addition, an RF bridge operates with low levels of RF, typically down around +10dBm to +20dBm (or 10mW to 100mW of RF power). They cannot be used at high power levels because the resistors used to make up the "bridge" at microwave frequencies are typically physically quite small and have a very low power rating.
+
+An SWR meter can be left in-line all of the time if the losses it introduces are minimal. A typical frequency-suitable SWR meter loss will be considerably lower than 1dB. It requires RF power in the range of "watts" or "100's of milliwatts" to be able to get a full-scale deflection (FSD) of the meter on the ‘Forward" position and that sets the calibration for the ‘Reverse' position. The SWR is then read off the integrated meter scale. The SWR is the ratio of the load impedance to the design impedance of the device and where the design impedance is usually 50 ohms. The desired "matched" load impedance of 50 ohms gives a 1.0:1 ratio reading. A 1.5:1 would then be indicated for either a 75 ohm or 33.33 ohm load impedance, a 2:1 for either 100 ohms or 25 ohms etc.. 
+
+When I started looking for a means of tuning antennas at microwave, I found an article titled "A Wifi (V)SWR Meter to build yourself"  at web address http://pe2er.nl/wifiswr/index.htm . The only problem is that the article is actually a mis-nomer : it should probably read "A Wifi RF Impedance Bridge to build yourself ".  It cannot really be used as an "SWR meter" because the through-loss is a minimum of 6dB.  You can use it to indicate a "match" though, by using it to indicate when a composite load impedance is close to (or exactly) 50 ohms. That is done by looking for the "null" on the indicator as "tuning adjustments" are made on the antenna assembly.
+
+The original instructions in  http://pe2er.nl/wifiswr/Wifi-swrbridge-External-manual.pdf provided suggest using a short-circuit (suitable for microwave frequencies) to calibrate for FSD after the unit has first been calibrated to accurately indicate a 50 ohm matched condition with a "null".  The SWR can then be read off the meter when set up with a suitable calibration scale. I do recommend reading through the PDF as it does explain the theory and practice.
+
+Unfortunately, while it specifies the power loss (6dB) at the output connector in the general description / specifications, nowhere does it say to use the device to test an antenna and then remove the device from the coaxial feeder for normal use. Knowledge-able people might think to do so, some others may not - if for no other reason than normally an "SWR meter" is left in-line (eg at HF & CB frequencies). 
+
+If your intention is to use one of these with WLAN access point / card hardware, you will need to include the peak-hold function referenced in the original article. 
+
+The way I intend to use this type of device is to attach it at the feed point of the antenna under test (i.e. the SMA connector on the antenna) and feed continuous carrier signal at low RF power from a suitable source and then make physical adjustments such that the "null" indication is achieved. The termination impedance is then 50 ohms so will provide a "match" to the coaxial line and thence to the transmitter output impedance with minimal losses being introduced. That will result in maximum power transfer to the antenna assembly and maximum radiated power.
+
+I built my RF bridge up on a small piece of FR4 double-sided PCB using artwork that I created in ExpressPCB, assembled using SMD parts and using SMA female bulkhead connectors soldered to opposite ends.. I used a BAT245 diode in place of the original BAT62-03W and used pairs of 100 ohm SMD resistors in parallel ( = 50 ohms) in place of the 49.9 ohm ones specified.  The photos provided show the layout upon completion of component mounting and also after the bridge was "balanced" while using a high quality 50 ohm termination. This latter photo shows a strip of tinplate soldered across part of the PCB - where the position and proximity to the relevant components was adjusted by trial and error - the same as in the original article. The importance of an extremely good 50 ohm termination during this process sets up the long-term usefulness of the whole project so cannot be under-stated.
+
+ 
+
+
+This is the basic PCB layout. Note that the overall size of the PCB itself is just 20mm x 20mm. OUT = variable/unknown Z.
+
+ExpressPCB artwork file here as a ZIP (5Kb)
+
+
+The PCB with the SMA connectors in place. The LHS is the Out or unknown impedance port, the RHS is the RF signal input port.
+
+There are several wired "vias" through the board material : 3 along the "top" of the photo with 2 partially masked by the SMA connector legs, and another on the closest side of the photo adjacent to the SMA connectors and one centrally down near the end of the 2 x 100ohm resistors to the ground trace.  These are essential when building up the PCB.
+
+
+The tinplate shield soldered across part of the PCB around the input components. It's size and shape have to be carefully adjusted to "null" the bridge when terminated in a high quality 50 ohm resistive load. 
+ 
+
+My 50 ohm termination is actually a commercial 5 watt 20dB SMA-SMA attenuator rated to 18GHz. My home-made 10dB SMA-SMA attenuator pales in comparison, and while close to 50 ohms, is by no means exactly that. Interestingly, it's attenuation is quite close to 10dB at microwave frequencies.
+
+This bridge has been proven to operate at 1.2GHz (well, closer to 1.3 GHz), 2.4 GHz and should work effectively at both 3.4GHz and 5.7 GHz as well.
+
+The RF bridge should be placed as close to the "load" as possible, particularly at microwave frequencies. My testing was done with a short (100mm) SMA male-to-male cable using UT141 solid mini-coax and the load was the Coffee can dual band feed described elsewhere on this web site. 
+
+First I cross-checked the depth of the "null" with my 20dB attenuator and my DMM connected to the DET+ output against "ground" : result = 1.1mV with +18dBm input at 2403.0 MHz.  
+
+Next, I connected the coffee can antenna to the port and the immediate reading was in the 20's of millivolts. I adjusted the tuning screw and managed to get a low value (ie. toward the null) of about 8mV. Obviously still not really close to 50 ohms being presented to the bridge. I readjusted the length of the actual radiating element in the can itself in increments while still adjusting the tuning screw while still looking for the lowest possible value.  The final value was 1.6mV so fairly close to the value achieved with the 50 ohm resistive load. Note : if you have an analogue multimeter available, use it on it's lowest voltage range (or maybe current range depending on model) as it is just so much easier to see the null as you tune the adjustments..
+
+There isn't any reason that this bridge could not be used at lower frequencies, particularly down to VHF - if necessary replacing the 5pF (4.7pF) capacitors with a larger value e.g. 1nF (0.001uF).  The main criteria is that once you have the components on the board, you must adjust the tinplate shield accurately to balance the bridge while connected to a high quality resistive load, preferably at the highest frequency you plan to use it for. I did my initial adjustments at 1.04 GHz with +13dBm from my signal generator but the "live" testing with +18dBm at 2.4GHz & true 50 ohm load was so close to balanced that I did not attempt to re-balance it at that frequency.
+
+You also need to make sure that you only apply up to 100mW (+20dBm) of RF otherwise the two sets of 100 ohm 1206 input resistors may be damaged, but more likely, the diode will disappear in a "puff of smoke". 
