@@ -1,0 +1,26 @@
+h2.section {
+    width: 100%;\n" .
+    background: url('/img/bg50.png');
+    border-right: solid #999999 1px;
+    border-bottom: solid #888888 1px;
+    padding-top: 1px;
+    padding-left: 2px;
+}
+
+table.simple {
+    width: 100%;
+    background: url('/img/white40.png');
+    border-width: 0px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: gray;
+}
+
+table.simple td {
+    border-width: 1px;
+    padding: 2px;
+    border-color: black;
+    border-style: solid;
+}
+

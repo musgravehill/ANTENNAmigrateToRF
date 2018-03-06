@@ -1,0 +1,12 @@
+function phpads_deliverActiveX(content) {document.write(content);}
+var OA_output = new Array();
+OA_output['width:700-950,_height:70-110,_rcgf-862-img|rcgf-adsense'] = '';
+OA_output['width:700-950,_height:70-110,_rcgf-862-img|rcgf-adsense'] += '<'+'a href=\'https://decals.rcgroups.com/adclick.php?bannerid=20002&amp;zoneid=0&amp;source=FPV+Equipment&amp;dest=http%3A%2F%2Fwww.dragonlinkrc.com%2F\' target=\'_blank\'><'+'img class=\'_decalimg\' src=\'https://decals.rcgroups.net/storage/advertisementdragonlink900x450-2.jpg\' width=\'950\' height=\'110\' alt=\'\' title=\'\' border=\'0\'><'+'/a>';
+OA_output['clientid=2122'] = '';
+OA_output['clientid=2122'] += '<'+'a href=\'https://decals.rcgroups.com/adclick.php?bannerid=5972&amp;zoneid=0&amp;source=FPV+Equipment&amp;dest=http%3A%2F%2Fwww.hobbyking.com%2Fhobbyking%2Fstore%2FHobbyKing_New_RC_Products.asp%3ForderBy%3Drecently%26utm_source%3Drcgroups.com%26utm_medium%3Ddisplay%26utm_campaign%3Dnewproductshttps%3A%2F%2Fhobbyking.com%2Fen_us%2Fnew-items.html%3Futm_source%3Drcgroups.com%26utm_campaign%3Dnewitems%26utm_medium%3Ddisplay\' target=\'_blank\'><'+'img class=\'_decalimg\' src=\'https://decals.rcgroups.net/storage/middleimage_2.jpg\' width=\'354\' height=\'25\' alt=\'HobbyKing\' title=\'HobbyKing\' border=\'0\'><'+'/a>';
+OA_output['zone:185'] = '';
+OA_output['zone:185'] += '<'+'a href=\'https://decals.rcgroups.com/adclick.php?bannerid=18762&amp;zoneid=185&amp;source=FPV+Equipment&amp;dest=http%3A%2F%2Fwww.readymaderc.com%2Fstore%2Findex.php%3Fmain_page%3Dindex%26cPath%3D112_409_876%26utm_source%3Drcgfpvgeneral%26utm_medium%3DBanner%26utm_campaign%3Dnsh\' target=\'_blank\' onMouseOver="self.status=\'Get the Nano Skyhunter and All the Best FPV Equipment from RMRC!\'; return true;" onMouseOut="self.status=\'\';return true;"><'+'img class=\'_decalimg\' src=\'https://decals.rcgroups.net/storage/rmrc_rcgroups_banner_3_right(450x110).jpg\' width=\'450\' height=\'110\' alt=\'Get the Nano Skyhunter and All the Best FPV Equipment from RMRC!\' title=\'Get the Nano Skyhunter and All the Best FPV Equipment from RMRC!\' border=\'0\'><'+'/a>';
+OA_output['zone:187'] = '';
+OA_output['zone:187'] += '<'+'a href=\'https://decals.rcgroups.com/adclick.php?bannerid=20545&amp;zoneid=187&amp;source=FPV+Equipment&amp;dest=http%3A%2F%2Feagletreesystems.com\' target=\'_blank\'><'+'img class=\'_decalimg\' src=\'https://decals.rcgroups.net/storage/eagletree1a.gif\' width=\'450\' height=\'110\' alt=\'\' title=\'\' border=\'0\'><'+'/a>';
+OA_output['zone:98'] = '';
+OA_output['clientid=1004'] = '';
