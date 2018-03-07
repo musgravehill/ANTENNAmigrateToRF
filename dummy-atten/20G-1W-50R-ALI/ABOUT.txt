@@ -1,0 +1,19 @@
+https://ru.aliexpress.com/item/free-shipping-DC-20GHz-2W-50-Ohm-load-Microwave-Load-SMA-terminal-load-RF-coaxial-dummy/2030763967.html
+
+585,17 руб.
+
+Похоже на Радиал! Но у них нет 20Ггц. Или 4, или 26.
+https://www.radiall.com/microwave-components/mc1-product-type/termination/
+Терминаторы 4ГГц имеют насечки на гайке. У меня гайка с гладкими гранями и похожа на 1\2Вт терминаторы 18..26ГГц.
+Причем, оммическое сопротивление +_5% заявлено, т.е. 50+_ 2.5 Ом.
+А у меня как раз 51 Ом 
+
+Заявлено DC-20GHz 50 Ohm 2W RF coaxial dummy load
+
+Частота против vswrdc ЗАЯВЛЕНО
+4 ГГц 1.05: 1 
+4-8 ГГц 1.10.1
+8-12.4 ГГц 1.1.1 
+12.4-18 ГГц 1.15.1 
+20 ГГц 1.20
+Impedance50 Ом
