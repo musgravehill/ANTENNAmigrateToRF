@@ -1,0 +1,847 @@
+body {
+	background-color: #ffffff;
+	color: #000000;
+	margin: 15px 15px;
+	padding: 0px 0px;
+}
+
+/* main */
+
+table.main {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td.mainmenu {
+	text-align: left;
+	vertical-align: top;
+	padding: 0px 0px;
+	width: 200px;
+}
+
+td.maincontent {
+	text-align: left;
+	vertical-align: top;
+	padding: 0px 0px;
+}
+
+td.mainmenu p.center {
+	text-align: center;
+	margin: 4pt 0pt 4pt 0pt;
+}
+
+/* header */
+
+table.header {
+	margin: 0px 0px;
+	width: 100%;
+	empty-cells: show;
+}
+
+td.headertitle {
+	border-top: 1px solid #5555bb;
+	border-left: 1px solid #5555bb;
+	border-right: 1px solid #5555bb;
+	background-image: url('img/headerbg.png');
+	background-color: #111144;
+	color: #336699;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 6pt 8pt 3pt 8pt;
+	vertical-align: top;
+}
+
+td.headertitle h1 {
+	color: #3377aa;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 24pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0pt 100pt 3pt 0pt;
+}
+
+td.headertitle p {
+	text-align: left;
+	margin: 0pt 0pt 3pt 0pt;
+}
+
+td.headerbuttonleft,
+td.headerbuttonleftactive,
+td.headerbuttonempty,
+td.headerbuttonright,
+td.headerbuttonrightactive {
+	border-top: 1px solid #666688;
+	border-bottom: 1px solid #666688;
+	background-image: url('img/buttonbg.png');
+	background-repeat: repeat-x;
+	background-color: #777777;
+	color: #000000;
+	text-align: center;
+	white-space: nowrap;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 0px 0px;
+	height: 20px;
+	vertical-align: middle;
+}
+td.headerbuttonleft,
+td.headerbuttonleftactive {
+	border-left: 1px solid #666688;
+	width: 60px;
+}
+td.headerbuttonempty {
+	border-left: 1px solid #666688;
+	border-right: 1px solid #666688;
+}
+td.headerbuttonright,
+td.headerbuttonrightactive {
+	border-right: 1px solid #666688;
+	width: 60px;
+}
+td.headerbuttonleftactive,
+td.headerbuttonrightactive {
+	background-image: url('img/buttonbgactive.png');
+	background-repeat: repeat-x;
+	background-color: #666666;
+}
+
+td.headerbuttonleft a,
+td.headerbuttonleftactive a,
+td.headerbuttonright a,
+td.headerbuttonrightactive a {
+	text-align: center;
+	text-decoration: none;
+	padding: 0px 0px;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	display: block;
+}
+
+td.headerbuttonleft a:hover,
+td.headerbuttonleftactive a:hover,
+td.headerbuttonright a:hover,
+td.headerbuttonrightactive a:hover {
+	background-image: url('img/buttonbghover.png');
+	background-repeat: repeat-x;
+	background-color: #555555;
+}
+
+td.headerbuttonleft a span,
+td.headerbuttonleftactive a span,
+td.headerbuttonright a span,
+td.headerbuttonrightactive a span {
+	color: #000000;
+	margin: 0px 10px;
+	position: relative;
+	top: 3px;
+}
+td.headerbuttonleft a:hover span,
+td.headerbuttonleftactive a:hover span,
+td.headerbuttonright a:hover span,
+td.headerbuttonrightactive a:hover span,
+td.headerbuttonleft a:active span,
+td.headerbuttonleftactive a:active span,
+td.headerbuttonright a:active span,
+td.headerbuttonrightactive a:active span {
+	color: #000000;
+	text-decoration: underline;
+}
+td.headerbuttonleft a:focus span,
+td.headerbuttonleftactive a:focus span,
+td.headerbuttonright a:focus span,
+td.headerbuttonrightactive a:focus span {
+	outline: 1px dotted;
+}
+
+/* menu */
+
+div.block {
+	border: 1px solid #8888aa;
+	background-image: url('img/blockbg.png');
+	background-repeat: repeat-x;
+	background-color: #eeeeee;
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 10px 0px 10px 0px;
+	padding: 0px 9px 3px 9px;
+	width: 180px;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+div.block hr {
+	border: 0px;
+	border-top: 1px solid #8888aa;
+	margin: 5px 0px 5px 0px;
+	width: 100%;
+	height: 0px;
+}
+
+div.block h5 {
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 5px 0px 5px 0px;
+}
+
+div.block p {
+	text-align: left;
+	margin: 5px 0px 5px 0px;
+}
+
+div.block a {
+	color: #5577cc;
+	text-decoration: none;
+}
+div.block a:hover,
+div.block a:active {
+	text-decoration: underline;
+}
+
+div.block a.blocklink {
+	color: #000000;
+	text-decoration: none;
+	padding: 2px 3px;
+	display: block;
+}
+div.block a.blocklink span {
+	color: #5577cc;
+}
+div.block a.blocklink:hover,
+div.block a.blocklink:active {
+	text-decoration: none;
+	background-color: #dddddd;
+}
+div.block a.blocklink:hover span,
+div.block a.blocklink:active span {
+	text-decoration: underline;
+}
+
+/* content */
+
+div.content {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 15px 10px 10px 20px;
+	padding: 0pt 0pt 0pt 0pt;
+	overflow: hidden;
+}
+
+div.content hr {
+	border: 0px;
+	border-top: 1px solid #aaaaaa;
+	margin: 12pt 0pt 12pt 0pt;
+	width: 100%;
+	height: 0px;
+	clear: both;
+}
+
+div.content h1 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 18pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0pt 40pt 6pt 0pt;
+}
+
+div.content h2 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 15pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 12pt 40pt 6pt 0pt;
+}
+div.content h3 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 13pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 12pt 40pt 6pt 0pt;
+}
+div.content h4 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 12pt 40pt 6pt 0pt;
+}
+
+div.content h6 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 12pt 0pt 6pt 0pt;
+}
+
+div.content p {
+	text-align: justify;
+	margin: 6pt 0pt 6pt 0pt;
+}
+div.content p.center {
+	text-align: center;
+}
+
+div.content ul,
+div.content ol {
+	margin: 6pt 0pt 6pt 0pt;
+	padding: 0pt 0pt 0pt 24pt;
+}
+
+div.content a {
+	color: #5577cc;
+	text-decoration: none;
+}
+div.content a:hover,
+div.content a:active {
+	text-decoration: underline;
+}
+
+div.content p.articlebuttons {
+	text-align: right;
+	color: #666666;
+	font-size: 8pt;
+	margin: 0px 0px 10px 20px;
+	display: block;
+	float: right;
+}
+
+/* boxborder, box */
+
+div.boxborder {
+	border: 1px solid #bbbbdd;
+	margin: 10pt 15% 10pt 15%;
+	padding: 1px;
+}
+
+div.box {
+	border: 0px;
+	background-color: #eeeeee;
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 0px;
+	padding: 10pt 10pt 10pt 10pt;
+	overflow: hidden;
+}
+
+div.box h1 {
+	text-align: center;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0pt 40pt 6pt 40pt;
+	clear: both;
+}
+
+div.box h2 {
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 12pt 40pt 6pt 0pt;
+	clear: both;
+}
+
+div.box p {
+	text-align: left;
+	margin: 6pt 0pt 6pt 0pt;
+}
+
+div.box a {
+	color: #5577cc;
+	text-decoration: none;
+}
+div.box a:hover,
+div.box a:active {
+	text-decoration: underline;
+}
+
+/* code */
+
+pre.code {
+	border: 1px dashed #888888;
+	background-color: #dddddd;
+	color: #222222;
+	text-align: left;
+	white-space: pre-wrap;
+	font-family: "Courier New", Monospace;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 6pt 0pt 6pt 0pt;
+	padding: 2pt 3pt;
+	overflow: auto;
+}
+div.note pre.code,
+div.warning pre.code,
+div.hint pre.code,
+div.quote pre.code,
+td.commenttext pre.code {
+	margin: 4pt 0pt 4pt 0pt;
+}
+
+span.code {
+	border: 1px dashed #888888;
+	background-color: #dddddd;
+	color: #222222;
+	text-align: left;
+	white-space: pre-wrap;
+	font-family: "Courier New", Monospace;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 0pt 2pt;
+}
+
+/* quote */
+
+div.quoteheader {
+	color: #223355;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 6pt 40pt 0pt 10pt;
+	padding: 2pt 2pt;
+	overflow: hidden;
+}
+div.quote {
+	border: 1px solid #aaaadd;
+	background-color: #eeeeff;
+	color: #5577aa;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 0pt 40pt 6pt 10pt;
+	padding: 2pt 6pt 2pt 6pt;
+	overflow: auto;
+}
+div.note div.quoteheader,
+div.warning div.quoteheader,
+div.hint div.quoteheader,
+div.quote div.quoteheader,
+td.commenttext div.quoteheader {
+	margin: 5pt 10pt 0pt 5pt;
+}
+div.note div.quote,
+div.warning div.quote,
+div.hint div.quote,
+div.quote div.quote,
+td.commenttext div.quote {
+	margin: 0pt 10pt 5pt 5pt;
+}
+
+div.quote h6 {
+	text-align: left;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 10pt 0pt 5pt 0pt;
+	clear: both;
+}
+
+div.quote p {
+	text-align: justify;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+div.quote ul,
+div.quote ol {
+	margin: 5pt 0pt 5pt 0pt;
+	padding: 0pt 0pt 0pt 20pt;
+}
+
+div.quote a {
+	color: #112233;
+	text-decoration: none;
+}
+div.quote a:hover,
+div.quote a:active {
+	text-decoration: underline;
+}
+
+/* note, warning, hint */
+
+div.note,
+div.warning,
+div.hint {
+	border: 1px dotted #888888;
+	background-color: #eeeeee;
+	color: #444444;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 6pt 10pt 6pt 10pt;
+	padding: 6pt 8pt 5pt 8pt;
+	overflow: hidden;
+}
+div.warning {
+	border: 1px dotted #995555;
+	background-color: #ffdddd;
+	color: #662222;
+}
+div.hint {
+	border: 1px dotted #559955;
+	background-color: #ddffdd;
+	color: #226622;
+}
+
+div.note h5,
+div.warning h5,
+div.hint h5 {
+	text-align: center;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+div.note p,
+div.warning p,
+div.hint p {
+	text-align: justify;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+div.note ul,
+div.note ol,
+div.warning ul,
+div.warning ol,
+div.hint ul,
+div.hint ol {
+	margin: 5pt 0pt 5pt 0pt;
+	padding: 0pt 0pt 0pt 20pt;
+}
+
+div.note a {
+	color: #999999;
+	text-decoration: none;
+}
+div.warning a {
+	color: #aa8888;
+	text-decoration: none;
+}
+div.hint a {
+	color: #88aa88;
+	text-decoration: none;
+}
+div.note a:hover,
+div.note a:active,
+div.warning a:hover,
+div.warning a:active,
+div.hint a:hover,
+div.hint a:active {
+	text-decoration: underline;
+}
+
+/* smalltable */
+
+table.smalltable {
+	margin: 6pt 6pt 6pt 6pt;
+	border-collapse: collapse;
+}
+
+td.smalltable {
+	border: 1px solid #cccccc;
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 0pt 5pt 0pt 5pt;
+	vertical-align: top;
+}
+
+td.smalltable table.smalltable,
+div.quote table.smalltable,
+td.commenttext table.smalltable {
+	margin: 5pt 5pt 5pt 5pt;
+}
+
+td.smalltable h6 {
+	text-align: left;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 10pt 0pt 5pt 0pt;
+	clear: both;
+}
+
+td.smalltable p {
+	text-align: justify;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+td.smalltable ul,
+td.smalltable ol {
+	margin: 5pt 0pt 5pt 0pt;
+	padding: 0pt 0pt 0pt 20pt;
+}
+
+td.smalltable a {
+	color: #5577cc;
+	text-decoration: none;
+}
+td.smalltable a:hover,
+td.smalltable a:active {
+	text-decoration: underline;
+}
+
+/* comment */
+
+table.comment {
+	border: 1px solid #cccccc;
+	margin: 0pt 0pt 6pt 0pt;
+	width: 100%;
+	empty-cells: show;
+}
+
+td.commentlabel,
+td.commentlabelmod,
+td.commentlabeladmin {
+	border-right: 1px dotted #cccccc;
+	background-color: #eeeeee;
+	color: #000000;
+	text-align: left;
+	text-decoration: none;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	padding: 5pt 6pt 5pt 6pt;
+	width: 120px;
+	vertical-align: top;
+}
+td.commentlabelmod {
+	background-color: #ddddff;
+}
+td.commentlabeladmin {
+	background-color: #ddffff;
+}
+
+td.commentlabel h5,
+td.commentlabelmod h5,
+td.commentlabeladmin h5 {
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 0pt 0pt 5pt 0pt;
+}
+
+td.commentlabel p,
+td.commentlabelmod p,
+td.commentlabeladmin p {
+	text-align: left;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+td.commenttext {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: left;
+	text-decoration: none;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	padding: 2pt 7pt 4pt 7pt;
+	vertical-align: top;
+}
+
+td.commenttext hr {
+	border: 0px;
+	border-top: 1px solid #cccccc;
+	margin: 5pt 0pt 5pt 0pt;
+	width: 100%;
+	height: 1px;
+	clear: both;
+}
+
+td.commenttext h6 {
+	text-align: left;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 10pt 0pt 5pt 0pt;
+	clear: both;
+}
+
+td.commenttext p {
+	text-align: justify;
+	margin: 5pt 0pt 5pt 0pt;
+}
+
+td.commenttext ul,
+td.commenttext ol {
+	margin: 5pt 0pt 5pt 0pt;
+	padding: 0pt 0pt 0pt 16pt;
+}
+
+td.commenttext p.commentdate {
+	text-align: left;
+	color: #666666;
+	font-size: 7pt;
+	display: block;
+	float: left;
+}
+td.commenttext p.commentbuttons {
+	text-align: right;
+	color: #666666;
+	font-size: 8pt;
+	display: block;
+	float: right;
+}
+td.commenttext p.commenteditdate {
+	text-align: left;
+	color: #666666;
+	font-size: 7pt;
+}
+
+/* invisibletable */
+
+table.invisibletable {
+	margin: 4pt 0pt 4pt 0pt;
+}
+
+tr.invisibletable:hover {
+	background-color: #dddddd;
+}
+
+td.invisibletable {
+	color: #000000;
+	text-align: left;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 0pt 0pt 0pt 0pt;
+	vertical-align: middle;
+}
+
+td.invisibletable p {
+	text-align: left;
+	margin: 4pt 4pt 4pt 4pt;
+}
+
+td.invisibletable a {
+	color: #5577cc;
+	text-decoration: none;
+}
+td.invisibletable a:hover,
+td.invisibletable a:active {
+	text-decoration: underline;
+}
+
+/* footer */
+
+div.footer {
+	color: #666666;
+	text-align: center;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 7pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 0px 10px;
+	padding: 0pt 0pt;
+	overflow: hidden;
+}
+
+div.footer p {
+	margin: 0pt 0pt 4pt 0pt;
+}
+
+/* global */
+
+input.textbox,
+textarea.textbox {
+	border: 1px solid #66aacc;
+	background-color: #ffffff;
+	color: #333333;
+	text-align: left;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 1px 1px;
+	padding: 1px 2px;
+	vertical-align: top;
+}
+
+/* bbcode editor */
+
+span.bbcodebutton {
+	border: 1px solid #555599;
+	margin: 1px 1px;
+	padding: 0px 0px;
+	display: inline-block;
+}
+input.bbcodebutton {
+	border: 1px solid #ffffff;
+	background-color: #dddddd;
+	margin: 0px 0px;
+	padding: 1px 6px;
+}
+input.bbcodebutton:active {
+	background-color: #eeeeee;
+}
+
