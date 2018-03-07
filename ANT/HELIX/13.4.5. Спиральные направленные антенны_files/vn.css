@@ -1,0 +1,147 @@
+/*Бэкграунд и цветовая схема полос прокрутки */
+body         {scrollbar-face-color: #cfd2eb;
+              scrollbar-highlight-color:#cfd2eb;
+              scrollbar-shadow-color:#000070;
+              scrollbar-3dlight-color:#ffffff;
+              scrollbar-arrow-color:#cfd2eb;
+              scrollbar-track-color:#cfd2eb;
+              scrollbar-darkshadow-color:#000070;
+			  background-image:url('backa.jpg')}
+
+/*Основной шрифт */               
+html, body {color : #000070; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:normal;}
+
+/*Цветовая схема линков */
+a:visited { color : #0000ca;}
+a:active  { color : #FF6600;}
+a:link    { color : #0000ff;}
+a:hover   { color : #FF6600; background-color:#f0f0fd;}    
+
+/*Горизонтальная линия с цветом во всех браузерах только через цвет гранницы */
+HR {align:center; width:94%; padding:0px; margin:0px;
+border-top:1px solid #000070;
+}
+
+
+/*Ловушка под ключевые слова */
+h1 {font-size:0px;font-weight:normal;line-height:0px; margin:0px 0px 0px -10000px;}  	
+
+/*Основной заголовк статьи*/	
+h2 {
+font-size:14pt;
+font-weight:bold;
+text-align:center;
+line-height:24px;
+color:#000070;
+padding:0px;
+margin:10px 0px 6px 0px;
+}	
+
+/*Подзаголовки, */
+h3 {
+text-align:center;
+line-height:18px;
+color:#000070;
+padding:0px;
+margin:10px 0px 6px 0px;
+font-size: 11pt; font-weight: bold;
+}		
+
+/*Аннотации перед текстом */
+h4 {
+font: italic 100 10pt "Arial", "Helvetica";
+text-align:justify;
+text-indent: 1.5em;
+line-height:18px;
+color:#000070;
+padding:0px;
+margin:0px 2px 0px 2px;
+}	
+
+/*Параграф*/
+p {
+padding:0px;
+margin:2px 0px 2px 5px;
+text-align:justify;
+text-indent: 1.5em;
+}
+
+/*Оформление нумерованных списков*/
+ol {
+color:#000070;
+padding:0px 0px 0px 30px;
+margin:0px 10px 0px 30px;
+border-left:solid 3px #ffcc66;
+}
+
+
+li {
+padding:0px;
+margin:1px 0px 1px 0px;
+}
+
+/*Оформление маркированных списков*/
+ul {
+color:#000070;
+padding:0px 0px 0px 33px;
+margin:0px 20px 0px 40px;
+}
+
+
+li {
+padding:0px;
+margin:1px 0px 1px 0px;
+}
+
+
+
+.zz{font-family: Arial; font-size: 8pt; color:#008040;}
+
+.an{font: italic 100 12pt "Times New Roman", "serif";
+    color:#008040;
+	text-indent: 1.5em;}
+
+
+/*Стили от стартовой страницы */
+  .z1{font-family: Times New Roman, serif; font-size: 10pt; font-weight: bold; color:#000070;}
+  .zz1{font-family: Times New Roman, serif; font-size: 11pt; font-weight: bold; color:#000070;}
+  .z2{font-family: Verdana, Arial Cyr, Arial; font-size: 8pt; color:#000070;}
+  .z3{font-family: Times New Roman, serif; font-size: 10pt; font-weight: lighter; color:#000070;}
+  .z4{font-family: Verdana, Arial Cyr, Arial; font-size: 8pt; color:#3030b0;}
+  .z5{font-family: Times New Roman, serif; font-size:11pt; color:#FFFFFF;}
+  .z6{font-family: Verdana, Arial Cyr, Arial; font-size:9pt; color:#202090; font-weight:500;}
+/*Стиль  кода */
+  .z7{font-family: Verdana, Arial Cyr; color : #046808; font-size:11pt; font-weight:500; padding:10px 0px 10px 40px; margin:0px 10px 0px 30px;}
+/*Стиль   аннотаций в меню */
+  .z8{font-size: 10px; color:#717bbb; font-style: italic; line-height:11px;  padding: 0px 0px 1px 0px;}
+   .pr3{filter:FlipV;}
+/*Стиль  нормального текста в таблице */
+  .z9{color:#000070; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:normal;}
+/* Хитрость обрезки картинки счетчика на стартовой */      
+.c4 {
+background-image: url('http://hit3.hotlog.ru/cgi-bin/hotlog/count?s=28374&im=209');
+background-position: 0px -36px;
+padding:0px;
+margin:0px;}
+
+        
+        
+ .z9 { 
+ font-family: Times New Roman; font-size: 13px; 
+ font-weight: bold; 
+ position: relative; top: -3px;
+		}
+        
+/*Стиль  рекламы yandex в тексте и внизу */
+  .ya{font-family:Verdana, Arial, Helvetica sans-serif; font-size:11px; font-weight:normal;}
+        
+  /*Стиль  нормального текста в таблице */
+table.norm {color : #000070; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:normal;}
+        
+
+
+        
+        
+        
+        
+  
