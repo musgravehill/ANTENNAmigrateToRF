@@ -1,0 +1,122 @@
+#vmenu { /* Common style */
+	margin: 0px; 
+	padding: 0px; 
+	list-style: none;
+	font-size: 12px;
+	position:relative;
+	z-index:90;
+}
+
+#vmenu ul { /* Root items */
+	padding: 1px;
+	margin: 0px;
+	list-style: none;
+	width: 180px;
+	z-index: 99;
+	overflow: visible;
+	position: absolute; 
+	background-color: #fafafa;
+	border: 1px solid #555555;
+}
+
+#vmenu li.has-children { /* Any item with children */
+	position: relative;
+	width: 170px;
+	display:block;
+	background: #f7f7f7 url('images/cate_arrow.gif') no-repeat 165px;
+	padding-right: 9px;
+}
+
+#vmenu li.has-children:hover, #vmenu a.has-children:hover { /* Any item with children - hover */
+	color: #f5740a;
+	background: #eeeeee url('images/cate_arrow.gif') no-repeat 165px;
+}
+
+
+#vmenu li > a.has-children:hover, #vmenu li:hover > a.has-children:link, #vmenu li:hover > a.has-children:visited   { /* Parents of selected item - do no hide focus from them */
+	color: #333333;
+}
+
+#vmenu li { /* Any item without children */
+	position: relative;
+	width: 170px;
+	display: block;
+	background-color: #f7f7f7;
+	padding-right: 9px;
+}
+
+#vmenu li:hover, #vmenu a:hover { /* Any item wihout children - hover */
+	color: #F5740a;
+    background-color: #eeeeee;
+}
+
+#vmenu li.h-sep { /* Horizontal separator */
+	margin: 0;
+	padding: 0;
+	height: 1px;
+	line-height: 1px;
+	font-size: 1px;
+	background: url('images/emenu_delim.gif') repeat-x center center;
+	width: 179px;
+}
+
+#vmenu li.h-sep:hover { /* Horizontal separator */
+	background: url('images/emenu_delim.gif') repeat-x center;
+	width: 179px;
+}
+
+#vmenu ul li {  /* 2nd+ level items */
+	background-color: #ffffff; 
+	font-size: 11px; 
+	background-image: none;
+	width: 179px;
+	padding-right:0px;
+}
+
+#vmenu ul li.has-children {  /* 2nd+ level items with children */
+	background-color: #ffffff; 
+}
+
+
+#vmenu a, #vmenu li ul li a { /* 2nd+ level items (a tag) */
+    text-decoration:none; 
+	color: #333333;
+	font-weight: bold;
+    display:block;
+    padding: 4px 4px 4px 9px;
+}
+
+#vmenu li ul li a { /* 2nd+ level items (a tag) */
+    padding: 4px 4px 4px 9px;
+}
+
+#vmenu ul { /* submenu offset relating to root items */
+    display: none; 
+    position: absolute; 
+    top:0; 
+    left: 179px;
+}
+
+#vmenu li:hover > ul { /* Show children */
+    display: block; 
+}
+
+#vmenu li ul li.h-sep { /* Horizontal subcategories separator */
+	margin: 0;
+	padding: 0;
+	height: 1px;
+	line-height: 0.1px;
+	font-size: 1px;
+	background: url('images/emenu_subcats_delim.gif') repeat-x;
+}
+
+#vmenu li ul li.h-sep:hover { /* Horizontal subcategories separator */
+	background: url('images/emenu_delim.gif') repeat-x center;
+}
+
+/* Win IE only \*/
+* html #vmenu li { width: 179px; padding-right: 0px;}
+* html #vmenu li.has-children { width: 179px; padding-right: 0px;}
+* html #vmenu ul {left: 179px;} 
+* html #vmenu a {width: 166px;} 
+/* end holly hack */

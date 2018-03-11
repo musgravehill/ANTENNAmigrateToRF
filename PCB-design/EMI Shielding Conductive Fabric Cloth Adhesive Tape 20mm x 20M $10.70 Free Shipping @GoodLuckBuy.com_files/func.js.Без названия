@@ -1,0 +1,49 @@
+//
+// $Id: func.js 5963 2008-09-19 12:35:23Z brook $
+//
+
+var points = {};
+
+// This function calculates the new product (earned && price) points and updates values
+function fn_update_product_points(id)
+{
+	if (exclude_from_calculate[id]) {
+		return false;
+	}
+
+	var delta = 0;
+	var modifiers = [];
+	var qty = document.getElementById('amount_' + id) ? parseInt(document.getElementById('amount_' + id).value) : 1;
+
+	for (i in pr_o[id]) {
+		if (!document.getElementById(pr_o[id][i]['id'])) {
+			continue;
+		}
+		modifiers[i] = pr_o[id][i]['pm'][pr_o[id][i]['selected_value']];
+		if (typeof(modifiers[i]) == 'undefined') {
+			continue;
+		}
+		if (modifiers[i].substring(0, 1) == 'A') {
+			delta += parseFloat(fn_format_price(modifiers[i].substring(1, modifiers[i].length-1), decplaces));
+		} else if(modifiers[i].substring(0, 1)  == 'P') {
+			delta += parseFloat(fn_format_price(points[id]['reward'] * parseFloat(modifiers[i].substring(1, modifiers[i].length-1))/100, decplaces));
+		}
+	}
+
+	if (document.getElementById('reward_points_' + id) && points[id]['reward']) {
+		// Points calculation is based on the original price
+		if (points_with_discounts == 'Y' && pr_d[id]) {
+			var amount_for_points = (parseFloat(update_ids[id]['original_price']['P'])) ? (update_ids[id]['original_price']['P'] - update_ids[id]['discount_value']['P']) : 0;
+		} else {
+			var amount_for_points = parseFloat(update_ids[id]['original_price']['P']);
+		}
+		var pamount = (points[id]['amount_type'] && points[id]['amount_type'] == 'P') ? amount_for_points * points[id]['pure_amount'] / 100 : points[id]['pure_amount'] * amount_for_points/update_ids[id]['original_price']['P'];
+		var reward = Math.round(parseInt(pamount) + parseInt(delta));
+		document.getElementById('reward_points_' + id).innerHTML = Math.round(parseInt(qty) * reward);
+	}
+	if (document.getElementById('price_in_points_' + id) && points[id]['per']) {
+		var subtotal = (price_in_points_with_discounts == 'Y' && pr_d[id]) ? update_ids[id]['product_subtotal']['P'] : qty * update_ids[id]['original_price']['P'];
+		document.getElementById('price_in_points_' + id).innerHTML = Math.round(points[id]['per'] * subtotal);
+	}
+	return true;
+}

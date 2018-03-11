@@ -1,0 +1,1442 @@
+// $Id: form_scripts.js 5963 2008-09-19 12:35:23Z brook $
+
+//
+// Extend wrapper
+//
+Object.extend = function(source, destination)
+{
+	//override source object properties with props of new object
+	for (k in destination) {
+		source[k] = destination[k];
+	}
+
+	return source;
+}
+
+$A = Array.from = function(iterable)
+{
+	if (!iterable) {
+		return [];
+	}
+
+	if (iterable.toArray) {
+		return iterable.toArray();
+	} else {
+		var results = [];
+		for (var i = 0, length = iterable.length; i < length; i++) {
+			results.push(iterable[i]);
+		}
+
+		return results;
+	}
+}
+
+// --- Javascript prototypes ----------
+
+// str_replace prototype wrapper
+String.prototype.str_replace = function(src, dst)
+{
+
+	return this.toString().split(src).join(dst);
+}
+
+String.prototype.trim = function()
+{
+	return this.replace(/^\s+|\s+$/g, '');
+}
+
+
+// object bind prototype
+Function.prototype.bind = function()
+{
+	var __method = this;
+	var args = $A(arguments);
+	var object = args.shift();
+	return function() {
+		return __method.apply(object, args.concat($A(arguments)));
+	}
+}
+
+// load htmlarea
+// Automatically calculates the editor base path based on the current URL.
+var html_editor_url = document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')) + '/classes/fckeditor/';
+var document_loaded = false;
+var fn_inheritance = {};
+var html_editor_window;
+var html_editor_id;
+var queries_stack = [];
+var active_queries = 0;
+
+//
+// Global definitions
+//
+
+function fn_add_event(elm, event, func)
+{
+	if (elm.attachEvent) {
+		elm.attachEvent('on' + event, func);
+	} else if (elm.addEventListener) {
+		elm.addEventListener(event, func, true);
+	} else {
+		elm['on' + event] = func;
+	}
+}
+
+//
+// Show/hide any tag by its id.
+// parameters:
+// id - element id
+// @status - can be true (expand) or false (collapse)
+function fn_show_tag(id, status, stop_listen)
+{
+	if (document.getElementById(id)) {
+		if (status == true || status == false) {
+			document.getElementById(id).style.display = (status == true)?"none":"";
+		} else {
+			document.getElementById(id).style.display = (document.getElementById(id).style.display == "")?"none":"";
+		}
+	}
+	if (stop_listen == true) {
+		window.onscroll = '';
+	}
+}
+
+function fn_disable_elms(ids, status)
+{
+	for(var i in ids){
+		if (document.getElementById(ids[i])){
+			document.getElementById(ids[i]).disabled = status;
+		}
+	}
+}
+
+//
+// Change section and
+// id - section id
+
+function fn_show_section(id, scts, separate_form, redraw_all)
+{
+	for (i in scts)
+	{
+		// Hide empty tabs
+		if (document.getElementById('content_'+i) && document.getElementById('content_'+i).innerHTML.trim() == '') {
+			document.getElementById('content_'+i).style.display = 'none';
+			document.getElementById('tab_'+i+'_bg').style.display = 'none';
+		}
+
+		if (i == id) {
+			if (document.getElementById('product_save_button')) {
+				document.getElementById('product_save_button').style.display = (separate_form == 'Y') ? 'none' : '';
+			}
+			if (document.getElementById('content_'+i)) {
+				document.getElementById('content_'+i).style.display = '';
+			}
+			document.getElementById('tab_'+i+'_bg').className = 'section-active-tab-bg';
+			if (document.getElementById('tab_'+i+'_left')){
+				document.getElementById('tab_'+i+'_left').src = tab_left_active_image_path;
+			}
+			if (document.getElementById('tab_'+i+'_right')){
+				document.getElementById('tab_'+i+'_right').src = tab_right_active_image_path;
+			}
+			if (document.getElementsByName('selected_section')) {
+				elms = document.getElementsByName('selected_section');
+				for (var k=0; k<elms.length; k++) {
+					elms[k].value = id;
+				}
+			}
+			if (scts[i].tab_type == 'ajax') {
+				var tab = document.getElementById('tab_'+i);
+				tab.section_id = i;
+				tab.onclick = function (event) {fn_show_section(this.section_id, sections, sections[this.section_id]['separate_form']);};
+				scts[i].tab_type == 'js_switch';
+			}
+		} else {
+			if (document.getElementById('tab_'+i+'_bg').className == 'section-active-tab-bg' || redraw_all) {
+				if (document.getElementById('content_'+i)) {
+					document.getElementById('content_'+i).style.display = 'none';
+				}
+				document.getElementById('tab_'+i+'_bg').className = 'section-inactive-tab-bg';
+				if (document.getElementById('tab_'+i+'_left')){
+					document.getElementById('tab_'+i+'_left').src = tab_left_image_path;
+				}
+				if (document.getElementById('tab_'+i+'_right')){
+					document.getElementById('tab_'+i+'_right').src = tab_right_image_path;
+				}
+			}
+		}
+	}
+}
+
+//
+// Expand/collapse row
+// @tag_id - tag identifier that should be expanded/collapsed
+// @flag - can be 1 (expand) or -1 (collapse)
+function fn_invert_row(tag_id, flag)
+{
+	fn_show_tag(tag_id, flag);
+	fn_show_tag('plus' + tag_id, flag);
+	fn_show_tag('minus' + tag_id, flag);
+}
+
+//
+// Expand/collapse all rows in list
+// @tag_id - tag identifier of list that should be expanded or collapsed
+// @flag - can be 1 (expand) or -1 (collapse)
+function fn_invert_all_rows(tag_id, flag)
+{
+	rows = document.getElementById(tag_id).getElementsByTagName('div');
+
+	for (i = 0; i < rows.length; i++) {
+		if (typeof(rows[i].id) != 'undefined' && rows[i].id) {
+			fn_show_tag(rows[i].id, flag);
+			fn_show_tag('plus' + rows[i].id, !flag);
+			fn_show_tag('minus' + rows[i].id, flag);
+		}
+	}
+
+	fn_show_tag('minus_plus', flag);
+	fn_show_tag('plus_minus', !flag);
+
+}
+
+//
+// Sets element property to defined value (or to negative value, of value is not ser)
+//
+function fn_switch_elms(elms, property, value)
+{
+	for (i=0;i<elms.length;i++)	{
+		if (document.getElementById(elms[i])) {
+			document.getElementById(elms[i])[property] = (value) ? value : !document.getElementById(elms[i])[property];
+		}
+	}
+}
+
+//
+// Check / uncheck all checkboxes in form
+// @form_name - form name whose checkboxes should be checked or unchecked
+// @checkbox_id - tag identifier of checkboxes that should be checked or unchecked
+// @flag - can be true or false
+function fn_check_all_checkboxes(form_name, flag, checkbox_id, strict)
+{
+	if (!checkbox_id)
+		checkbox_id = 'delete_checkbox';
+
+	if (typeof(strict) == 'undefined') {
+		strict = true;
+	}
+
+	if(!(d_form = document.forms[form_name]))
+		return false;
+
+	for(i=0; i < d_form.length; i++) {
+		if (d_form[i].type == 'checkbox' && fn_compare_strings(d_form.elements[i].id, checkbox_id, strict) && !d_form.elements[i].disabled) {
+			d_form.elements[i].checked = flag;
+		}
+	}
+	return true;
+}
+
+//
+// Move selected elements of multiple select input
+//
+function fn_select_move_elements(to, from, non_movable, message)
+{
+	to_elm = document.getElementById(to);
+	from_elm = document.getElementById(from);
+	skipped_elms = [];
+
+	if(!from_elm || !to_elm) {
+		return false;
+	}
+
+	while (from_elm.selectedIndex != -1) {
+		if (non_movable && non_movable[from_elm.options[from_elm.selectedIndex].value] == true)	{
+			skipped_elms.push(from_elm.options[from_elm.selectedIndex].value);
+			from_elm.options[from_elm.selectedIndex].selected = false;
+			continue;
+		}
+
+		idx = to_elm.options.length;
+		to_elm.options[idx] = new Option(from_elm.options[from_elm.selectedIndex].text, from_elm.options[from_elm.selectedIndex].value);
+		to_elm.options[idx].className = from_elm.options[from_elm.selectedIndex].className;
+		from_elm.options[from_elm.selectedIndex] = null;
+	}
+
+	if (skipped_elms.length > 0 && typeof(message) != 'undefined') {
+		alert(message + skipped_elms.join(', '));
+	}
+
+	return true;
+}
+
+function fn_move_field(id, direction)
+{
+	elm = document.getElementById(id);
+	var selected_idx = elm.selectedIndex;
+	var total = elm.length;
+	var move = true;
+	var exchange_idx = 0;
+	if (selected_idx != -1) {
+		if ((direction == 'up' && selected_idx == 0) || direction == 'down' && selected_idx == total -1) {
+			return false;
+		}
+
+		if (direction == 'up') {
+			exchange_idx = selected_idx - 1;
+		}
+
+		if (direction == 'down') {
+			exchange_idx = selected_idx + 1;
+		}
+
+		exchange = {text: elm.options[exchange_idx].value, value: elm.options[exchange_idx].value, classname: elm.options[exchange_idx].className};
+		elm.options[exchange_idx].value = elm.options[selected_idx].value;
+		elm.options[exchange_idx].text = elm.options[selected_idx].text;
+		elm.options[exchange_idx].className = elm.options[selected_idx].className;
+
+		elm.options[selected_idx].value = exchange.value;
+		elm.options[selected_idx].text = exchange.text;
+		elm.options[selected_idx].className = exchange.classname;
+
+		elm.selectedIndex = exchange_idx;
+	}
+}
+
+//
+// Select all elements in selects input
+//
+function fn_select_save_elements()
+{
+	var args = fn_select_save_elements.arguments;
+
+	for (i = 0; i < args.length; i++) {
+		if (document.getElementById(args[i])) {
+			var select = document.getElementById(args[i]);
+			for(var k = select.length-1; k >= 0; k--) {
+				select.options[k].selected = true;
+			}
+		}
+	}
+
+	return true;
+}
+
+//
+// Unselect all elements in selects input
+//
+function fn_unselect_save_elements()
+{
+	var args = fn_unselect_save_elements.arguments;
+
+	for (i = 0; i < args.length; i++) {
+		if (document.getElementById(args[i])) {
+			var select = document.getElementById(args[i]);
+			for(var k = select.length-1; k >= 0; k--) {
+				select.options[k].selected = false;
+			}
+		}
+	}
+
+	return true;
+}
+
+
+//
+// Select text in text input
+//
+function fn_select_input(select)
+{
+	select.select();
+        if(select.value == "Keywords / SKU"){
+            select.value = "";
+        }
+}
+
+function fn_select_input_focus(select){
+    if(select.value==""){
+        select.value = "Keywords / SKU";
+    }
+}
+
+// Compare 2 strings
+// @haystack - where search
+// @needle - what search
+// @strict - exact compare or partial
+function fn_compare_strings(haystack, needle, strict)
+{
+	if (strict == true) {
+		return (haystack == needle);
+	} else {
+		return (haystack.indexOf(needle) == -1) ? false : true;
+	}
+}
+//
+// Check if there are any selected checkboxes in the form
+// @form_name - form name in which checkboxes should be selected or deselected
+// @checkbox_id - tag id of checkboxes that should be selected or deselected
+// @no_alert - do not display notification
+// @strict - compare ids strictly or partially
+function fn_check_selected(form_name, checkbox_id, no_alert, strict) {
+{
+	if (typeof(strict) == 'undefined') {
+		strict = true;
+	}
+
+	if (!checkbox_id) {
+		checkbox_id = 'delete_checkbox';
+	}
+
+	if(!(d_form = document.forms[form_name])) {
+		return false;
+	}
+
+	for(i=0; i < d_form.length; i++) {
+		if (fn_compare_strings(d_form.elements[i].id, checkbox_id, strict)) {
+			if (d_form.elements[i].checked) {
+				return true;
+			}
+		}
+	}
+	if (!no_alert) {
+		alert(lang.error_no_items_selected);
+	}
+	return false;
+}																													    }
+
+function fn_delete_selected(form_name, mode_value, no_confirmation, checkbox_id, elm_name, strict)
+{
+
+	if (typeof(strict) == 'undefined') {
+		strict = true;
+	}
+	if (!fn_check_selected(form_name, checkbox_id, '', strict)) {
+		return false;
+	}
+	if (!no_confirmation) {
+		if (!confirm(lang.delete_confirmation)) {
+			return false;
+		}
+	}
+
+	if (typeof(elm_name)== 'undefined' || elm_name.length == 0) {
+		elm_name = mode_name;
+	}
+
+	document.forms[form_name].elements[elm_name].value = mode_value;
+	document.forms[form_name].submit();
+	return true;
+}
+
+icart_handlers = {
+
+	document_loaded: false,
+	handlers: [],
+
+	set_handler: function()
+	{
+		var args = $A(this.set_handler.arguments);
+
+		// If document is already loaded - execute function right now
+		if (this.document_loaded) {
+			fn = args.shift();
+			if (fn)	{
+				fn.apply(fn, args);
+			}
+		} else {
+			this.handlers.push({'function': args.shift(), 'args': args});
+		}
+	},
+
+	load: function()
+	{
+		if (this.handlers) {
+			for (i=0; i<this.handlers.length; i++) {
+				fn = this.handlers[i]['function'];
+				if (fn)	{
+					fn.apply(fn, this.handlers[i]['args']);
+				}
+			}
+		}
+
+		// Set flag that document is already loaded
+		this.document_loaded = true;
+	}
+}
+
+fn_add_event(window, 'load', icart_handlers.load.bind(icart_handlers));
+
+//
+// Common function to perform AJAX request
+//
+function fn_ajax_http_request(query, result_ids, method, data, func, caching, pending_message, loading_box)
+{
+	var req = new JsHttpRequest();
+	var QUERIES_LIMIT = 1;
+
+	req.caching = typeof(caching) == 'undefined' ? false : caching;
+	req.silent = typeof(loading_box) == 'undefined' ? false : loading_box;
+	query = fn_query_remove(query, 'result_ids');
+
+	if (!data) {
+		data = {};
+	}
+
+	if (!result_ids) {
+		result_ids = [];
+	}
+
+	if (fn_check_type(result_ids, 'array') == false) {
+		result_ids = [result_ids];
+	}
+
+
+	req.onreadystatechange = function() {
+		if (req.readyState == 4) {
+			var regex_all = new RegExp('<script[^>]*>([\u0001-\uFFFF]*?)</script>', 'img');
+		    var regex_one = new RegExp('<script[^>]*>([\u0001-\uFFFF]*?)</script>', 'im');
+			var matches = [];
+			var match = '';
+
+			if (req.responseJS.force_redirection) {
+				fn_redirect(req.responseJS.force_redirection);
+			}
+
+			if (req.responseJS.html) {
+				for (k in req.responseJS.html) {
+					src = document.getElementById(k);
+					if (!src) {
+						continue;
+					}
+
+					matches = req.responseJS.html[k].match(regex_all);
+					src.innerHTML =  matches ? req.responseJS.html[k].replace(regex_all, '') : req.responseJS.html[k];
+
+					if (matches) {
+						for (var i=0 ; i< matches.length ; i++ ) {
+							if (matches[i].match(regex_one)[1]) {
+								if (window.execScript) {
+									window.execScript(matches[i].match(regex_one)[1]);
+								} else {
+									window.eval(matches[i].match(regex_one)[1]);
+								}
+
+							}
+						}
+					}
+				}
+			} else {
+				var new_node = document.createElement('div');
+				new_node.innerHTML = req.responseText;
+				document.body.appendChild(new_node);
+			}
+
+			fn_ajax_update_vars(req.responseJS);
+
+			if (func) {
+				func(req.responseJS, req.responseText);
+			}
+			active_queries--;
+			if (queries_stack.length) {
+				var data = queries_stack.pop();
+				fn_call_user_func_array('fn_ajax_http_request', data);
+			}
+		}
+	}
+
+	if (data instanceof Object) {
+		data.result_ids = result_ids;
+	} else {
+		for (i = 0; i < result_ids.length; i++ ) {
+			data += '&result_ids[]=' + result_ids[i];
+		}
+	}
+
+	if (pending_message) {
+		if (pending_message instanceof Object) {
+			for (k in pending_message) {
+				document.getElementById(k).innerHTML = pending_message[k];
+			}
+		} else {
+			for (k in result_ids) {
+				document.getElementById(result_ids[k]).innerHTML = pending_message;
+			}
+		}
+	}
+
+	if (active_queries < QUERIES_LIMIT) {
+		// Run request
+		req.open(method || 'GET', query, true);
+		req.send(data);
+		active_queries++;
+	} else {
+		queries_stack.push(arguments);
+	}
+}
+
+//
+// Submit form using AJAX
+//
+function fn_ajax_form_submit(form_name, result_id, callback, pending_message)
+{
+	var method, action;
+	var form;
+	var data = {};
+
+	form = document.forms[form_name];
+	elms = form.elements;
+	data = '';
+
+	for (i = 0; i < elms.length ; i++) {
+		if (elms[i].disabled == true) {
+			continue;
+		}
+
+		if (
+			(elms[i].tagName.toLowerCase() == 'input' &&
+				(
+					elms[i].type == 'text' ||
+					elms[i].type == 'hidden' ||
+					elms[i].type == 'password' ||
+					(elms[i].type == 'radio' && elms[i].checked == true) ||
+					(elms[i].type == 'checkbox' && elms[i].checked == true)
+				)
+			) ||
+			(
+				elms[i].tagName.toLowerCase() == 'select' ||
+				elms[i].tagName.toLowerCase() == 'textarea'
+			)){
+
+				if (elms[i].tagName.toLowerCase() == 'select' && elms[i].multiple == true) {
+					for (k = 0; k < elms[i].options.length ; k++) {
+						if (elms[i].options[k].selected == true) {
+							data += escape(elms[i].name) + '=' + encodeURIComponent(elms[i].options[k].value) + '&';
+						}
+					}
+				} else {
+					data += escape(elms[i].name) + '=' + encodeURIComponent(elms[i].value) + '&';
+				}
+		}
+	}
+
+	for (i=0; i<form.attributes.length; i++) {
+		if (form.attributes[i].name.toLowerCase() == 'action') {
+			action = form.attributes[i].value;
+		}
+		if (form.attributes[i].name.toLowerCase() == 'method') {
+			method = form.attributes[i].value;
+		}
+	}
+
+	fn_ajax_http_request(action, result_id, method, data, callback || null, null, pending_message || '');
+}
+
+
+function fn_get_window_sizes()
+{
+	var iebody = (document.compatMode && document.compatMode != 'BackCompat')? document.documentElement : document.body;
+
+	return {
+		'offset_x'   : iebody.scrollLeft ? iebody.scrollLeft : (self.pageXOffset ? self.pageXOffset : 0),
+		'offset_y'   : iebody.scrollTop  ? iebody.scrollTop : (self.pageYOffset ? self.pageYOffset : 0),
+		'view_height': self.innerHeight ? self.innerHeight : iebody.clientHeight,
+		'view_width' : self.innerWidth ? self.innerWidth : iebody.clientWidth,
+		'height'     : iebody.scrollHeight ? iebody.scrollHeight : window.height,
+		'width'      : iebody.scrollWidth ? iebody.scrollWidth : window.width
+	}
+}
+
+function fn_open_editor(id, object, area) {
+	html_editor_id = id;
+//	html_editor_object = object;
+//	html_editor_area = area;
+
+	if (html_editor_window) {
+		html_editor_window.close();
+	}
+	html_editor_window = window.open(html_editor_url+"popup.html?lang="+cart_language+'&btn_save='+escape(lang['save'])+'&btn_close='+escape(lang['close']),"html_ed","status=no,top=100,left=100,height=600,width=850,resizable=yes");
+	html_editor_window.focus();
+}
+
+
+// Check email address for validity
+function fn_is_email(email) {
+	var filter=/^([\w-+=_]+(?:\.[\w-+=_]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	if (filter.test(email)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+//
+// Checks if the value is blank
+//
+function fn_is_blank(val){
+	if (val==null){
+		return true;
+	}
+	for (var i=0; i<val.length; i++) {
+		if((val.charAt(i)!="\t")&&(val.charAt(i)!="\n")&&(val.charAt(i)!="\r")){
+			return false;
+		}
+	}
+	return true;
+}
+
+//
+// Checks if the value is integer
+//
+function fn_is_integer(val)
+{
+	if(fn_is_blank(val)){
+		return false;
+	}
+	for(var i=0; i<val.length; i++){
+		if (!fn_is_digit(val.charAt(i))) {
+			return false;
+		}
+	}
+	return true;
+}
+
+//
+// Checks if the value is digit
+//
+function fn_is_digit(num)
+{
+	if(num.length>1){
+		return false;
+	}
+	var string="1234567890";
+	if (string.indexOf(num)!=-1){
+		return true;
+	}
+	return false;
+}
+
+//
+// Checks if the value is phone number
+//
+function fn_is_phone(phone)
+{
+	return phone.match(/^\(?\d{3}\)?[ ]?[\d-]*$/gi) ? true : false;
+}
+
+
+function fn_display_trigger()
+{
+	var elms = document.getElementsByTagName('SPAN');
+	var args = fn_display_trigger.arguments;
+
+	for (i=0;i<elms.length;i++) {
+		for (j=0;j<args.length;j++)	{
+			if (elms[i].id.indexOf(args[j]) == 0) {
+				elms[i].style.display = (elms[i].style.display == 'none') ? '' : 'none';
+			}
+		}
+	}
+}
+
+function fn_ajax_update_vars(response)
+{
+	if (response.update_vars)	{
+		for (k in response.update_vars) {
+			elms = document.getElementsByName(k);
+			if (elms.length>0) {
+				for (var i=0; i<elms.length; i++) {
+					elms[i].value = response.update_vars[k];
+				}
+			}
+		}
+	}
+
+	if (response.notification) {
+		var elm;
+		document.getElementById('ajax_message_container').innerHTML = '';
+		for (k in response.notification) {
+			elm = document.createElement('div');
+			elm.innerHTML = response.notification[k].message;
+			elm.className = 'ajax-notification-' + response.notification[k].type.toLowerCase();
+			document.getElementById('ajax_message_container').appendChild(elm);
+		}
+
+		if (browser_info.browser == 'Internet Explorer' && browser_info.version < 7) {
+			document.getElementById('ajax_message').onpropertychange = function() { fn_underlay_iframe('ajax_message'); };
+		}
+
+		window.onscroll = function() { fn_align_element('ajax_message') };
+		fn_align_element('ajax_message');
+
+		if (!window._timeouts) {
+			window._timeouts = {};
+		}
+		if (window._timeouts['ajax_message']) {
+			window.clearTimeout(window._timeouts['ajax_message']);
+		}
+		window._timeouts['ajax_message'] = window.setTimeout("fn_show_tag('ajax_message', true, true);", 4000);
+		document.getElementById('ajax_message').onclick = function() {
+			window.onscroll = null;
+			this.style.display = 'none';
+		}
+	}
+
+	if (typeof(fn_check_all_exceptions) == 'function') {
+		fn_check_all_exceptions(false);
+	}
+}
+
+function fn_underlay_iframe(id)
+{
+	var pname = event.propertyName
+	var elm = document.getElementById(id);
+	var iframe;
+	if (!document.getElementById('if_' + id)) {
+		elm.style.zIndex = 9999;
+		iframe = document.createElement('IFRAME');
+		iframe.setAttribute('src', 'javascript: false;');
+		iframe.setAttribute('id', 'if_' + id);
+		iframe.style.position = 'absolute';
+		iframe.style.zIndex = elm.style.zIndex - 1;
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+	} else {
+		iframe = document.getElementById('if_' + id);
+	}
+
+	if (pname == 'style.display') {
+		if (elm.style.display == 'none' && document.getElementById('if_' + id)) {
+			document.getElementById('if_' + id).style.display = 'none';
+		} else {
+			iframe.style.left = elm.offsetLeft + 'px';
+			iframe.style.top = elm.offsetTop + 'px';
+			iframe.style.width = elm.offsetWidth + 'px';
+			iframe.style.height = elm.offsetHeight + 'px';
+			iframe.style.display = '';
+		}
+	}
+	else if (pname == 'style.top' || pname == 'style.left') {
+		iframe.style.top = elm.style.top;
+		iframe.style.left = elm.style.left;
+		iframe.style.width = elm.offsetWidth;
+		iframe.style.height = elm.offsetHeight;
+	}
+}
+
+function fn_hotkeys(evt)
+{
+	var char_code = (evt.which) ? evt.which : event.keyCode;
+
+	// CTRL + ' - show search by pid window
+	if (evt.ctrlKey && char_code == 222) {
+		if (result = prompt('Product ID', '')) {
+			fn_redirect(index_script+'?'+target_name+'=products&'+mode_name+'=update&product_id='+result);
+		}
+	}
+}
+
+function fn_format_num(expr, decplaces, primary)
+{
+	var num = '';
+	var decimals = '';
+	var tmp = 0;
+	var k = 0;
+	var i = 0;
+	var thousands_separator = (primary == true) ? currencies.primary.thousands_separator : currencies.secondary.thousands_separator;
+	var decimals_separator = (primary == true) ? currencies.primary.decimals_separator : currencies.secondary.decimals_separator;
+	var decplaces = (primary == true) ? currencies.primary.decimals : currencies.secondary.decimals;
+
+	expr = expr.toString();
+	tmp = parseInt(expr);
+	num = tmp.toString();
+
+	// Separate thousands
+	if (num.length >= 4 && thousands_separator != '') {
+		tmp = new Array();
+		for (var i=num.length-3; i>-4 ; i=i-3) {
+			k = 3;
+			if (i<0) {
+				k = 3 + i;
+				i=0;
+			}
+			tmp.push(num.substr(i,k));
+			if (i==0) {
+				break;
+			}
+		}
+		num = tmp.reverse().join(thousands_separator);
+	}
+
+	// Add decimals
+	if (decplaces > 0) {
+		if (decimals_separator!= '' && expr.indexOf('.') != -1) {
+			// Fixme , use toFixed() here
+			var decimal_full = expr.substr(expr.indexOf('.') + 1, expr.length);
+			if (decimal_full.length > decplaces) {
+				decimals = Math.round(decimal_full / (Math.pow(10 , (decimal_full.length - decplaces))));
+			} else {
+				decimals = expr.substr(expr.indexOf('.') + 1, decplaces);
+			}
+		} else {
+			decimals = '0';
+		}
+
+		if (decimals.length < decplaces) {
+			tmp = decimals.length;
+			for (i=0; i<decplaces-tmp; i++) {
+				decimals += '0';
+			}
+		}
+		num += decimals_separator + decimals;
+	}
+
+	return num;
+}
+
+function fn_query_remove(query, vars)
+{
+	if (typeof(vars) == 'undefined') {
+		return query;
+	}
+	if (!fn_check_type(vars, 'array')) {
+		vars = [vars];
+	}
+	var start = query;
+	if (query.indexOf('?') >= 0) {
+		start = query.substr(0, query.indexOf('?'));
+		var search = query.substr(query.indexOf('?'));
+		var srch_array = search.split("&");
+		var temp_array = new Array();
+		var concat = true;
+		var amp = '';
+		for (var i = 0; i < srch_array.length; i++) {
+			temp_array = srch_array[i].split("=");
+			concat = true;
+			for (var j = 0; j < vars.length; j++) {
+				if (vars[j] == temp_array[0] || temp_array[0].indexOf(vars[j]+'[') != -1) {
+					concat = false;
+					break;
+				}
+			}
+			if (concat == true) {
+				start += amp + temp_array[0] + '=' + temp_array[1]
+			}
+			amp = '&';
+		}
+	}
+	return start;
+}
+
+//
+// Open pop-up window with detailed image
+//
+function fn_open_popup_image(popup_script, image_width, image_height)
+{
+	if (image_width == 0) {
+		image_width = 400;
+	}
+	if (image_height == 0) {
+		image_height = 400;
+	}
+	image_width += 10;
+	image_height += 10;
+
+	if ((typeof(handle_popup_image)!='undefined') && (handle_popup_image.closed == false)) {
+		handle_popup_image.close();
+	}
+    handle_popup_image = window.open(popup_script, 'popup_image', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,left=200,top=100,width=' + image_width + ',height=' + image_height + ',resizable=yes');
+}
+
+function fn_align_element()
+{
+	var ids = $A(arguments);
+	var w = fn_get_window_sizes();
+	for (k in ids) {
+		msg = document.getElementById(ids[k]);
+		if (msg) {
+			msg.style.display = 'block';
+			msg.style.top = w.offset_y + (w.view_height - msg.offsetHeight) / 2 + 'px';
+			msg.style.left = w.offset_x + (w.view_width - msg.offsetWidth) / 2 + 'px';
+		}
+	}
+}
+
+function fn_blink(cycle)
+{
+	if (cycle > 6) {
+		be.style.visibility = 'visible';
+		clearTimeout(timeout);
+		return;
+	}
+	cycle++;
+	if (be = document.getElementById('blinking_elm')) {
+		be.style.visibility = (be.style.visibility == 'visible') ? 'hidden' : 'visible';
+		timeout = window.setTimeout('fn_blink('+cycle+')', 500);
+	}
+}
+
+function fn_format_price(value, decplaces)
+{
+	if (typeof(decplaces) == 'undefined') {
+		decplaces = 2;
+	}
+
+	value = parseFloat(value.toString()) + 0.00000000001;
+
+	var tmp_value = value.toFixed(decplaces);
+
+	if (tmp_value.charAt(0) == '.') {
+		return ('0' + tmp_value);
+	} else {
+		return tmp_value;
+	}
+}
+
+function fn_check_type(src, expected_type)
+{
+	expected_type = expected_type.toLowerCase();
+	src_type = (''+typeof(src)).toLowerCase();
+	var res;
+	switch (expected_type) {
+		case "object":
+			res = (src instanceof Object) || (src_type.indexOf(expected_type) != -1);
+			break;
+		case "array":
+			res = (src instanceof Array) || (src_type.indexOf(expected_type) != -1);
+			break;
+		default:
+			res = src_type.indexOf(expected_type) != -1;
+	}
+	return res;
+}
+
+function fn_addons_inheritance(caller)
+{
+	if (fn_inheritance[caller]){
+		for(var i in fn_inheritance[caller]){
+			if(typeof(window[fn_inheritance[caller][i]]) == 'function' && typeof(window[caller]) == 'function'){
+				fn_call_user_func_array(fn_inheritance[caller][i], eval(caller).arguments);
+			}
+		}
+	}
+}
+
+function fn_call_user_func_array(func, params)
+{
+	// create function object
+	var __function = eval(func);
+
+	return __function.apply(func, params);
+}
+
+function fn_get_function_name(body)
+{
+    var body = new String (body);
+    return body.substring(9,body.indexOf('(',9)).replace(/\s/g, '');
+}
+
+
+// -------- Cookie functions collection -------------
+
+function fn_get_cookie_val (offset)
+{
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1) {
+		endstr = document.cookie.length;
+	}
+	return unescape(document.cookie.substring(offset, endstr));
+}
+
+function fn_get_cookie(name)
+{
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while (i < clen) {
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg) {
+			return fn_get_cookie_val(j);
+		}
+
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0) {
+			break;
+		}
+	}
+	return null;
+}
+
+function fn_set_cookie(name, value, expires, path, domain, secure)
+{
+	document.cookie = name + "=" + escape (value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+}
+
+function fn_delete_cookie(name, path, domain)
+{
+	if (fn_get_cookie(name)) {
+		document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+	}
+}
+// /-------- Cookie functions collection -------------
+
+
+//
+// -------- Web-form object -------------------
+//
+
+//
+// This object represents maintenance routines for web-form
+//
+function icart_form(name, use_ajax, result_id, callback, bind_keypress)
+{
+	this.name = name;
+	this.use_ajax = use_ajax || false;
+	this.result_id = result_id || '';
+	this.required_fields = [];
+	this.callback = callback || null;
+	this.onsubmit = [];
+	this.extra_ids = [];
+	this.css_cache = [];
+	this.failed_message = '';
+	this.pending_message = '';
+
+	// Attach submit event to all form text elements
+	if (bind_keypress) {
+		icart_handlers.set_handler(this.bind_keys.bind(this));
+	}
+}
+
+icart_form.prototype = {
+
+	// Set onkeypress event for all text elements to allow send form by hitting ENTER key
+	bind_keys: function()
+	{
+		var func = function(evt) {
+			var char_code = (window.event) ?  window.event.keyCode : evt.which;
+			var elm = (window.event) ? window.event.srcElement : evt.target;
+
+			if (char_code == 13) {
+				elm._form_object.submit();
+			}
+		}
+
+		form = document.forms[this.name];
+		if (!form) {
+			return false;
+		}
+		form.onsubmit = function() {return false};
+		form.setAttribute('autocomplete', 'off');
+		for (k = 0 ; k < form.elements.length ; k++) {
+			if ((form.elements[k].tagName.toLowerCase() == 'input' && (form.elements[k].type.toLowerCase() == 'text' || form.elements[k].type.toLowerCase() == 'password')))	{
+				form.elements[k]._form_object = this;
+				fn_add_event(form.elements[k], 'keypress', func);
+			}
+		}
+
+	},
+	// Put form field(s) to required list
+	set_required_fields: function ()
+	{
+		for (i=0;i<this.set_required_fields.arguments.length;i++) {
+			if (this.set_required_fields.arguments[i] != '') {
+				this.required_fields[this.set_required_fields.arguments[i]] = 'Y';
+			}
+		}
+	},
+
+	// Remove form field from required list
+	uset_required_fields: function ()
+	{
+		for (i=0;i<this.uset_required_fields.arguments.length;i++) {
+			delete this.required_fields[this.uset_required_fields.arguments[i]];
+		}
+	},
+
+	// Put form field to extra checking list
+	set_extra: function (f_id, type)
+	{
+		this.extra_ids[f_id] = type;
+	},
+
+	// Remove form field from required list
+	uset_extra: function ()
+	{
+		for (i=0;i<this.uset_extra.arguments.length;i++) {
+			delete this.extra_ids[this.uset_extra.arguments[i]];
+		}
+	},
+
+	// Mark all required fields
+	set_required_marks: function()
+	{
+		for (field in this.required_fields) {
+			if (document.getElementById(field) && document.getElementById('mark_'+field)) {
+				document.getElementById('mark_'+field).innerHTML = "*";
+			}
+		}
+	},
+
+	// This function checks required fields and set a warning mark if something wrong
+	check_fields: function()
+	{
+		var is_ok = true;
+		var set_mark = false;
+		var error_messages = [];
+		var tmp = '';
+
+		elms = document.forms[this.name].elements;
+		for (i=0; i<elms.length; i++) {
+			set_mark = false;
+
+			// Check the email field
+			if (this.extra_ids[elms[i].id] == 'E') {
+				if (fn_is_email(elms[i].value) == false) {
+					if (this.required_fields[elms[i].id] == 'Y' || fn_is_blank(elms[i].value) == false) {
+						error_messages.push(lang.error_email_invalid);
+						is_ok = false;
+						set_mark = true;
+					}
+				}
+			/*/ Check the domain name field
+			} else if (this.extra_ids[elms[i].id] == 'U') {
+				if ((tmp = fn_check_domain_name(elms[i].value, lang.domain_invalid_0, lang.domain_invalid_1, lang.domain_invalid_2, lang.domain_invalid_3, true)) != true) {
+					if (this.required_fields[elms[i].id] == 'Y' || fn_is_blank(elms[i].value) == false) {
+						error_messages.push(tmp);
+						is_ok = false;
+						set_mark = true;
+					}
+				}*/
+			// Check the phone field
+			} else if (this.extra_ids[elms[i].id] == 'P') {
+				if (fn_is_phone(elms[i].value) == false) {
+					if (this.required_fields[elms[i].id] == 'Y' || fn_is_blank(elms[i].value) == false) {
+						error_messages.push(lang.phone_number_invalid);
+						is_ok = false;
+						set_mark = true;
+					}
+				}
+
+			// Check for integer field
+			} else if (this.extra_ids[elms[i].id] == 'I') {
+				if (fn_is_integer(elms[i].value) == false) {
+					if (this.required_fields[elms[i].id] == 'Y' || fn_is_blank(elms[i].value) == false) {
+						is_ok = false;
+						set_mark = true;
+					}
+				}
+			// Check for multiple selectbox
+			} else if (this.extra_ids[elms[i].id] == 'M' && elms[i].length == 0) {
+				is_ok = false;
+				set_mark = true;
+
+			// Select all items in multiple selectbox
+			} else if (this.extra_ids[elms[i].id] == 'A') {
+				if (elms[i].length == 0) {
+					is_ok = false;
+					set_mark = true;
+				} else {
+					var k = 0;
+					for	(k=0; k<elms[i].length; k++) {
+						elms[i].options[k].selected = true;
+					}
+				}
+			// Custom checking function
+			} else if (typeof(this.extra_ids[elms[i].id]) == 'function') {
+				var fn = this.extra_ids[elms[i].id];
+				var _result = fn.call(fn, elms[i].value);
+				if (_result != true) {
+					error_messages.push(_result);
+					is_ok = false;
+					set_mark = true;
+				}
+			// Check for blank value
+			} else {
+
+				// Check for multiple selectbox
+				if (elms[i].tagName == 'INPUT' || elms[i].tagName == 'TEXTAREA' || elms[i].tagName == 'SELECT') {
+					if (this.required_fields[elms[i].id] == 'Y') {
+						if ((elms[i].tagName == 'INPUT' && elms[i].type == 'checkbox' && elms[i].checked == false) || fn_is_blank(elms[i].value) == true) {
+							is_ok = false;
+							set_mark = true;
+						}
+					}
+				}
+
+			}
+			if (elms[i].id != '') {
+				if (!this.css_cache[elms[i].id]) {
+					this.css_cache[elms[i].id] = document.getElementById(elms[i].id).className;
+				}
+				document.getElementById(elms[i].id).className = this.css_cache[elms[i].id] + ((set_mark == true) ? ' form-elm-required' : '');
+			}
+		}
+
+		if (is_ok == false) {
+			var message = '';
+			for (k in error_messages) {
+				message += '- ' + error_messages[k] + "\n";
+			}
+			alert(message + '- ' + lang.error_required_fields);
+		}
+		return is_ok;
+	},
+
+	// Add form onsubmit handler
+	set_onsubmit: function()
+	{
+		this.onsubmit.push(this.set_onsubmit.arguments);
+	},
+
+	// Clear onsubmit list
+	clear_onsubmit: function()
+	{
+		this.onsubmit = [];
+	},
+
+	// Submit the form
+	submit: function()
+	{
+		var is_ok = true;
+		if (this.onsubmit) {
+			for (i=0; i<this.onsubmit.length; i++) {
+				var args = $A(this.onsubmit[i]);
+				var fn = args.shift();
+				if (fn.apply(fn, args) == false) {
+					is_ok = false;
+					break;
+				}
+			}
+		}
+
+		if (is_ok == true && this.check_fields() == true) {
+			if (this.use_ajax == true) {
+				fn_ajax_form_submit(this.name, this.result_id, this.callback, this.pending_message);
+			} else {
+				document.forms[this.name].submit();
+			}
+		} else if (this.failed_message) {
+			alert(this.failed_message);
+		}
+	},
+
+	// Set field value
+	set_field_value: function(field, value)
+	{
+		var i = 0;
+		if (document.forms[this.name].elements[field]) {
+			document.forms[this.name].elements[field].value = value;
+		} else { // This fixes the bug when form is created in run-time
+			elms = document.forms[this.name].elements;
+			for (i=0 ; i < elms.length ; i++ ) {
+				if (elms[i].name == field) {
+					elms[i].value = value;
+					break;
+				}
+			}
+		}
+	},
+	get_field_value: function(field)
+	{
+		if (document.forms[this.name].elements[field]) {
+			return document.forms[this.name].elements[field].value;
+		}
+	},
+
+	// Set message that appears when submit fails
+	set_failed_message: function(message)
+	{
+		this.failed_message = message;
+	}
+}
+
+
+
+function fn_switch_box(id, forced_closure)
+{
+	elm = document.getElementById(id);
+	if (!elm) {
+		return false;
+	}
+
+	// visible
+	if (elm.style.display == '' || forced_closure == true) {
+		fn_set_cookie(id, 1);
+		elm.style.display = 'none';
+	} else {
+		fn_delete_cookie(id);
+		elm.style.display = '';
+	}
+
+	document.getElementById('img_open_'+id).style.display = (elm.style.display == 'none') ? '' : 'none';
+	document.getElementById('img_close_'+id).style.display = elm.style.display;
+}
+
+function fn_close_notification(key, close_session)
+{
+	if (close_session) {
+		fn_ajax_http_request(index_script + '?close_notification='+key);
+	}
+	fn_show_tag('notification_'+key, true);
+}
+
+function fn_redirect(url)
+{
+	if (document.getElementsByTagName('base')[0]) {
+		url = document.getElementsByTagName('base')[0].href + url;
+	}
+	window.location.href = url;
+}
+
+/**
+* Function : fn_print_array()
+* Arguments: The data - array, hash(associative array), object
+*    The level - OPTIONAL
+* Returns  : The textual representation of the array.
+* This function was inspired by the print_r function of PHP.
+* This will accept some data as the argument and return a
+* text that will be a more readable version of the
+* array/hash/object that is given.
+*/
+function fn_print_r(value)
+{
+	alert(fn_print_array(value));
+}
+
+function fn_print_array(arr,level)
+{
+	var dumped_text = "";
+	if(!level) {
+		level = 0;
+	}
+
+	//The padding given at the beginning of the line.
+	var level_padding = "";
+	for(var j=0; j < level+1; j++) {
+		level_padding += "    ";
+	}
+
+	if(typeof(arr) == 'object') { //Array/Hashes/Objects
+		for(var item in arr) {
+			var value = arr[item];
+
+			if(typeof(value) == 'object') { //If it is an array,
+				dumped_text += level_padding + "'" + item + "' ...\n";
+				dumped_text += fn_print_array(value,level+1);
+			} else {
+				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+			}
+		}
+	} else { //Stings/Chars/Numbers etc.
+		dumped_text = arr+" ("+typeof(arr)+")";
+	}
+
+	return dumped_text;
+}
+
+function fn_html_entity_decode(str)
+{
+    var ta = document.createElement("TEXTAREA");
+    ta.innerHTML = str.replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+    return ta.value;
+}

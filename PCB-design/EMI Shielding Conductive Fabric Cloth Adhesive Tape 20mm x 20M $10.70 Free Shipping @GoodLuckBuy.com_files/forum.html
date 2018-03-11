@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.goodluckbuy.com/forums/forum.php?productid=68241 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Goodluckbuy Product Forums</title>
+<link rel="stylesheet" type="text/css" href="./pro_dropdown_2.css">
+<link rel="stylesheet" type="text/css" href="./comm.css">
+<script language="javascript" src="./all.js.Без названия"></script>
+<script language="javascript" src="./editor.js.Без названия"></script>
+<script language="javascript" src="./editor_toolbar.js.Без названия"></script>
+
+
+<script language="javascript" type="text/javascript">
+function toggle(obj){
+	if(document.getElementById(obj).style.display=="none"){
+		document.getElementById(obj).style.display = "block";
+	}else{
+		document.getElementById(obj).style.display = "none";
+	}
+	turnHeight('myTestFrameID');
+	parent.window.document.all.myTestFrameID.height=document.body.scrollHeight + 20;
+	
+}
+
+function turnHeight(iframe)   {   
+    var frm = window.parent.document.getElementById(iframe);   
+    var subWeb = window.parent.document.frames ? window.parent.document.frames[iframe].window.parent.document : frm.contentDocument;   
+    if(frm != null && subWeb != null)   
+    { frm.height = subWeb.body.scrollHeight + 20;}   
+}  
+
+</script>
+
+</head>
+
+<body style="padding:5px;margin:10px;font-size:13px; " marginwidth="0" marginheight="0"> 
+<div id="forums_open"><a href="http://www.goodluckbuy.com/forums/?productid=68241" target="_top" style="color:#0000FF;">open this forum in full page</a></div>
+<div id="forums_topic"><a href="http://www.goodluckbuy.com/forums/forum.php?productid=68241#content" onclick="javascript:toggle(&#39;divPost&#39;);" style="color:#0000FF;font-weight:bold;">Post a new topic</a></div>
+
+
+<div id="divPost" style="display:none;margin-bottom:10px;">
+	<a name="content"></a>
+	<table cellspacing="1" width="100%" cellpadding="5" bgcolor="#f0f0f0">
+		<form name="postForm" action="http://www.goodluckbuy.com/forums/forums.class.php" target="pageFrame" method="post"></form>
+		<tbody>
+			<tr>
+				<th height="29">Name: </th>
+				<td width="100%" bgcolor="white">
+					<input type="text" style="WIDTH: 60%" maxlength="30" value="" id="username" name="username">
+				</td>
+			</tr>
+			<tr>
+				<th height="29">Email: </th>
+				<td width="100%" bgcolor="white">
+					<input type="text" style="WIDTH: 75%" maxlength="30" value="" id="email" name="email">
+				</td>
+			</tr>
+			<tr>
+				<th height="29">Subject: </th>
+				<td width="100%" bgcolor="white">
+										<input style="WIDTH: 99%" maxlength="100" value="" id="subject" name="subject">
+									</td>
+			</tr>
+			<tr>
+				<th valign="top">Message: </th>
+				<td width="100%" bgcolor="white">
+						<input type="hidden" id="productid" name="productid" value="68241">
+						<input type="hidden" id="categoryid" name="categoryid" value="">
+						<input type="hidden" id="parentid" name="parentid" value="">
+						<input type="hidden" id="action" name="action" value="addthreed">
+						<input type="hidden" id="Messcontent" name="Messcontent" value="Welcome Message &lt;a href=&quot;http://www.goodluckbuy.com&quot;&gt;Goodluckbuy&lt;/a&gt;" style="display:none"><input type="hidden" id="Messcontent___Config" value="SkinPath=/forums/fckeditor/editor/skins/silver/&amp;AutoDetectLanguage=true&amp;DefaultLanguage=en" style="display:none"><iframe id="Messcontent___Frame" src="./fckeditor.html" width="100%" height="200" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; width: 100%; height: 200px;"></iframe>
+						<input type="submit" value="Post Message" onclick="javascript:return SubmitEditor();">
+						
+						<span id="errorContent" style="margin-left:50px;color:#FF0000;font-size:13px;"></span>
+				</td>
+			</tr>
+		</tbody>
+		
+  </table>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+	function SubmitEditor(){
+		var nameValue = document.getElementById('username').value;
+		var emailValue = document.getElementById('email').value;
+		var subject = document.getElementById('subject').value;
+		if(nameValue == ""){
+			document.postForm.username.focus();
+			document.getElementById('errorContent').innerHTML = "";
+			return false;
+		}else if(emailValue == ""){
+			document.postForm.email.focus();
+			return false;
+		}else if(!isEmail(emailValue)){
+			document.getElementById('email').value = "";
+			document.postForm.email.focus();
+			return false;
+		}else if(subject == ""){
+			document.postForm.subject.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function isEmail(str){ 
+		res = /^[0-9a-zA-Z_\-\.]+@[0-9a-zA-Z_\-]+(\.[0-9a-zA-Z_\-]+)*$/; 
+		var re = new RegExp(res); 
+		return !(str.match(re) == null); 
+	}
+</script>
+
+<div style="width:100%;">
+<p style="line-height:16px;margin:0px;color:#6C6C6C;font-size:11px;padding:0px;">Please note that Goodluckbuy Forums are not a sales or product support board. While we do constantly participate in this forum,please contact us via support ticket at <a href="http://www.goodluckbuy.com/">http://www.goodluckbuy.com/</a> for a guaranteed fast response.We make every effort to make the quickest replies. </p>
+</div>
+<div>
+	<ul style="list-style:none;padding:10px;margin:10px;">
+		</ul>
+</div>
+	<div id="loginDiv" style="width:400px;padding:5px;margin:10px auto 0;border:1px solid #CCCCCC;background:#F7F6F3;display:none;"><a name="login"></a>
+	<div style="width:100%;background:#5DB5E1;line-height:22px;font-weight:bold;color:#FFFFFF;text-indent:5px;">GoodLuckBuy Account Sign In</div>
+	<div style="font-weight:bold;color:#000000;">Please sign-in to post or reply to topic.</div>
+	<form action="http://www.goodluckbuy.com/forums/forums.class.php" method="post" name="loginform" style="margin:8px auto 1px;">
+		<input type="hidden" value="login" name="action">
+		<div style="width:100%;height:25px;text-align:center;"><span style="margin-right:5px;width:75px;">Username:</span><input type="text" name="username" value="" style="width:160px;height:18px;"></div>
+		<div style="width:100%;height:25px;text-align:center;"><span style="margin-right:5px;width:75px;">Password:</span><input type="password" name="password" value="" style="width:160px;height:18px;"></div>
+		<div style="width:85%;margin:0 auto 0;height:25px;text-align:right;"><input type="image" src="./SignIn.gif"></div>
+	</form>
+	<div style="font-size:11px;">Don't have an account in our store?Feel free to <a href="http://www.goodluckbuy.com/index.php?target=profiles&amp;mode=add">register here</a></div>
+	<div><a href="http://www.goodluckbuy.com/index.php?target=auth&amp;mode=recover_password">Forgot password? </a></div>
+</div><iframe id="pageFrame" name="pageFrame" style="display:none" src="./saved_resource.html"></iframe>
+
+
+<iframe src="javascript:void(0)" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; height: 0px; width: 0px; position: absolute; z-index: 10000;" src="./saved_resource(1).html"></iframe><iframe src="javascript:void(0)" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; height: 0px; width: 0px; position: absolute; z-index: 10000;" src="./saved_resource(2).html"></iframe><iframe src="javascript:void(0)" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; height: 0px; width: 0px; position: absolute; z-index: 10000;" src="./saved_resource(3).html"></iframe></body><script>window.FCKeditorAPI = {Version : "2.6.6",VersionBuild : "25427",Instances : window.FCKeditorAPI && window.FCKeditorAPI.Instances || {},GetInstance : function( name ){return this.Instances[ name ];},_FormSubmit : function(){for ( var name in FCKeditorAPI.Instances ){var oEditor = FCKeditorAPI.Instances[ name ] ;if ( oEditor.GetParentForm && oEditor.GetParentForm() == this )oEditor.UpdateLinkedField() ;}this._FCKOriginalSubmit() ;},_FunctionQueue	: window.FCKeditorAPI && window.FCKeditorAPI._FunctionQueue || {Functions : new Array(),IsRunning : false,Add : function( f ){this.Functions.push( f );if ( !this.IsRunning )this.StartNext();},StartNext : function(){var aQueue = this.Functions ;if ( aQueue.length > 0 ){this.IsRunning = true;aQueue[0].call();}else this.IsRunning = false;},Remove : function( f ){var aQueue = this.Functions;var i = 0, fFunc;while( (fFunc = aQueue[ i ]) ){if ( fFunc == f )aQueue.splice( i,1 );i++ ;}this.StartNext();}}}</script></html>

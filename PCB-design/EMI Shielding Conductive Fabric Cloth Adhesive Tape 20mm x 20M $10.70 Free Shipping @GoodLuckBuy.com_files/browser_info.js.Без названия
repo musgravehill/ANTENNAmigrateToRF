@@ -1,0 +1,107 @@
+//
+// $Id: browser_info.js 3618 2007-08-10 07:50:36Z seva $
+//
+
+browser_info = {
+	init: function () {
+		this.browser = this.search_string(this.data_browser) || lang.info_unknown;
+		this.version = this.search_version(navigator.userAgent) || this.search_version(navigator.appVersion) || lang.info_unknown;
+		this.os = this.search_string(this.data_os) || lang.info_unknown;
+	},
+	search_string: function (data) {
+		for (var i=0;i<data.length;i++) {
+			var data_string = data[i].string;
+			var data_prop = data[i].prop;
+			this.version_search_string = data[i].version_search || data[i].identity;
+			if (data_string) {
+				if (data_string.indexOf(data[i].manufacturer) != -1) {
+					return data[i].identity;
+				}
+			} else if (data_prop) {
+				return data[i].identity;
+			}
+		}
+		return false;
+	},
+	search_version: function (data_string) {
+		var index = data_string.indexOf(this.version_search_string);
+		if (index == -1) {
+			return;
+		}
+		return parseFloat(data_string.substring(index+this.version_search_string.length+1));
+	},
+	data_browser: [
+		{
+			string: navigator.userAgent,
+			manufacturer: "OmniWeb",
+			version_search: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			manufacturer: "Apple",
+			identity: "Safari"
+		},
+		{
+			string: null,
+			prop: window.opera,
+			identity: "Opera"
+		},
+		{
+			string: navigator.vendor,
+			manufacturer: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			manufacturer: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			manufacturer: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			manufacturer: "Camino",
+			identity: "Camino"
+		},
+		{	// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			manufacturer: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			manufacturer: "MSIE",
+			identity: "Internet Explorer",
+			version_search: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			manufacturer: "Gecko",
+			identity: "Mozilla",
+			version_search: "rv"
+		}
+	],
+	data_os : [
+		{
+			string: navigator.platform,
+			manufacturer: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			manufacturer: "Mac",
+			identity: "Mac"
+		},
+		{
+			string: navigator.platform,
+			manufacturer: "Linux",
+			identity: "Linux"
+		}
+	]
+};
+
+browser_info.init();

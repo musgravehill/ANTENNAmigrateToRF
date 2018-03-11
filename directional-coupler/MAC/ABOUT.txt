@@ -1,0 +1,26 @@
+MAC C3205-20 Microwave RF Directional Coupler 4-8GHz 20dB coupling +48dB dir
+
+Freq. Range 4-8 GHz
+Model  C3205-20
+Coupling dB 20 ±1.25
+Freq Sensitivity dB ±.75
+Insertion Loss dB  ExcludingCoupledPower 0.25   
+Insertion Loss dB  True 0.30
+Directivity dB 20
+VSWR  primary line 1.25
+VSWR secondary Line 1.25
+Power W Average Incident 50
+Power W Average Reflected 50
+Power W Peak  3K
+OUTline  7
+
+Coupling: The difference in power level measured at the coupled port relative to the power level applied at the input port (unless noted). Coupling tolerances are specified MAC Technology Inc. DEFINITIONS including frequency sensitivity and therefore indicate the maximum range for the measured coupling level.
+
+Frequency Sensitivity: The maximum variation in coupling level as measured over the specified frequency band.
+
+True Insertion Loss : The difference in the measured power level at the output port relative to the power level applied at the input port with all other ports properly terminated.
+Insertion Loss (Excluding Coupled Power): A calculated value indicating power dissipation within the device and not including power routed to other outputs.Typically given for reference only.
+Phase Balance: The maximum difference in output phase levels measured at any given frequency in the specified operating band.
+Isolation: The amount of power reduction measured at any output port with respect to the power level applied at any other output port with all other ports properly terminated.Note: The average power level (determined by duty cycle) of a peak power signal must not exceed the "Average Power" rating of the device.
+Directivity: The difference of coupled power levels obtained after applying power through the coupler in both the forward and reverse directions with all other portsproperly terminated.
+Average Power: The maximum calculated average or CW power level which may be applied at the input of a device without potentially resulting in damage to the device.Reverse Power: The maximum calculated average or CW power level which may be applied at the output of a device without potentially resulting in damage to the device.Peak Power: The maximum peak power level which may be applied at the input of a device without potentially resulting in damage to the device.Amplitude Balance: The maximum difference of output power levels measured at any given frequency in the specified operating band

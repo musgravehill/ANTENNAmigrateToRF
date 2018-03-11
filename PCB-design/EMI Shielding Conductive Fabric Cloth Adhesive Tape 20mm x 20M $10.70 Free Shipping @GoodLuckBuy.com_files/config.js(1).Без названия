@@ -1,0 +1,8 @@
+//
+// $Id: config.js 3358 2007-07-18 13:07:05Z zenuch $
+//
+
+if (!fn_inheritance['fn_add_to_cart']){
+	fn_inheritance['fn_add_to_cart'] = [];
+}
+fn_inheritance['fn_add_to_cart'] = fn_inheritance['fn_add_to_cart'].concat(['fn_simultaneous_add']);

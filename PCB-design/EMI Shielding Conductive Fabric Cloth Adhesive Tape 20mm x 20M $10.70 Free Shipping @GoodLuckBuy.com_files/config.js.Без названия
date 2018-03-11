@@ -1,0 +1,8 @@
+//
+// $Id: config.js 3358 2007-07-18 13:07:05Z zenuch $
+//
+
+if (!fn_inheritance['fn_check_exceptions']){
+	fn_inheritance['fn_check_exceptions'] = [];
+}
+fn_inheritance['fn_check_exceptions'] = fn_inheritance['fn_check_exceptions'].concat(['fn_update_product_points']);

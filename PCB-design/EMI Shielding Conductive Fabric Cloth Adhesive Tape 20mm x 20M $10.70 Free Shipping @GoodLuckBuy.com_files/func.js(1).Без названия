@@ -1,0 +1,34 @@
+//
+// $Id: func.js 3358 2007-07-18 13:07:05Z zenuch $
+//
+
+var scrollers_list = [];
+/* it is disabled temporarily
+function fn_simultaneous_add(product_id, ajax_add_to_cart)
+{
+	var form = document.forms['_product_details_form_'+product_id];
+	if (typeof(form) == 'undefined' || form == null) {
+		return false;
+	}
+	var forms = document.forms;
+	var elements, elm;
+	for (var i = 0; i < forms.length; i++) {
+		if (forms[i].name.indexOf('lm_simultaneous_add_form') > -1) {
+			if (typeof(forms[i].simultaneous_add) != 'undefined') {
+				if (forms[i].simultaneous_add.checked == true) {
+					elements = forms[i].elements;
+					for (var j = 0; j < elements.length; j++) {
+						if (forms[i].simultaneous_add != elements[j] && typeof(form[elements[j].name]) == 'undefined') {
+							elm = document.createElement('INPUT');
+							elm.type = 'hidden';
+							elm.name = elements[j].name;
+							elm.value = elements[j].value;
+							form.appendChild(elm);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+*/
