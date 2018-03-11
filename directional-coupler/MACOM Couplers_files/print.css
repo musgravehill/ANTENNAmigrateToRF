@@ -1,0 +1,28 @@
+.header,
+.needHelp,
+.footer,
+.world-map,
+.feedBack,
+.BrightcoveExperience {
+    display: none;
+}
+
+.bevelBox {
+    border: none;
+
+}
+
+.bevelBox .bevelCorners {
+    -webkit-clip-path: none;
+    clip-path: none;
+    background-image: none;
+    border: none;
+}
+
+.bodywrapper .contact h2 {
+    margin: 0;
+}
+
+.BrightcoveExperience {
+    display: none;
+}

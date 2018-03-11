@@ -1,0 +1,27 @@
+function piResponse() {
+piSetCookie('visitor_id297922', '60529460', 978);
+piSetCookie('visitor_id297922-hash', '91f34fb8219c9fd9ca2c0f26d315e91a97ad372341214686e5ecd69b8fd6e84b3697648ae4c2351d2826bfa11f5486fef15a77dd', 978);
+
+if (document.location.protocol != "https:" || (document.location.protocol == "https:" && false)) {
+var analytics_link = document.location.protocol + "//" + "www2.macom.com/analytics?";
+pi.tracker.visitor_id='60529460';
+
+pi.tracker.visitor_id_sign='91f34fb8219c9fd9ca2c0f26d315e91a97ad372341214686e5ecd69b8fd6e84b3697648ae4c2351d2826bfa11f5486fef15a77dd';
+
+var variables = 'conly=true';
+for (property in pi.tracker) {
+	variables += "&"+property+"="+pi.tracker[property];
+}
+var headID = document.getElementsByTagName("head")[0];
+piScriptObj[piScriptNum] = document.createElement('script');
+piScriptObj[piScriptNum].type = 'text/javascript';
+piScriptObj[piScriptNum].src = analytics_link + variables;
+headID.appendChild(piScriptObj[piScriptNum]);
+piScriptObj[piScriptNum].onload = function() { return; }
+}
+}
+piResponse();
+
+
+
+
