@@ -1,0 +1,111 @@
+/*--------------------------------- LINKS / CODE ----------------------------------------*/
+a {
+color:#222;
+transition: color 0.2s linear 0s;
+/* Firefox 4 */
+-moz-transition: color 0.2s linear 0s;
+/* Safari and Chrome */
+-webkit-transition: color 0.2s linear 0s;
+/* Opera */
+-o-transition: color 0.2s linear 0s;
+}
+a:hover,em,code {
+color:#3498db;
+}
+
+span.ico:hover { color: #fff; transform: rotate(360deg); }
+
+.tp-caption.big_color{
+background-color:#3498db;	
+/*letter-spacing: -1.5px;	*/									
+}
+
+/*--------------------------------- MOSAIC ----------------------------------------*/
+
+#main .sprocket-mosaic .sprocket-mosaic-order ul li, #main .sprocket-mosaic .sprocket-mosaic-order ul li, .sprocket-mosaic .sprocket-mosaic-order li, .sprocket-mosaic .sprocket-mosaic-order li {
+background-color:#3498db;
+color:#fff!important;
+}
+.sprocket-mosaic h2 {
+background-color:#3498db;
+}
+.sprocket-tabs-nav {
+background: #3498db;
+}
+
+/*--------------------------------- TOOLBAR ----------------------------------------*/
+
+.jp-toolbar-outer.jphide {opacity:0;}
+
+
+/*--------------------------------- BUTTON ----------------------------------------*/
+button, a.button-default,a.button-primary, a.button-small {
+background-color:#3498db;
+color:#fff!important;
+padding:6px 10px;
+}
+a.button-default:hover,a.button-primary:hover, a.button-small:hover {
+background-color:#1abc9c;
+color:#fff!important;
+}
+/*--------------------------------- MODULE ----------------------------------------*/
+.mod-clean3 h3 {
+background:#3498db;
+color:#FFF;
+padding:8px 15px;
+}
+.mod-border-left {
+border-left:4px solid #3498db!important;
+}
+.mod-border-top {
+border-top:4px solid #3498db!important;
+}
+.mod-border-right {
+border-right:4px solid #3498db!important;
+}
+.mod-border-bottom {
+border-bottom:4px solid #3498db!important;
+}
+
+.mod-color {
+background-color:#3498db!important;
+color:#FFF;
+}
+.mod-color a:link,.mod-color a:visited {
+color:#fff;
+}
+
+.mod-color a:hover {
+text-decoration:underline;
+}
+
+.mod-color h1,.mod-color h2,.mod-color h3,.mod-color h4,.mod-color h5,.mod-color h6 {
+color:#fff;
+}
+
+.mod-color h3 {
+color:#FFF;
+padding:8px 0;
+}
+.mod-color span.color {
+color:#fff;
+}
+.mod-color button {
+color:#3498db!important;
+background-color:#FFFFFF;
+}
+
+/*--------------------------------------------- MENU -------------------------------------------------------*/
+.menu-dropdown li.active .level1 {
+border-bottom:3px solid #3498db;
+}
+.menu-dropdown a.level2:hover,
+.menu-dropdown a.level3:hover,
+.menu-sidebar a:hover > span,
+.menu-sidebar span:hover > span {
+color:#3498db;
+}
+span.ico {
+background: none repeat scroll 0 0 #3498db;
+}
+
