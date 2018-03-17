@@ -1,0 +1,642 @@
+/*防止连续提交 START*/
+var isCan=true;
+
+function setCanSend(bool){
+    isCan=bool;
+}
+
+function getCanSend(){
+    return isCan;
+}
+/*防止连续提交 END*/
+
+//增加投票
+function QA_addVote(obj){
+    QA_questionVoteItem(obj,1);
+}
+
+//减少投票
+function QA_reduceVote(obj){
+    QA_questionVoteItem(obj,-1);
+}
+
+//投票处理
+function QA_questionVoteItem(obj,type)
+{
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var o = $(obj);
+    var num = o.parent().data("num");
+    var qid = o.parent().data("qid");
+    var QAtocken=$("#QAtocken").val();
+    var QAdisplay=$("#QAdisplay").val();
+    var ajaxUrl='';
+    if(o.hasClass('active')){
+        setCanSend(true);
+        return false;
+    }
+    if(type==-1){
+        num--;
+        ajaxUrl=homeUrl+'ajax/reduceQaVote/'+qid+'.html';
+    }
+    else{
+        num++;
+        ajaxUrl=homeUrl+'ajax/addQaVote/'+qid+'.html';
+    }
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'QAtocken':QAtocken,'QAdisplay':QAdisplay},
+        dataType:'json',
+        success:function(res){
+            setCanSend(true);
+            if(res.code==-1){
+                login();
+            }
+            else{
+                o.parent().find('span').removeClass("active");
+                o.addClass("active");
+                var num_format=votes_format(num);
+                o.siblings(".num").html(num_format);
+                o.parent().data("num",num);
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+}
+
+//提交问题
+function QA_submitQuestion(){
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var _contentObj = $("#question_content");
+    var content   = QA_contentFilter(_contentObj.val());
+    var pid = _contentObj.data("pid");
+    var QAdisplay=$("#QAdisplay").val();
+    var ajaxUrl=homeUrl+'ajax/checkQuestion/'+pid+'.html';
+
+    var validate = true;
+    delInputNotice(_contentObj);
+    if(content.length<2 || content.length>1000){
+        setCanSend(true);
+        inputNotice(_contentObj,_contentObj.attr('msg'));
+        validate = false;
+    }
+    if(!validate) return false;
+
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'question_content':content,'QAdisplay':QAdisplay},
+        dataType:'json',
+        success:function(res){
+            if(!res.isLogin){
+                login();
+            }
+            else if(res.hasError){
+                setCanSend(true);
+                inputNotice(_contentObj,res.message);
+            }
+            else{
+                $("#questionForm").submit();
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+}
+
+//提交答案
+function QA_submitAnswer(){
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var _contentObj = $("#answer_content");
+    var content   = QA_contentFilter(_contentObj.val());
+    var qid = _contentObj.data("qid");
+    var ajaxUrl=homeUrl+'ajax/checkAnswer/'+qid+'.html';
+    var validate = true;
+    delInputNotice(_contentObj);
+    if(content.length<2 || content.length>1000){
+        setCanSend(true);
+        inputNotice(_contentObj,_contentObj.attr('msg'));
+        validate = false;
+    }
+    if(!validate) return false;
+
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'answer_content':content},
+        dataType:'json',
+        success:function(res){
+            if(!res.isLogin){
+                login();
+            }
+            else if(res.hasError){
+                setCanSend(true);
+                inputNotice(_contentObj,res.message);
+            }
+            else{
+                $("#answerForm").submit();
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+}
+
+//内容过滤验证
+function QA_contentFilter(content){
+    var start_ptn = /<\/?[^>]*>/g;
+    var end_ptn = /[ | ]*\n/g;
+    var space_ptn = /&nbsp;/ig;
+    var text=content.replace(start_ptn,"");
+        text=content.replace(end_ptn,"");
+        text=content.replace(space_ptn,"");
+    return text;
+}
+
+//展开更多
+function QA_seeMoreBtn1(obj){
+    var o=$(obj).parent();
+    var oParent = o.closest('.answer_text');
+    var len = oParent.find('.answer_list').length;
+    if(len<=1)return;
+    var index = parseInt(o.attr('data-index'))+2;
+    var index2=index*2;
+    o.attr('data-index',index);
+    oParent.find('.answer_list:lt('+index2+')').show();
+    o.siblings(".view_hide").show();
+    if(index2>=len){
+        o.siblings(".view_all").show();
+        o.hide();
+    }
+    askquestion_cV2();
+}
+//收缩更多
+function QA_seeMoreBtn2(obj){
+    var o=$(obj).parent();
+    var oParent = o.closest('.answer_text');
+    oParent.find('.answer_list').hide();
+    oParent.find('.answer_list:lt(1)').show();
+    o.hide().siblings(".view_all").hide().siblings(".view_more").attr('data-index',0).show();
+    askquestion_cV2();
+}
+
+//展开comment
+function QA_comment(obj){
+    var o = $(obj);
+    if (o.hasClass('isopen')) {
+        o.removeClass('isopen');
+        o.parents('.comments_item').siblings('.see_comments').hide();
+    } else {
+        //加载comments
+        var page=1;
+        var aid=o.data('aid');
+        var content=$("#comment_ul_"+aid).html();
+        if(content==''){
+            initObject.QA_loadComments(aid,page);
+        }
+        o.addClass('isopen');
+        o.parents('.comments_item').siblings('.see_comments').stop(true).fadeIn(300);
+    }
+}
+
+//提交comment
+function QA_submitAnswerComment(obj){
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var o=$(obj);
+    var aid=o.data("aid");
+    var _contentObj=$("#comment_content_"+aid);
+    var num=$("#comment_num_"+aid).text();
+    var comment_content=QA_contentFilter(_contentObj.val());
+    var validate = true;
+    delInputNotice(_contentObj);
+    if(comment_content.length<2 || comment_content.length>1000){
+        inputNotice(_contentObj,_contentObj.attr('msg'));
+        validate = false;
+        setCanSend(true);
+    }
+    if(!validate){
+        return false;
+    }
+    var ajaxUrl=homeUrl+'ajax/submitAnswerComment/'+aid+'.html';
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'comment_content':comment_content},
+        dataType:'json',
+        success:function(res){
+            setCanSend(true);
+            if(!res.isLogin){
+                login();
+            }
+            else if(res.hasError){
+                inputNotice(_contentObj,res.message);
+            }
+            else{
+                $("#comment_content_"+aid).val('');
+                $("#comment_ul_"+aid).html(res.comments);
+                num=parseInt(num)+parseInt(res.increase);
+                $("#comment_num_"+aid).text(num);
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+}
+
+//点击反馈
+function QA_feedback(obj,is_helpful){
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var o = $(obj);
+    var aid=o.data('aid');
+    var ajaxUrl=homeUrl+'ajax/answerFeedback/'+aid+'.html';
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'is_helpful':is_helpful},
+        dataType:'json',
+        success:function(res){
+            setCanSend(true);
+            if(res.code==-1){
+                login();
+            }else{
+                o.hide();
+                o.siblings('a').hide();
+                o.siblings('em.em_before').hide();
+                o.siblings('em.em_after').stop(true).fadeIn(300);
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+
+}
+
+//see more
+function QA_seeMore(obj){
+    var o= $(obj);
+    o.hide();
+    o.siblings(".ellipsis").hide();
+    o.siblings(".see_more_text").show();
+    o.siblings(".see_less").show();
+}
+
+//see less
+function QA_seeLess(obj){
+    var o= $(obj);
+    o.hide();
+    o.siblings(".see_more_text").hide();
+    o.siblings(".see_more").show();
+    o.siblings(".ellipsis").show();
+}
+
+//问题搜索
+function QA_keywordQuestion(obj,e){
+    var keycode=e.keyCode;
+    if(keycode==13){
+        return false;
+    }
+    var o=$(obj);
+    delInputNotice(o);
+    var keyword=o.val();
+    var html='';
+    $(".vote_result").remove();
+    var iqf=$(".item_QAproduct .qa_search .focus_text");
+    if(iqf.attr('data-index')!=1){
+        iqf.attr('data-index',1).css('display','block');
+    }
+    if(keyword.length<1){
+        $(".searchResult .resultArea").empty();
+        $("#question_list").show();
+        $(".searchResult .resultArea").hide();
+        $(".searchResult .creatAnswer").hide();
+        iqf.css('display', 'none');
+        iqf.attr('data-index',0);
+    }
+    else{
+        $("#question_list").hide();
+        $(".searchResult .resultArea").show();
+        $(".searchResult .creatAnswer").show();
+        var pid =o.data('pid');
+        var ajaxUrl=homeUrl+'ajax/keywordQuestion/'+pid+'.html';
+        $.ajax({
+            type : 'get',
+            url:  ajaxUrl,
+            data: {'keyword':keyword},
+            success:function(res){
+                $(".searchResult .resultArea").html(res);
+                iqf.css('display', 'none');
+            },
+            error:function(){
+                $(".searchResult .resultArea").html('');
+                iqf.css('display', 'none');
+            }
+        });
+    }
+}
+
+/*QC投票 START*/
+//增加投票
+function QC_addVote(obj){
+    QC_questionVoteItem(obj,1);
+}
+
+//减少投票
+function QC_reduceVote(obj){
+    QC_questionVoteItem(obj,-1);
+}
+
+//投票处理
+function QC_questionVoteItem(obj,type)
+{
+    if(!getCanSend()) return false;
+    setCanSend(false);
+    var o = $(obj);
+    var num = o.parent().data("num");
+    var tid = o.parent().data("tid");
+    var QCtocken=$("#QAtocken").val();//利用QA的tocken
+    var QAdisplay=$("#QAdisplay").val();
+    var ajaxUrl='';
+    if(o.hasClass('active')){
+        setCanSend(true);
+        return false;
+    }
+    if(type==-1){
+        num--;
+        ajaxUrl=homeUrl+'ajax/reduceQcVote/'+tid+'.html';
+    }
+    else{
+        num++;
+        ajaxUrl=homeUrl+'ajax/addQcVote/'+tid+'.html';
+    }
+    $.ajax({
+        type: 'post',
+        url:  ajaxUrl,
+        data: {'QCtocken':QCtocken,'QAdisplay':QAdisplay},
+        dataType:'json',
+        success:function(res){
+            setCanSend(true);
+            if(res.code==-1){
+                login();
+            }
+            else{
+                o.parent().find('span').removeClass("active");
+                o.addClass("active");
+                var num_format=votes_format(num);
+                o.siblings(".num").html(num_format);
+                o.parent().data("num",num);
+            }
+        },
+        error:function(){
+            setCanSend(true);
+        }
+    });
+}
+/*QC投票 END*/
+
+function votes_format(num){
+    if(parseInt(num)>=1000){
+        var prefix=num==1000?'k':'k+';
+        num=(num/1000).toFixed(1)+prefix;
+    }
+    return num;
+}
+
+function askquestion_cV2(){
+    $('.qa_answerList ol li').each(function(i){
+       this.onclick=function(){
+           var ul_height = $(".qa_answerList ul li").eq(i).outerHeight();
+           $(".qa_answerList ul").css('height',ul_height + 10);
+       };
+
+
+       if ($(this).hasClass('active')) {
+            $(".qa_answerList ul").css('height',$(".qa_answerList ul li").eq(i).outerHeight() + 10);
+       }
+    });
+};
+
+
+//enter 不提交
+$("#questionForm").keypress(function(e){
+    var keycode=e.keyCode;
+    if(keycode==13){
+        return false;
+    }
+    return true;
+})
+
+//3秒后提示语消失
+$(document).ready(function(){
+    setTimeout(function(){
+        $(".isShowMessage").fadeOut(1000).removeClass("isShowMessage");
+    },3000);
+})
+
+
+// 2.0
+var initObject ={
+
+    /*删除问题*/
+    QA_delQuestion:function(qid, callback){
+        var ajaxUrl='ajax/delQaQuestion/'+qid+'.html';
+        var code=0;
+        $.ajax({
+            type: 'post',
+            url:  ajaxUrl,
+            data: {'qid':qid},
+            dataType:'json',
+            async : false,
+            success:function(res){
+                code= res.code;
+                callback && callback();
+            }
+        });
+        return code;
+    },
+
+    /*删除答案*/
+    QA_delAnswer:function(aid, callback){
+        var ajaxUrl='ajax/delQaAnswer/'+aid+'.html';
+        var code=0;
+        $.ajax({
+            type: 'post',
+            url:  ajaxUrl,
+            data: {'aid':aid},
+            dataType:'json',
+            async : false,
+            success:function(res){
+                code= res.code;
+                callback && callback();
+            }
+        });
+        return code;
+    },
+
+    /*删除失败提示*/
+    QA_delError:function(obj){
+        var o=obj.parents('.confirm_delete').find(".del_text");
+            o.addClass("del_fail");
+        var error_msg=o.data('error_msg');
+            o.html('<i></i>'+error_msg);
+    },
+
+    /*取消删除提示*/
+    QA_delCancel:function(obj){
+        var o=obj.parents('.confirm_delete').find(".del_text");
+            o.removeClass("del_fail");
+        var confire_msg=o.data('confire_msg');
+            o.html('<i></i>'+confire_msg); 
+            obj.parents('.confirm_delete').hide(); 
+    },
+
+    /*加载comments*/
+    QA_loadComments:function(aid,page){
+        if(aid=='') return false;
+        var ajaxUrl='ajax/loadQaComments/'+aid+'.html';
+        $.ajax({
+            type: 'post',
+            url:  ajaxUrl,
+            data: {'page':page},
+            dataType:'html',
+            success:function(res){
+                $("#comment_ul_"+aid).html(res);
+            }
+        });
+    },
+    /*加载comments*/
+    QA_loadDefaultComments:function(aid){
+        if(aid!=''){
+            this.QA_loadComments(aid,1);
+        }
+    }
+}
+
+$(function(){
+
+    /*answer list*/
+    $(document).on('click', '.answer_bd .comments .helpful a.delete', function(){
+        $(this).hide().parents('.comments_item').siblings('.confirm_delete').show();
+        $(this).parents('.comments_item').siblings('.confirm_delete').find('.del_btn').css('width', $(this).hide().parents('.comments_item').siblings('.confirm_delete').find('.del_text').outerWidth());
+    })
+    $(document).on('click', '.comments .del_btn .delBtn', function(){
+        var aid=$(this).data('aid');
+        var code=initObject.QA_delAnswer(aid,function(){
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+        });
+        if(code==1){
+            $(this).parents('.isDelete').hide().siblings('.del_success').show();
+            $(this).parents('.answer_bd_list').find('.text').hide().siblings('.date').hide().siblings('.comments_box').find('.comments_item').hide().siblings('.see_comments').hide();
+        }else{
+            var obj=$(this);
+            initObject.QA_delError(obj);
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+            window.location.reload();
+        }
+    })
+    $(document).on('click', '.comments .del_btn .cancel', function(){
+        var obj=$(this);
+            initObject.QA_delCancel(obj);
+            $(this).parents('.comments').find('.comments_item a.delete').show();
+    })
+
+    /* question info*/
+    $(document).on('click', '.item_AnswerSuccess .successContent .right .del', function(){
+        $(this).hide().parents('.right').find('.confirm_delete').show();
+        $(this).parents('.right').find('.confirm_delete').find('.del_btn').css('width', $(this).parents('.right').find('.confirm_delete').find('.del_text').outerWidth());
+    })
+    $(document).on('click', '.item_AnswerSuccess .right .del_btn .delBtn', function(){
+        var qid=$(this).data('qid');
+        var code=initObject.QA_delQuestion(qid, function(){
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+        });
+        if(code==1){
+            $(this).parents('.isDelete').hide().siblings('.del_success').show();
+            $(this).parents('.confirm_delete').siblings('.text_1').hide();
+        }else{
+            var obj=$(this);
+            initObject.QA_delError(obj);
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+            window.location.reload();
+        }
+    })
+    $(document).on('click', '.item_AnswerSuccess .right .del_btn .cancel', function(){
+        var obj=$(this);
+            initObject.QA_delCancel(obj);
+            $(this).parents('.right').find('.del').show();
+    })
+
+    /*answer info*/
+    $(document).on('click', '.item_AnswerSuccess .now_text .del', function(){
+        $(this).hide().parents('.now_text').find('.confirm_delete').show();
+        $(this).parents('.now_text').find('.confirm_delete').find('.del_btn').css('width', $(this).parents('.now_text').find('.confirm_delete').find('.del_text').outerWidth());
+    })
+    $(document).on('click', '.item_AnswerSuccess .now_text .del_btn .delBtn', function(){
+        var aid=$(this).data('aid');
+        var code=initObject.QA_delAnswer(aid, function(){
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+        });
+        if(code==1){
+            $(this).parents('.isDelete').hide().siblings('.del_success').show();
+            $(this).parents('.now_text').find('.text_0').hide();
+        }
+        else{
+            var obj=$(this);
+                initObject.QA_delError(obj);
+                $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+                window.location.reload();
+        }
+    })
+    $(document).on('click', '.item_AnswerSuccess .now_text .del_btn .cancel', function(){
+        var obj=$(this);
+            initObject.QA_delCancel(obj);
+            $(this).parents('.now_text').find('.del').show();
+    });
+
+    $(document).on('click', '.answer_hd_right .user_time .del', function(){
+        $(this).hide().parents('.user_time').siblings('.confirm_delete').show();
+        $(this).parents('.answer_hd_right').find('.confirm_delete').find('.del_btn').css('width', $(this).parents('.answer_hd_right').find('.confirm_delete').find('.del_text').outerWidth());
+    });
+
+    /*answer list question*/
+    $(document).on('click', '.answer_hd_right .del_btn .delBtn', function(){
+        var qid=$(this).data('qid');
+        var code=initObject.QA_delQuestion(qid, function(){
+            $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+        });
+        if(code==1){
+            $(this).parents('.isDelete').hide().siblings('.del_success').show();
+            $(this).parents('.answer_hd_right').find('h2').hide().siblings('.user_time').hide().siblings('.describe').hide();
+        }
+        else{
+            var obj=$(this);
+                initObject.QA_delError(obj);
+                $(this).parents('.del_btn').css('width', $(this).parents('.del_btn').siblings('.del_text_box').find('.del_text').outerWidth());
+                window.location.reload();
+        }
+    });
+    $(document).on('click', '.answer_hd_right .del_btn .cancel', function(){
+        var obj=$(this);
+            initObject.QA_delCancel(obj);
+            $(this).parents('.answer_hd_right').find('.user_time .del').show();
+    });
+
+    /*load comments*/
+    $(document).on('click', '.comments_list_page .page_box_num a', function(){
+        var page=parseInt($(this).data('page'));
+        if(page>0){
+            var aid=$(this).parents('.comments_list_page').data('aid');
+            initObject.QA_loadComments(aid,page);
+        }
+    })
+})

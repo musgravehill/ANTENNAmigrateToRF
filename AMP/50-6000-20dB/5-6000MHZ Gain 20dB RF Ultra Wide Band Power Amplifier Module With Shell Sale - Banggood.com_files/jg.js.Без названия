@@ -1,0 +1,343 @@
+//
+var JGData = {
+	//需要发送给服务器的参数集合
+	C:{},
+	//class过滤词
+	classfiter:['_20161124','_20161212','_170504','_20170111','_20161213','_20161216','_20161217','_20170321','_170328','_170329','_170330','_170627','_1101','_20170105','_170724','_170807','_170804','_170801','_170719','_170720','_170721','_170722','_170815','_170621','_170821','_170831','_170901','_170717','_170718','_170906','_170808','_170921','_170412','_171016','_171012','_171017','_171020','_171031','_171026','_171101','_171108', '_171110','_171113','_171120','_171124','_171205','_171107','_171214','_171215','_171228','_171221','_171225', '_180106','_180112','_180117','_171115','_080129','_180201','_180208','_180308','_180115', '_180223'],
+	//点击hover
+	actiontype:['click','hover'],
+	//用户中心页面组
+	accounttype:['orderList','wishList','coupons','myPreorders','points','accountSettings','affiliate','referrals','giftCard','dropship','addressList','tracking','community'],
+	//用户中心过滤词
+	accountfiter:['t%3DordersList','t%3Dwishlist','t%3DmyCoupons','t%3DpreOrders','t%3Dpoints','t%3Dsetting','ffiliate','t%3Dreferrals','t%3Dgiftcard','t%3Ddropship','t%3Daddress','t%3DmsgList','t%3Dposts','t%3Dmsn','t%3DmyReview'],
+	//行为标示
+	type:['home','category','search','prodcut','brand','orderList','newArrival','flashDeals','preOrder','shoppingCart','checkoutSuccess','addressList','wishList','coupons','myPreorders','points','accountSettings','brandStreet','login','affiliate','referrals','giftCard','dropship','community','tracking','helpCenter','wholesale'],
+	//分类剩余筛选
+	categoryfiter:['arrivals','%2Fsearch%2F','%2Fbuy%2F','%2FFlashdeals','2FDeals_','%2Fpreorder','%2Fbrands','login','help_center','Wholesale','_hl','%2Fshopping_cart'],
+	//分类剩余筛选值
+	categoryfitertype:['newArrival','search','search','flashDeals','flashDeals','preOrder','brand','login','helpCenter','wholesale','helpCenter','shoppingCart'],
+	//会话有效期24分钟
+	tm24:1440000,
+	//用户标示有效期1年
+	ty1:31104000000,
+	//上级url
+	referer:document.referrer.replace(/\$/g,""),
+	//当前url
+	visit_page:document.location.href,
+	//hostname
+	site:document.location.host,
+	//domain
+	domain:document.domain.split(".")[1],
+	//cookie写入函数，s：cookie名称，g：要写入的值，p：保存的域名，l：有效期
+	Wv:function(s,g,p,l){
+		s=s+"="+g+"; path=/; ";
+		l&&(s+="expires="+(new Date(new Date().getTime()+l)).toGMTString()+"; ");
+		p&&(s+="domain="+p+";");
+		document.cookie=s
+	},
+	//cookie读取函数，y：cookie名称
+	Vv:function(y){
+		for(var g=[],t=document.cookie.split(";"),l=RegExp("^\\s*"+y+"=\\s*(.*?)\\s*$"),s=0;s<t.length;s++){
+			var p=t[s]["match"](l);p&&g.push(p[1])
+		}
+		return g
+	},
+	//获取url上的query参数,l:参数名，p：url的search
+	Gp:function(l,p){
+		var s=new RegExp(".*(?:^|&|[?]|[/])"+l+"=([^&]*).*$");var g=s.exec(p);return g?encodeURIComponent(g[1]):""
+	},
+	//获取地址栏URL的参数值,n: 标签名
+	Gup:function(n){
+		var s = new RegExp("(^|&)" + n + "=([^&]*)(&|$)");var g = window.location.search.substr(1).match(s);
+		if(g != null){return unescape(g[2])};
+	},
+	//获取产品页面的产品id，l：url,h:url的host
+	Gpid:function(l,h){
+		var s = h == 'us.banggood.com' && new RegExp(".*-wp-.*-([0-9]*)\\.html")
+		|| h == 'eu.banggood.com' && new RegExp(".*-wp-.*-([0-9]*)\\.html")
+		|| new RegExp(".*-p-([0-9]*)\\.html");
+		var g=s.exec(l);
+		return g ? encodeURIComponent(g[1]) : 0
+	},
+	//获取分类页的分类id，l：url,h:url的host
+	Gcid:function(l,h){
+		var s=h=='us.banggood.com'&&new RegExp(".*-c-[a-zA-Z]{2,3}-([0-9]*)[-.]")
+		||h=='eu.banggood.com'&&new RegExp(".*-c-[a-zA-Z]{2,3}-([0-9]*)[-.]")
+		||new RegExp(".*-c-([0-9]*)[-.]");
+		var g=s.exec(l);
+		return g?encodeURIComponent(g[1]):0
+	},
+	//获取品牌页的品牌id，l：url,h:url的host
+	Gbrand:function(l,h){
+		var s=new RegExp(".*-b-([0-9]*)\\.html");
+		var g=s.exec(l);
+		return g?encodeURIComponent(g[1]):0
+	},
+	//获取关键词，l：url,h:url的host
+	Gkeyword:function(l,h){
+		var s=h=='us.banggood.com'&&new RegExp("\\/wh_search\\/[a-zA-Z]{2,3}\\/([^/]*)[.\]")
+		||h=='eu.banggood.com'&&new RegExp("\\/wh_search\\/[a-zA-Z]{2,3}\\/([^/]*)[.\]")
+		||new RegExp("\\/search\\/([^/]*)[.\]");
+		var g=s.exec(l);return g?encodeURIComponent(g[1]):""
+	},
+	//解析上级url
+	parseRP:function(referer){
+		var a=document.createElement("a");
+		a.href=referer;
+		this.C.referer_group = '';
+		var r_categories = this.Gcid(a.pathname,a.hostname);
+		var r_products = this.Gpid(a.pathname,a.hostname);
+		var r_brandid = this.Gbrand(a.pathname,a.hostname);
+		var rStatus = this.C.referer.indexOf('.html')<0;
+		var rkeyfiter = 'banggood.com%2F';
+		var rkeyfiterlength = rkeyfiter.length;
+		var rfirstIndex = this.C.referer.indexOf('banggood.com%2F');
+		if(this.C.referer_group.substr(rfirstIndex+rkeyfiterlength,1)==''){
+			this.C.referer_group = this.type[0];
+		}
+		if(r_categories>0){
+			this.C.referer_group = this.type[1];
+		}
+
+		if(r_products>0){
+			this.C.referer_group = this.type[3];
+		}
+		if(r_brandid>0){
+			this.C.referer_group = this.type[4];
+		}
+
+		for(var rpi=0; rpi<this.accountfiter.length;rpi++){
+			if(rStatus && this.C.referer_group.indexOf(this.accountfiter[rpi])>-1){
+				if(this.accountfiter[rpi]=='t%3Dmsn' || this.accountfiter[rpi]=='t%3DmyReview'){
+					this.C.referer_group = this.accounttype[12];
+				}else{
+					this.C.referer_group = this.accounttype[rpi];
+				}
+			}
+		}
+
+		for(var ri = 0;ri<this.categoryfiter.length;ri++){
+			if(this.C.referer.indexOf(this.categoryfiter[ri])>-1){
+				this.C.referer_group = this.categoryfitertype[ri];
+			}
+		}
+	},
+	//解析当前url
+	parseVP:function(w){
+		var categories_id = this.Gcid(w.pathname,w.hostname);
+		var products_id = this.Gpid(w.pathname,w.hostname);
+		var brand_id = this.Gbrand(w.pathname,w.hostname);
+		var pStatus = this.C.visit_page.indexOf('.html')<0;
+		var keyfiter = 'banggood.com%2F';
+		var keyfiterlength = keyfiter.length;
+		var firstIndex = this.C.visit_page.indexOf('banggood.com%2F');
+		this.C.visit_group = '';
+		if(this.C.visit_page.substr(firstIndex+keyfiterlength,1)==''){
+			this.C.visit_group = this.type[0];
+		}
+		if(categories_id>0){
+			this.C.visit_group = this.type[1];
+		}
+		if(products_id>0){
+			this.C.visit_group = this.type[3];
+		}
+		if(brand_id>0){
+			this.C.visit_group = this.type[4];
+		}
+
+		for(var pi=0; pi<this.accountfiter.length;pi++){
+			if(pStatus && this.C.visit_page.indexOf(this.accountfiter[pi])>-1){
+				if(this.accountfiter[pi]=='t%3Dmsn' || this.accountfiter[pi]=='t%3DmyReview'){
+					this.C.visit_group = this.accounttype[12];
+				}else{
+					this.C.visit_group = this.accounttype[pi];
+				}
+			}
+		}
+
+		for(var i = 0;i<this.categoryfiter.length;i++){
+			if(this.C.visit_page.indexOf(this.categoryfiter[i])>-1){
+				this.C.visit_group = this.categoryfitertype[i];
+			}
+		}
+
+
+
+		this.C.info={};
+		this.C.point_id='';
+		this.C.order_id='';
+		this.C.label='';
+		this.C.action = '';
+		/*this.C.field1 = '';
+		this.C.number1 = '';
+		this.C.number2 = '';
+		this.C.number3 = '';
+		this.C.number4 = '';
+		this.C.number5 = '';
+		this.C.string1 = '';
+		this.C.string2 = '';
+		this.C.string3 = '';
+		this.C.text1 = '';
+		this.C.text2 = '';
+		this.C.text3 = '';*/
+	},
+
+	init: function(){
+		this.C.customers_id=this.Vv('dc_cid')[0]||0;
+		this.C.site=this.site;
+		this.C.domain=this.domain;
+		var u=this.Vv('rec_uid'),u1=u.length>0?u[0].split('|'):[],
+			s=this.Vv('__bguser'),s1=s.length>0?s[0].split('|'):[];
+		if(u1.length>0){
+			this.C.user_id=u1[0]||0;
+			this.C.ft=u1[1]||0;
+		}
+		this.C.sess_id=s1.length>0?s1[1]:0;
+		if(this.referer){
+			this.C.referer=encodeURIComponent(this.referer);
+			this.parseRP(this.referer);
+		}else{
+			this.C.referer_group = '';
+			this.C.referer = '';
+		}
+		this.C.visit_page=encodeURIComponent(this.visit_page);
+		this.parseVP(document.location);
+		this.sendRec();
+
+		var Redefinename = this.JGCheckClassName;
+
+		this.C.info = JSON.stringify(this.C.info);
+		$(document).on('click','a,dt,img,span,input,label,li,ul,div,i,b,strong,s,h3,u,h4,button',function(event){
+			var text = $(this).get(0).tagName;
+			var clickname = $(this).attr('class');
+			var arr = [];
+			arr.push(clickname);
+			if(text=='A' && text.length==1){
+				if($(this).hasClass('clickandsend')){
+					Redefinename(JGData,arr,3,$(this));
+				}else{
+					Redefinename(JGData,arr,1,$(this));
+				}
+			}else{
+				Redefinename(JGData,arr,3,$(this));
+			}
+		});
+	},
+
+	CheckSearchkeyWordsBtn: function(){
+		this.C.info = {};
+		var keyword = document.querySelector("input[name='keywords'][type='text']").value,
+			keywordTypeList = ['recommendkeyword','activity','userkeyword'],
+			hinttagname = document.querySelector("input[name='hint_search_tagname']").value,
+			keyType = '';
+		if(window.localStorage.getItem("_RecKey") != null && window.localStorage.getItem("_RecKey") == keyword){
+			keyType = keywordTypeList[0];
+		}else{
+			if(hinttagname.length > 0 && keyword == hinttagname){
+				keyType = keywordTypeList[1];
+			}else{
+				keyType = keywordTypeList[2];
+			}
+		}
+		this.C.info = {
+			'string1':keyword,
+			'string2':keyType,
+		};
+		this.C.info = JSON.stringify(this.C.info);
+		return this.C.info;
+	},
+	JGCheckClassName: function(obj,str,num,_this,directID){
+		var result = str[0];
+		var point_id ='';
+		if(_this == ''){
+			point_id = directID;
+			obj.C.label=str;
+			obj.C.action=obj.actiontype[num];
+			obj.C.point_id=point_id;
+			obj.sendRec(1);
+		}else{
+			point_id = _this.attr('data-point-id');
+			if(typeof(result) != 'undefined' && typeof(point_id) != 'undefined'){
+				var arrpoint_id = point_id.split('|');
+				classname = result.split(' ');
+				mypoint_id = point_id;
+				for(var i=0;i<classname.length;i++){
+					for(var j=0;j<obj.classfiter.length;j++){
+						if(classname[i].indexOf(obj.classfiter[j])>-1){
+							obj.C.label=classname[i];
+							if(obj.C.label == 'top_search_button_20161212' || obj.C.label == 'top_search_button_170412'){
+								obj.CheckSearchkeyWordsBtn();								
+							}
+							if(num==2){
+								if(classname.indexOf('homehover')>-1){
+									obj.C.action=obj.actiontype[1];
+									if(arrpoint_id.length==2){
+										mypoint_id = arrpoint_id[1];
+									}
+									obj.C.point_id=mypoint_id;
+									obj.sendRec(1);
+								}
+							}else{
+								if(!_this.hasClass('nocountclick')){
+									obj.C.action=obj.actiontype[0];
+									if(arrpoint_id.length==2){
+										mypoint_id = arrpoint_id[0];
+									}
+									obj.C.point_id=mypoint_id;
+									if(num==3){
+										obj.sendRec(1);
+									}else{
+										if(_this.parent().hasClass('hotcate_list')){
+											obj.sendRec(1);
+										}else{
+											obj.sendRec(2);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+
+	//数据发送接口
+	sendRec:function(num){
+		var JGstorage=window.localStorage;
+		var s='';
+		for(var k in this.C){
+			s +='&'+k+'='+this.C[k];
+		}
+		if(typeof(num) != 'undefined'){
+			if(num==1){
+				var g=("https:"==document.location.protocol?"https://dc":"http://dc")+".banggood.com/index.php?com=sess&t=record"+s+"&callback=?";
+				$.getJSON(g,function(){});
+			}else if(num==2){
+				JGstorage.setItem("JGAutoRecord",s);
+			}
+		}else{
+			if(JGstorage.getItem("JGAutoRecord") != null){
+			var autostorage=("https:"==document.location.protocol?"https://dc":"http://dc")+".banggood.com/index.php?com=sess&t=record"+JGstorage.getItem("JGAutoRecord")+"&callback=?";
+			$.getJSON(autostorage,function(){});
+			JGstorage.removeItem('JGAutoRecord');
+			}
+		}
+
+	},
+	//回调函数
+	callback:function(ret){
+		var _t=ret.split('.');
+		if(_t.length>1){
+			var uid=_t[0]||0,sid=_t[1]||0,st=_t[2]||0,ft=this.C.ft||st;
+			this.C.user_id=uid;this.C.sess_id=sid;
+			this.Wv('rec_uid',uid+'|'+ft,'banggood.com',this.ty1);
+			this.Wv('rec_sid',sid+'|'+st,'banggood.com',this.tm24);
+		}
+		return true
+	}
+};
+
+(function(){
+	JGData.init();
+})();

@@ -1,0 +1,1288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="https://www.eevblog.com/forum/Themes/default/css/index.css" />
+<link rel="stylesheet" type="text/css" href="https://www.eevblog.com/forum/Themes/default/css/webkit.css" />
+<script type="text/javascript" src="https://www.eevblog.com/forum/Themes/default/scripts/script.js?fin20"></script>
+<script type="text/javascript" src="https://www.eevblog.com/forum/Themes/default/scripts/theme.js?fin20"></script>
+<script type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://www.eevblog.com/forum/Themes/default";
+		var smf_default_theme_url = "https://www.eevblog.com/forum/Themes/default";
+		var smf_images_url = "https://www.eevblog.com/forum/Themes/default/images";
+		var smf_scripturl = "https://www.eevblog.com/forum/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var ajax_notification_text = "Loading...";
+		var ajax_notification_cancel_text = "Cancel";
+	// ]]></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="EEVblog Electronics Community Forum - Index" />
+<meta name="keywords" content="electronics forum, electronics engineering, electronics community, electronics, forum, hacker, maker, hobbyist, technology, pcb, schematic, design ,multimeter ,oscilloscope ,power supply,resistor ,capacitor ,inductor ,transistor ,chip ,ic ,arduino ,microcontroller ,pic ,atmel ,avr ,development ,discussion ,community ,review ,teardown ,equipment, altium, diptrace, eagle,circuit,australian" />
+<title>EEVblog Electronics Community Forum - Index</title>
+<link rel="canonical" href="https://www.eevblog.com/forum/index.php" />
+<link rel="help" href="https://www.eevblog.com/forum/help/" />
+<link rel="search" href="https://www.eevblog.com/forum/search/" />
+<link rel="contents" href="https://www.eevblog.com/forum/index.php" />
+<link rel="alternate" type="application/rss+xml" title="EEVblog Electronics Community Forum - RSS" href="https://www.eevblog.com/forum/.xml/?type=rss" /><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['\\$','\\$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,Safe">
+</script>
+<link rel="stylesheet" type="text/css" id="saythanks_css" href="https://www.eevblog.com/forum/Themes/default/css/saythanks.css" />
+<script type="text/javascript"><!-- // --><![CDATA[
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-13007638-2']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	// ]]></script>
+</head>
+<body><center><iframe src="//search.supplyframe.com/partner/26/ipo950/" marginheight="0" marginwidth="0" align="top" frameborder="0" height="160" scrolling="no" width="960"></iframe>
+</center>
+
+<script type="text/javascript">if (typeof(tapatalkDetect) == "function") tapatalkDetect();</script>
+
+<div id="wrapper" style="width: 95%">
+<div id="header"><div class="frame">
+<div id="top_section">
+<h1 class="forumtitle">
+<a href="https://www.eevblog.com/forum/index.php">EEVblog Electronics Community Forum</a>
+</h1>
+<img id="upshrink" src="https://www.eevblog.com/forum/Themes/default/images/upshrink.png" alt="*" title="Shrink or expand the header." style="display: none;" />
+<div id="siteslogan" class="floatright">A Free & Open Forum For Electronics Enthusiasts & Professionals</div>
+</div>
+<div id="upper_section" class="middletext">
+<div class="user">
+ <script type="text/javascript" src="https://www.eevblog.com/forum/Themes/default/scripts/sha1.js"></script>
+<form id="guest_form" action="https://www.eevblog.com/forum/login2/" method="post" accept-charset="UTF-8" onsubmit="hashLoginPassword(this, '29135b53d3c7e3684b3451c21b16042b');">
+<div class="info">Welcome, <strong>Guest</strong>. Please <a href="https://www.eevblog.com/forum/login/">login</a> or <a href="https://www.eevblog.com/forum/register/">register</a>.<br />Did you miss your <a href="https://www.eevblog.com/forum/activate/">activation email</a>?</div>
+<input type="text" name="user" size="10" class="input_text" />
+<input type="password" name="passwrd" size="10" class="input_password" />
+<select name="cookielength">
+<option value="60">1 Hour</option>
+<option value="1440">1 Day</option>
+<option value="10080">1 Week</option>
+<option value="43200">1 Month</option>
+<option value="-1" selected="selected">Forever</option>
+</select>
+<input type="submit" value="Login" class="button_submit" /><br />
+<div class="info">Login with username, password and session length</div>
+<input type="hidden" name="hash_passwrd" value="" /><input type="hidden" name="fd27872eb93" value="29135b53d3c7e3684b3451c21b16042b" />
+</form>
+</div>
+<div class="news normaltext">
+<form id="search_form" action="https://www.eevblog.com/forum/search2/" method="post" accept-charset="UTF-8">
+<input type="text" name="search" value="" class="input_text" />&nbsp;
+<input type="submit" name="submit" value="Search" class="button_submit" />
+<input type="hidden" name="advanced" value="0" /></form>
+</div>
+</div>
+<br class="clear" />
+<script type="text/javascript"><!-- // --><![CDATA[
+			var oMainHeaderToggle = new smc_Toggle({
+				bToggleEnabled: true,
+				bCurrentlyCollapsed: false,
+				aSwappableContainers: [
+					'upper_section'
+				],
+				aSwapImages: [
+					{
+						sId: 'upshrink',
+						srcExpanded: smf_images_url + '/upshrink.png',
+						altExpanded: 'Shrink or expand the header.',
+						srcCollapsed: smf_images_url + '/upshrink2.png',
+						altCollapsed: 'Shrink or expand the header.'
+					}
+				],
+				oThemeOptions: {
+					bUseThemeSettings: false,
+					sOptionName: 'collapse_header',
+					sSessionVar: 'fd27872eb93',
+					sSessionId: '29135b53d3c7e3684b3451c21b16042b'
+				},
+				oCookieOptions: {
+					bUseCookie: true,
+					sCookieName: 'upshrink'
+				}
+			});
+		// ]]></script>
+<div id="main_menu">
+<ul class="dropmenu" id="menu_nav">
+<li id="button_home">
+<a class="active firstlevel" href="https://www.eevblog.com/forum/index.php">
+<span class="last firstlevel"><img align="absMiddle" src="https://www.eevblog.com/forum/Themes/default/images/menu_icons/house.png" alt="Home" />&nbsp; Home</span>
+</a>
+</li>
+<li id="button_help">
+<a class="firstlevel" href="https://www.eevblog.com/forum/help/">
+<span class="firstlevel"><img align="absMiddle" src="https://www.eevblog.com/forum/Themes/default/images/menu_icons/help.png" alt="Help" />&nbsp; Help</span>
+</a>
+</li>
+<li id="button_search">
+<a class="firstlevel" href="https://www.eevblog.com/forum/search/">
+<span class="firstlevel"><img align="absMiddle" src="https://www.eevblog.com/forum/Themes/default/images/menu_icons/magnifier.png" alt="Search" />&nbsp; Search</span>
+</a>
+</li>
+<li id="button_about">
+<a class="firstlevel" href="https://www.eevblog.com/forum/index.php?action=about">
+<span class="firstlevel">About us</span>
+</a>
+</li>
+<li id="button_links">
+<a class="firstlevel" href="https://www.eevblog.com/forum/links/">
+<span class="firstlevel">Links</span>
+</a>
+</li>
+<li id="button_login">
+<a class="firstlevel" href="https://www.eevblog.com/forum/login/">
+<span class="firstlevel"><img align="absMiddle" src="https://www.eevblog.com/forum/Themes/default/images/menu_icons/key.png" alt="Login" />&nbsp; Login</span>
+</a>
+</li>
+<li id="button_register">
+<a class="firstlevel" href="https://www.eevblog.com/forum/register/">
+<span class="last firstlevel"><img align="absMiddle" src="https://www.eevblog.com/forum/Themes/default/images/menu_icons/key_add.png" alt="Register" />&nbsp; Register</span>
+</a>
+</li>
+</ul>
+</div>
+<br class="clear" />
+</div></div>
+<div id="content_section"><div class="frame">
+<div id="main_content_section">
+<div class="navigate_section">
+<ul>
+<li class="last">
+<a href="https://www.eevblog.com/forum/index.php"><span>EEVblog Electronics Community Forum</span></a>
+</li>
+</ul>
+</div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-0894473037274043" data-ad-slot="3740877399"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div id="boardindex_table">
+<table class="table_list">
+<tbody class="header" id="category_2">
+<tr>
+<td colspan="4">
+<div class="cat_bar">
+<h3 class="catbg">
+<a id="c2"></a>Electronics
+</h3>
+</div>
+</td>
+</tr>
+</tbody>
+<tbody class="content" id="category_2_boards">
+<tr id="board_2" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/beginners/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/beginners/" name="b2">Beginners</a>
+<p>A place for electronics newbies to ask questions. Include detail &amp; what you have already done to find the answer. Short "How does X work" questions are not proper forum etiquette. Assignment questions are ok, but show existing work.</p>
+</td>
+<td class="stats windowbg">
+<p>209631 Posts <br />
+18057 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=113791">Buriedcode</a><br />
+in <a href="https://www.eevblog.com/forum/beginners/audio-dac-output-low-pass-filter/msg1454729/#new" title="Re: Audio DAC output Low Pass Filter.">Re: Audio DAC output Low...</a><br />
+on <strong>Today</strong> at 05:27:38 AM
+</p>
+</td>
+</tr>
+<tr id="board_6" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/projects/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/projects/" name="b6">Projects, Designs, and Technical Stuff</a>
+<p>Show off your projects or other stuff you are working on. Talk about designs or ideas, ask technical questions, and share technical information. This is the big catch-all thread for anything electronic.</p>
+</td>
+<td class="stats windowbg">
+<p>209005 Posts <br />
+16694 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=104527">Undweeber</a><br />
+in <a href="https://www.eevblog.com/forum/projects/unlimited-power-flashlight-'joule-thief'-chinese-supercapacitors/msg1454738/#new" title="Re: Unlimited Power Flashlight + &quot;Joule Thief&quot; + Chinese Supercapacitors">Re: Unlimited Power Flas...</a><br />
+on <strong>Today</strong> at 05:39:00 AM
+</p>
+</td>
+</tr>
+<tr id="board_25" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/repair/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/repair/" name="b25">Repair</a>
+<p>Ask for repair help or describe how to repair equipment</p>
+</td>
+<td class="stats windowbg">
+<p>64842 Posts <br />
+6042 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=128695">abraxa</a><br />
+in <a href="https://www.eevblog.com/forum/repair/hameg-hm8030-3-hameg-hm8011-3/msg1454726/#new" title="Re: HAMEG HM8030-3/ HAMEG HM8011-3">Re: HAMEG HM8030-3/ HAME...</a><br />
+on <strong>Today</strong> at 05:22:05 AM
+</p>
+</td>
+</tr>
+<tr id="board_11" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/microcontrollers/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/microcontrollers/" name="b11">Microcontrollers &amp; FPGAs</a>
+<p>PIC, AVR, MSP430, ARM, Propeller, Renesas, Arduino, PICAXE, whatever. If it's about Microcontroller hardware or software, or programable logic like FPGA/PLDs, post it here.</p>
+</td>
+<td class="stats windowbg">
+<p>77708 Posts <br />
+4773 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=906">mikeselectricstuff</a><br />
+in <a href="https://www.eevblog.com/forum/microcontrollers/what-microchip-hides-from-dave-after-his-pickit3-video-yes-new-pickit4-)/msg1454645/#new" title="Re: What Microchip hides from Dave after his Pickit3 video, yes new Pickit4 :)">Re: What Microchip hides...</a><br />
+on <strong>Today</strong> at 03:07:07 AM
+</p>
+</td>
+</tr>
+<tr id="board_30" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/rf-microwave/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/rf-microwave/" name="b30">RF, Microwave, HAM Radio</a>
+<p>RF, Microwave, and HAM Radio designs, projects, and discussions.</p>
+</td>
+<td class="stats windowbg">
+<p>10791 Posts <br />
+1092 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=114698">Karlo_Moharic</a><br />
+in <a href="https://www.eevblog.com/forum/rf-microwave/(ask)-attenuator-bandwidth-range-does-bigger-always-better/msg1454723/#new" title="Re: [ASK] Attenuator bandwidth range, does bigger always better ?">Re: [ASK] Attenuator ban...</a><br />
+on <strong>Today</strong> at 05:19:15 AM
+</p>
+</td>
+</tr>
+<tr id="board_33" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/metrology/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/metrology/" name="b33">Metrology</a>
+<p>Everything metrology &amp; Calibration related. This is where the Voltnuts hang out.</p>
+</td>
+<td class="stats windowbg">
+<p>23501 Posts <br />
+769 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=138717">0.01C</a><br />
+in <a href="https://www.eevblog.com/forum/metrology/guildline-9975-resistance-bridge/msg1454683/#new" title="Re: Guildline 9975 resistance bridge">Re: Guildline 9975 resis...</a><br />
+on <strong>Today</strong> at 04:18:53 AM
+</p>
+</td>
+</tr>
+<tr id="board_34" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/renewable-energy/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/renewable-energy/" name="b34">Renewable Energy</a>
+<p>Renewable Energy: Solar, wind, thermal, nuclear, energy storage, Electric Vehicles etc.</p>
+</td>
+<td class="stats windowbg">
+<p>4257 Posts <br />
+234 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=139668">fourtytwo42</a><br />
+in <a href="https://www.eevblog.com/forum/renewable-energy/news-from-the-gti-design-workbench-lcl-issues/msg1454653/#new" title="Re: News from the GTI design workbench, Blog">Re: News from the GTI de...</a><br />
+on <strong>Today</strong> at 03:18:18 AM
+</p>
+</td>
+</tr>
+<tr id="board_20" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/oshw/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/oshw/" name="b20">Open Source Hardware</a>
+<p>A community section to discuss Open Source Hardware (OSHW) projects or anything OSHW related.
+If the project is not licensed under the OSHW scheme, please put it in the regular Projects &amp; Technical section.</p>
+</td>
+<td class="stats windowbg">
+<p>4280 Posts <br />
+250 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=25568">rhb</a><br />
+in <a href="https://www.eevblog.com/forum/oshw/lets-discuss-how-to-make-oshw-more-successful-(inspiration-by-foss-design-cycle)/msg1453072/#new" title="Re: Lets discuss how to make OSHW more successful (inspiration by FOSS design cycle)">Re: Lets discuss how to ...</a><br />
+on March 16, 2018, 05:39:21 AM
+</p>
+</td>
+</tr>
+<tr id="board_13" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/manufacture/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/manufacture/" name="b13">Manufacturing &amp; Assembly</a>
+<p>Discuss getting your PCB or product manufactured or assembled.
+Home brew PCB's, Pick &amp; Place machines, reflow etc.</p>
+</td>
+<td class="stats windowbg">
+<p>13339 Posts <br />
+820 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=98488">coppice</a><br />
+in <a href="https://www.eevblog.com/forum/manufacture/smt-production-line-manual-vs-automatic/msg1454695/#new" title="Re: SMT Production Line: Manual vs Automatic">Re: SMT Production Line:...</a><br />
+on <strong>Today</strong> at 04:35:17 AM
+</p>
+</td>
+</tr>
+<tr id="board_22" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/crowd-funded-projects/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/crowd-funded-projects/" name="b22">Crowd Funded Projects</a>
+<p>The best place on the internet to discuss crowd funded hardware projects!
+Is a campaign too good to be true? Is it technically possible?
+Promote your crowd funded project here, just be ready for serious expert feedback.</p>
+</td>
+<td class="stats windowbg">
+<p>17612 Posts <br />
+804 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=95710">mrpackethead</a><br />
+in <a href="https://www.eevblog.com/forum/crowd-funded-projects/limesdr-mini/msg1452416/#new" title="Re: LimeSDR mini">Re: LimeSDR mini</a><br />
+on March 15, 2018, 12:06:00 PM
+</p>
+</td>
+</tr>
+<tr id="board_14" class="windowbg2">
+<td class="icon windowbg" rowspan="2">
+<a href="https://www.eevblog.com/forum/eda/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/eda/" name="b14">General PCB/EDA/CAD Discussions</a>
+<p>If it doesn't fit into the other categories, put it here.
+General layout, library, footprint, and design questions etc</p>
+</td>
+<td class="stats windowbg">
+<p>28281 Posts <br />
+2790 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=25568">rhb</a><br />
+in <a href="https://www.eevblog.com/forum/eda/'x-ray'-or-'see-through'-view-of-pcb-making-them-from-separate-drawn-layouts/msg1454548/#new" title="Re: &quot;X-Ray&quot; or &quot;See-Through&quot; view of PCB - making them from separate drawn layouts?">Re: &quot;X-Ray&quot; or &quot;See-Thro...</a><br />
+on <strong>Today</strong> at 12:19:47 AM
+</p>
+</td>
+</tr>
+<tr id="board_14_children">
+<td colspan="3" class="children windowbg">
+<strong>Child Boards</strong>: <a href="https://www.eevblog.com/forum/kicad/" title="No New Posts (Topics: 239, Posts: 2641)">KiCad</a>, <a href="https://www.eevblog.com/forum/diptrace/" title="No New Posts (Topics: 109, Posts: 992)">DIPtrace</a>, <a href="https://www.eevblog.com/forum/circuit-studio/" title="No New Posts (Topics: 133, Posts: 1264)">Circuit Studio</a>, <a href="https://www.eevblog.com/forum/eagle/" title="No New Posts (Topics: 258, Posts: 2952)">Eagle</a>, <a href="https://www.eevblog.com/forum/altium/" title="No New Posts (Topics: 1033, Posts: 8918)">Altium Designer</a>, <a href="https://www.eevblog.com/forum/designspark/" title="No New Posts (Topics: 16, Posts: 106)">DesignSpark</a>, <a href="https://www.eevblog.com/forum/proteus/" title="No New Posts (Topics: 30, Posts: 312)">Proteus</a>, <a href="https://www.eevblog.com/forum/geda/" title="No New Posts (Topics: 11, Posts: 119)">gEDA</a>
+</td>
+</tr>
+</tbody>
+<tbody class="divider">
+<tr>
+<td colspan="4"></td>
+</tr>
+</tbody><tbody><tr><td colspan="4"> </td></tr></tbody>
+<tbody class="header" id="category_5">
+<tr>
+<td colspan="4">
+<div class="cat_bar">
+<h3 class="catbg">
+<a id="c5"></a>Products
+</h3>
+</div>
+</td>
+</tr>
+</tbody>
+<tbody class="content" id="category_5_boards">
+<tr id="board_21" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/testgear/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/testgear/" name="b21">Test Equipment</a>
+<p>Test Equipment reviews, teardowns, discussion, questions etc. This is the biggest T&amp;M forum on the net, so your product has likely already been discussed, please use the Search function in the menu above first!</p>
+</td>
+<td class="stats windowbg">
+<p>235214 Posts <br />
+11406 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=413">rf-loop</a><br />
+in <a href="https://www.eevblog.com/forum/testgear/hack-of-sigllent-spectrum-analyzer-ssa3021x/msg1454730/#new" title="Re: Hack of Sigllent spectrum analyzer ssa3021X?">Re: Hack of Sigllent spe...</a><br />
+on <strong>Today</strong> at 05:30:11 AM
+</p>
+</td>
+</tr>
+<tr id="board_32" class="windowbg2">
+<td class="icon windowbg">
+ <a href="https://www.eevblog.com/forum/thermal-imaging/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/thermal-imaging/" name="b32">Thermal Imaging</a>
+<p>Everything to do with thermal imaging and cameras</p>
+</td>
+<td class="stats windowbg">
+<p>21619 Posts <br />
+505 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=91515">Chanc3</a><br />
+in <a href="https://www.eevblog.com/forum/thermal-imaging/infracam-reset-usb-connection-to-msd/msg1454471/#new" title="Re: InfraCAM - Reset USB Connection to MSD">Re: InfraCAM - Reset USB...</a><br />
+on <strong>Yesterday</strong> at 10:04:49 PM
+</p>
+</td>
+</tr>
+<tr id="board_9" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/reviews/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/reviews/" name="b9">Other Equipment &amp; Products</a>
+<p>Product reviews, teardowns, and discussion about any gear that's NOT test equipment related. Tools, gadgets etc.</p>
+</td>
+<td class="stats windowbg">
+<p>52258 Posts <br />
+3750 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=173295">ricktendo</a><br />
+in <a href="https://www.eevblog.com/forum/reviews/stm32-oled-digital-soldering-station-for-t12-handle/msg1454734/#new" title="Re: CFW for STM32 OLED Digital Soldering Station with T12 Handle">Re: CFW for STM32 OLED D...</a><br />
+on <strong>Today</strong> at 05:34:13 AM
+</p>
+</td>
+</tr>
+<tr id="board_38" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/vintage-computing/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/vintage-computing/" name="b38">Vintage Computing</a>
+<p>Vintage Computers and related projects</p>
+</td>
+<td class="stats windowbg">
+<p>2507 Posts <br />
+127 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=111904">drussell</a><br />
+in <a href="https://www.eevblog.com/forum/vintage-computing/5-25'-floppy-disk-drive-working-under-win-7/msg1454639/#new" title="Re: 5,25&quot; Floppy Disk drive working under Win 7">Re: 5,25&quot; Floppy Disk dr...</a><br />
+on <strong>Today</strong> at 03:01:02 AM
+</p>
+</td>
+</tr>
+</tbody>
+<tbody class="divider">
+<tr>
+<td colspan="4"></td>
+</tr>
+</tbody><tbody><tr><td colspan="4"> </td></tr></tbody>
+<tbody class="header" id="category_4">
+<tr>
+<td colspan="4">
+<div class="cat_bar">
+<h3 class="catbg">
+<a id="c4"></a>General
+</h3>
+</div>
+</td>
+</tr>
+</tbody>
+<tbody class="content" id="category_4_boards">
+<tr id="board_4" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/chat/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/chat/" name="b4">General Chat</a>
+<p>This is where everyone hangs out and rants and chats about whatever electronics topics that don't fit into the other more specific categories on this forum. Occasional off-topic stuff is ok, but generally we like to keep it electronics related.</p>
+</td>
+<td class="stats windowbg">
+<p>292618 Posts <br />
+14917 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=112">Hero999</a><br />
+in <a href="https://www.eevblog.com/forum/chat/secrets-of-the-sun-and-we-are-having-squirrel-for-dinner/msg1454739/#new" title="Re: Secrets of the Sun, and we are having squirrel for dinner.">Re: Secrets of the Sun, ...</a><br />
+on <strong>Today</strong> at 05:39:47 AM
+</p>
+</td>
+</tr>
+<tr id="board_39" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/dodgy-technology/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/dodgy-technology/" name="b39">Dodgy Technology</a>
+<p>Discuss all dodgy sounding products, technology, and marketing here.
+Snake oil, Audiophoolery, Free Energy, outright scams, or just marketing-wank products that don't have a chance of meeting their specs, this is the place to discuss and debunk them.</p>
+</td>
+<td class="stats windowbg">
+<p>1679 Posts <br />
+30 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=18355">SeanB</a><br />
+in <a href="https://www.eevblog.com/forum/dodgy-technology/the-snake-oil-thread/msg1454651/#new" title="Re: Snake oil">Re: Snake oil</a><br />
+on <strong>Today</strong> at 03:16:27 AM
+</p>
+</td>
+</tr>
+<tr id="board_27" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/jobs/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/jobs/" name="b27">Jobs</a>
+<p>An industry jobs board.
+Post your job ad here.
+Commercial companies are welcome provided they don't spam and run, you must stick around &amp; contribute.
+No HR droids or recruitment companies.</p>
+</td>
+<td class="stats windowbg">
+<p>1304 Posts <br />
+160 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=173031">gp</a><br />
+in <a href="https://www.eevblog.com/forum/jobs/contract-electronics-engineerpcb-designer(altium)-berlin-germany/msg1454515/#new" title="Re: Contract - Electronics Engineer/PCB Designer(Altium) - Berlin, Germany">Re: Contract - Electroni...</a><br />
+on <strong>Yesterday</strong> at 11:29:44 PM
+</p>
+</td>
+</tr>
+<tr id="board_28" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/work-wanted/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/work-wanted/" name="b28">Work Wanted</a>
+<p>Looking for contract or regular work?
+Post your work wanted ad here listing your skills and what you have to offer.
+Resumes attachments (PDF) are allowed if you want to make them public.
+Companies NOT allowed.</p>
+</td>
+<td class="stats windowbg">
+<p>300 Posts <br />
+69 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=105127">ebastler</a><br />
+in <a href="https://www.eevblog.com/forum/work-wanted/brochures-manuals-guides-etc-(for-print-or-online-distribution)/msg1448030/#new" title="Re: Brochures, Manuals, Guides etc. (for print or online distribution)">Re: Brochures, Manuals, ...</a><br />
+ on March 10, 2018, 01:39:40 AM
+</p>
+</td>
+</tr>
+<tr id="board_7" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/buysellwanted/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/buysellwanted/" name="b7">Buy/Sell/Wanted</a>
+<p>List your electronics related stuff for sale, or link to others.
+Wanted ads go here too.
+Only dealers who are valued contributors to the forum community are welcome to post here.</p>
+</td>
+<td class="stats windowbg">
+<p>41106 Posts <br />
+6317 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=2319">firehopper</a><br />
+in <a href="https://www.eevblog.com/forum/buysellwanted/fs-(uk)-raspberry-pi-7'-official-touchscreens-(and-pi-3's)/msg1454732/#new" title="Re: SOLD (UK) Raspberry Pi 7&quot; official touchscreens (and Pi 3's)">Re: SOLD (UK) Raspberry ...</a><br />
+on <strong>Today</strong> at 05:32:41 AM
+</p>
+</td>
+</tr>
+<tr id="board_10" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/contests/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/contests/" name="b10">Contests &amp; Events</a>
+<p>All time sensitive things like contests, events, seminars, webinars, meetups, exhibitions, promotions, courses, etc.</p>
+</td>
+<td class="stats windowbg">
+<p>8805 Posts <br />
+172 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=129962">frozenfrogz</a><br />
+in <a href="https://www.eevblog.com/forum/contests/(eu)-free-giveaway-starter-package-simple-scope-logic-analyzer-dmm/msg1453594/#new" title="Re: World wide FREE giveaway starter package - oscilloscope, logic analyzer, DMM,...">Re: World wide FREE give...</a><br />
+on March 16, 2018, 08:30:11 PM
+</p>
+</td>
+</tr>
+</tbody>
+<tbody class="divider">
+<tr>
+<td colspan="4"></td>
+</tr>
+</tbody><tbody><tr><td colspan="4"> </td></tr></tbody>
+<tbody class="header" id="category_1">
+<tr>
+<td colspan="4">
+<div class="cat_bar">
+<h3 class="catbg">
+<a id="c1"></a>EEVblog
+</h3>
+</div>
+</td>
+</tr>
+</tbody>
+<tbody class="content" id="category_1_boards">
+<tr id="board_23" class="windowbg2 vob_protected" ">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/supporters-lounge/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/supporters-lounge/" name="b23">Supporters Lounge</a>
+<p>A private board for supporters of and major contributors to the blog. <a href="https://www.eevblog.com/forum/index.php?action=profile;area=subscriptions">CLICK HERE</a> to subscribe.</p>
+</td>
+<td class="stats windowbg">
+<p>5342 Posts <br />
+191 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <span class="vob_protected">Protected</span><br />
+in <span class="vob_protected">Protected</span><br />
+on March 15, 2018, 10:05:44 PM
+</p>
+</td>
+</tr>
+<tr id="board_1" class="windowbg2">
+<td class="icon windowbg" rowspan="2">
+<a href="https://www.eevblog.com/forum/blog/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+ <a class="subject" href="https://www.eevblog.com/forum/blog/" name="b1">EEVblog Specific</a>
+<p>Chat relating to specific EEVblog episodes or content.</p>
+</td>
+<td class="stats windowbg">
+<p>85906 Posts <br />
+2658 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=25360">madires</a><br />
+in <a href="https://www.eevblog.com/forum/blog/eevblog-1064-soldering-irons-old-vs-new/msg1454656/#new" title="Re: EEVblog #1064 - Soldering Irons OLD vs NEW">Re: EEVblog #1064 - Sold...</a><br />
+on <strong>Today</strong> at 03:22:43 AM
+</p>
+</td>
+</tr>
+<tr id="board_1_children">
+<td colspan="3" class="children windowbg">
+<strong>Child Boards</strong>: <a href="https://www.eevblog.com/forum/eevdiscover/" title="No New Posts (Topics: 4, Posts: 25)">EEVdiscover</a>, <a href="https://www.eevblog.com/forum/eevblab/" title="No New Posts (Topics: 59, Posts: 1945)">EEVblab</a>, <a href="https://www.eevblog.com/forum/suggestions/" title="No New Posts (Topics: 794, Posts: 6550)">Suggestions</a>, <a href="https://www.eevblog.com/forum/news/" title="No New Posts (Topics: 150, Posts: 3539)">News</a>
+</td>
+</tr>
+<tr id="board_29" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/other-blog-specific/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/other-blog-specific/" name="b29">Other Blog Specific</a>
+<p>Got your own blog?, or want to post someone else's blog and talk about it? You can do that here.</p>
+</td>
+<td class="stats windowbg">
+<p>3140 Posts <br />
+375 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=3">EEVblog</a><br />
+in <a href="https://www.eevblog.com/forum/other-blog-specific/captain-disillusion/msg1454158/#new" title="Captain Disillusion ">Captain Disillusion </a><br />
+on <strong>Yesterday</strong> at 12:05:13 PM
+</p>
+</td>
+</tr>
+<tr id="board_8" class="windowbg2">
+<td class="icon windowbg">
+<a href="https://www.eevblog.com/forum/amphour/">
+<img src="https://www.eevblog.com/forum/Themes/default/images/off.png" alt="No New Posts" title="No New Posts" />
+</a>
+</td>
+<td class="info">
+<a class="subject" href="https://www.eevblog.com/forum/amphour/" name="b8">The AmpHour Radio Show</a>
+<p>Talk about the Dave Jones &amp; Chris Gammell electronics podcast show.</p>
+</td>
+<td class="stats windowbg">
+<p>2240 Posts <br />
+238 Topics
+</p>
+</td>
+<td class="lastpost">
+<p><strong>Last post</strong> by <a href="https://www.eevblog.com/forum/profile/?u=205">wilfred</a><br />
+in <a href="https://www.eevblog.com/forum/amphour/microphones-sent-out/msg1419849/#new" title="Re: Microphones sent out">Re: Microphones sent out</a><br />
+on February 07, 2018, 11:23:05 AM
+</p>
+</td>
+</tr>
+</tbody>
+<tbody class="divider">
+<tr>
+<td colspan="4"></td>
+</tr>
+</tbody><tbody><tr><td colspan="4"> </td></tr></tbody>
+</table>
+</div>
+<div id="posting_icons" class="flow_hidden">
+<ul class="reset">
+<li class="floatleft"><img src="https://www.eevblog.com/forum/Themes/default/images/new_none.png" alt="" /> No New Posts</li>
+<li class="floatleft"><img src="https://www.eevblog.com/forum/Themes/default/images/new_redirect.png" alt="" /> Redirect Board</li>
+</ul>
+</div>
+<span class="clear upperframe"><span></span></span>
+<div class="roundframe"><div class="innerframe">
+<div class="cat_bar">
+<h3 class="catbg">
+<img class="icon" id="upshrink_ic" src="https://www.eevblog.com/forum/Themes/default/images/collapse.gif" alt="*" title="Shrink or expand the header." style="display: none;" />
+EEVblog Electronics Community Forum - Info Center
+</h3>
+</div>
+<div id="upshrinkHeaderIC">
+<div class="title_barIC">
+<h4 class="titlebg">
+<span class="ie6_header floatleft">
+<a href="https://www.eevblog.com/forum/recent/"><img class="icon" src="https://www.eevblog.com/forum/Themes/default/images/post/xx.gif" alt="Recent Posts" /></a>
+Recent Posts
+</span>
+</h4>
+</div>
+<div class="hslice" id="recent_posts_content">
+<div class="entry-title" style="display: none;">EEVblog Electronics Community Forum - Recent Posts</div>
+<div class="entry-content" style="display: none;">
+<a rel="feedurl" href="https://www.eevblog.com/forum/.xml/?type=webslice">Subscribe to Webslice</a>
+</div>
+<table align="center" cellpadding="5" cellspacing="0" width="100%" border="0">
+<tr>
+<td class="arp_header">Topic:</td>
+<td class="arp_header">Poster:</td>
+<td class="arp_header">Board:</td>
+<td class="arp_header">Post Time:</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/unlimited-power-flashlight-'joule-thief'-chinese-supercapacitors/msg1454738/?topicseen#msg1454738" rel="nofollow">Re: Unlimited Power Flashlight + &quot;Joule Thief&quot; + Chinese Supercapacitors</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=104527">Undweeber</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:39:00 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/mosfet-and-gate-driver-turn-onoff-times/msg1454737/?topicseen#msg1454737" rel="nofollow">Re: Mosfet and gate driver turn on/off times</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=105679">Rog520</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:37:16 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454736/?topicseen#msg1454736" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=98488">coppice</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:35:34 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454735/?topicseen#msg1454735" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=111180">Cerebus</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:34:37 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/reviews/stm32-oled-digital-soldering-station-for-t12-handle/msg1454734/?topicseen#msg1454734" rel="nofollow">Re: CFW for STM32 OLED Digital Soldering Station with T12 Handle</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=173295">ricktendo</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/reviews/">Other Equipment &amp; Products</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:34:13 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454733/?topicseen#msg1454733" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=100736">Cyberdragon</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:33:31 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/buysellwanted/fs-(uk)-raspberry-pi-7'-official-touchscreens-(and-pi-3's)/msg1454732/?topicseen#msg1454732" rel="nofollow">Re: SOLD (UK) Raspberry Pi 7&quot; official touchscreens (and Pi 3's)</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=2319">firehopper</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/buysellwanted/">Buy/Sell/Wanted</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:32:41 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/hack-of-sigllent-spectrum-analyzer-ssa3021x/msg1454730/?topicseen#msg1454730" rel="nofollow">Re: Hack of Sigllent spectrum analyzer ssa3021X?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=413">rf-loop</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:30:11 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/beginners/audio-dac-output-low-pass-filter/msg1454729/?topicseen#msg1454729" rel="nofollow">Re: Audio DAC output Low Pass Filter.</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=113791">Buriedcode</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/beginners/">Beginners</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:27:38 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/beginners/reconstructing-a-waveform-from-its-harmonics/msg1454728/?topicseen#msg1454728" rel="nofollow">Re: Reconstructing a waveform from its harmonics.</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=118880">rstofer</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/beginners/">Beginners</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:23:39 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/testing-lm324-op-amp/msg1454727/?topicseen#msg1454727" rel="nofollow">Re: testing LM324 OP-AMP</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=164224">hussamaldean</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:22:32 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/repair/hameg-hm8030-3-hameg-hm8011-3/msg1454726/?topicseen#msg1454726" rel="nofollow">Re: HAMEG HM8030-3/ HAMEG HM8011-3</a></td>
+ <td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=128695">abraxa</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/repair/">Repair</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:22:05 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/whats-your-work-benchlab-look-like-post-some-pictures-of-your-lab/msg1454725/?topicseen#msg1454725" rel="nofollow">Re: Whats your Work-Bench/lab look like? Post some pictures of your Lab.</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=151187">Edison</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:20:27 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/beginners/help-oscillloscope-gould-os3600-dm3010/msg1454724/?topicseen#msg1454724" rel="nofollow">Help Oscillloscope GOULD OS3600 + Dm3010</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=126458">jimiz</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/beginners/">Beginners</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:19:39 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/rf-microwave/(ask)-attenuator-bandwidth-range-does-bigger-always-better/msg1454723/?topicseen#msg1454723" rel="nofollow">Re: [ASK] Attenuator bandwidth range, does bigger always better ?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=114698">Karlo_Moharic</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/rf-microwave/">RF, Microwave, HAM Radio</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:19:15 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/transformer-with-high-isolation-in-dc-dc-converter/msg1454722/?topicseen#msg1454722" rel="nofollow">Re: Transformer with high isolation in DC-DC Converter</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=119676">MasterTech</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:18:05 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/at-last-siglent's-sds5054x-touchscreen/msg1454721/?topicseen#msg1454721" rel="nofollow">Re: At last, Siglent's SDS5054X touchscreen DSO...</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=120229">simone.pignatti</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:17:37 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/help-identify-this-component-106096/msg1454720/?topicseen#msg1454720" rel="nofollow">Re: Help identify this component</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=105713">MattHollands</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:17:23 AM</td>
+</tr>
+ <tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454719/?topicseen#msg1454719" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=111180">Cerebus</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:16:58 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/mosfet-gate-fast-ringing/msg1454718/?topicseen#msg1454718" rel="nofollow">Re: MOSFET gate fast ringing</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=160350">SiliconWizard</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:16:44 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/beginners/reconstructing-a-waveform-from-its-harmonics/msg1454717/?topicseen#msg1454717" rel="nofollow">Re: Reconstructing a waveform from its harmonics.</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=58">Simon</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/beginners/">Beginners</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:16:30 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/at-last-siglent's-sds5054x-touchscreen/msg1454716/?topicseen#msg1454716" rel="nofollow">Re: At last, Siglent's SDS5054X touchscreen DSO...</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=120229">simone.pignatti</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:13:43 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454715/?topicseen#msg1454715" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=113841">ChunkyPastaSauce</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:13:40 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/low-voltage-100mhz-x10-active-differential-probe/msg1454714/?topicseen#msg1454714" rel="nofollow">Re: Low voltage, 100MHz x10 active differential probe design</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=106815">Kleinstein</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:11:17 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/asking-for-assistance-diagnosing-a-preamp/msg1454713/?topicseen#msg1454713" rel="nofollow">Re: Asking for assistance diagnosing a preamp</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=160350">SiliconWizard</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:11:09 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/rf-microwave/l-network-question/msg1454712/?topicseen#msg1454712" rel="nofollow">Re: L-Network Question</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=53234">KJDS</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/rf-microwave/">RF, Microwave, HAM Radio</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 05:04:17 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/where-do-you-find-electronics-engineers-that-can-do-simple-electronics/msg1454711/?topicseen#msg1454711" rel="nofollow">Re: Where do you find Electronics engineers that can do simple electronics?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=85699">steverino</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:59:34 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/secrets-of-the-sun-and-we-are-having-squirrel-for-dinner/msg1454710/?topicseen#msg1454710" rel="nofollow">Re: Secrets of the Sun, and we are having squirrel for dinner.</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=111180">Cerebus</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:58:30 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/keithley-228228a/msg1454709/?topicseen#msg1454709" rel="nofollow">Re: KEITHLEY 228/228A</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=138063">Inverted18650</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:54:20 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-did-you-buy-today-post-your-latest-purchase!/msg1454708/?topicseen#msg1454708" rel="nofollow">Re: What did you buy today? Post your latest purchase!</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=119192">imidis</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:53:06 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/new-miami-foot-bridge-collapse-bad-engineering/msg1454707/?topicseen#msg1454707" rel="nofollow">Re: New Miami Foot Bridge Collapse Bad Engineering?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=105870">tooki</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:51:00 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/testing-lm324-op-amp/msg1454706/?topicseen#msg1454706" rel="nofollow">Re: testing LM324 OP-AMP</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=150217">precaud</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:49:31 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/beginners/555-from-transistors/msg1454705/?topicseen#msg1454705" rel="nofollow">Re: 555 from transistors?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=142747">Beamin</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/beginners/">Beginners</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:48:55 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/testing-lm324-op-amp/msg1454704/?topicseen#msg1454704" rel="nofollow">Re: testing LM324 OP-AMP</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=87951">Brutte</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:47:27 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454703/?topicseen#msg1454703" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=80485">Halfdead</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:47:06 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/hack-of-sigllent-spectrum-analyzer-ssa3021x/msg1454702/?topicseen#msg1454702" rel="nofollow">Re: Hack of Sigllent spectrum analyzer ssa3021X?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=413">rf-loop</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:45:28 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454701/?topicseen#msg1454701" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=127200">Vtile</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:43:31 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/where-do-you-find-electronics-engineers-that-can-do-simple-electronics/msg1454700/?topicseen#msg1454700" rel="nofollow">Re: Where do you find Electronics engineers that can do simple electronics?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=139928">treez</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:43:14 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454699/?topicseen#msg1454699" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=64734">wraper</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:38:50 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/testing-lm324-op-amp/msg1454697/?topicseen#msg1454697" rel="nofollow">testing LM324 OP-AMP</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=164224">hussamaldean</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:35:44 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/testgear/feeltech-fy6600-60mhz-2-ch-vco-function-arbitrary-waveform-signal-generator/msg1454696/?topicseen#msg1454696" rel="nofollow">Re: FeelTech FY6600 60MHz 2-Ch VCO Function Arbitrary Waveform Signal Generator</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=162541">DaveR</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/testgear/">Test Equipment</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:35:34 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/manufacture/smt-production-line-manual-vs-automatic/msg1454695/?topicseen#msg1454695" rel="nofollow">Re: SMT Production Line: Manual vs Automatic</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=98488">coppice</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/manufacture/">Manufacturing &amp; Assembly</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:35:17 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454694/?topicseen#msg1454694" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=98488">coppice</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:33:19 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/buysellwanted/fs-(de-eu)-various-eval-kits-(mostly-unused)/msg1454693/?topicseen#msg1454693" rel="nofollow">Re: FS / trade (de / EU): various eval kits (mostly unused)</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=127216">capt bullshot</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/buysellwanted/">Buy/Sell/Wanted</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:32:10 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454692/?topicseen#msg1454692" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=142747">Beamin</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:30:03 AM</td>
+</tr>
+ <tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/manufacture/long-lead-times/msg1454691/?topicseen#msg1454691" rel="nofollow">Re: Long lead times</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=138343">jmelson</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/manufacture/">Manufacturing &amp; Assembly</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:26:58 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/projects/asking-for-assistance-diagnosing-a-preamp/msg1454690/?topicseen#msg1454690" rel="nofollow">Re: Asking for assistance diagnosing a preamp</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=26235">adauphin</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/projects/">Projects, Designs, and Technical Stuff</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:24:34 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/repair/hameg-hm8030-3-hameg-hm8011-3/msg1454689/?topicseen#msg1454689" rel="nofollow">Re: HAMEG HM8030-3/ HAMEG HM8011-3</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=125696">lionelkjh</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/repair/">Repair</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:24:25 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/manufacture/smt-production-line-manual-vs-automatic/msg1454688/?topicseen#msg1454688" rel="nofollow">Re: SMT Production Line: Manual vs Automatic</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=138343">jmelson</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/manufacture/">Manufacturing &amp; Assembly</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:24:19 AM</td>
+</tr>
+<tr>
+<td class="arppost arp_left"><a href="https://www.eevblog.com/forum/chat/what-do-you-think-the-average-iq-of-this-forum-is/msg1454687/?topicseen#msg1454687" rel="nofollow">Re: What do you think the average IQ of this forum is?</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/profile/?u=127200">Vtile</a></td>
+<td class="arppost arp_rest"><a href="https://www.eevblog.com/forum/chat/">General Chat</a></td>
+<td class="arppost arp_rest"><strong>Today</strong> at 04:23:23 AM</td>
+</tr>
+</table>
+<br />
+</div>
+<div class="title_barIC">
+<h4 class="titlebg">
+<span class="ie6_header floatleft">
+<a href="https://www.eevblog.com/forum/stats/"><img class="icon" src="https://www.eevblog.com/forum/Themes/default/images/icons/info.gif" alt="Forum Stats" /></a>
+Forum Stats
+</span>
+</h4>
+</div>
+<p>
+1417285 Posts in 93240 Topics by 37975 Members. Latest Member: <strong> <a href="https://www.eevblog.com/forum/profile/?u=173877">Sleepy2000</a></strong><br />
+Latest Post: <strong>&quot;<a href="https://www.eevblog.com/forum/chat/secrets-of-the-sun-and-we-are-having-squirrel-for-dinner/msg1454739/#new" title="Re: Secrets of the Sun, and we are having squirrel for dinner.">Re: Secrets of the Sun, ...</a>&quot;</strong> ( <strong>Today</strong> at 05:39:47 AM )<br />
+<a href="https://www.eevblog.com/forum/recent/">View the most recent posts on the forum.</a><br />
+<a href="https://www.eevblog.com/forum/stats/">[More Stats]</a>
+</p>
+<div class="title_barIC">
+<h4 class="titlebg">
+<span class="ie6_header floatleft">
+<a href="https://www.eevblog.com/forum/who/"><img class="icon" src="https://www.eevblog.com/forum/Themes/default/images/icons/online.gif" alt="Users Online" /></a>
+Users Online
+</span>
+</h4>
+</div>
+<p class="inline stats">
+<a href="https://www.eevblog.com/forum/who/">2011 Guests, 327 Users (1 Hidden)</a>
+</p>
+<p class="inline smalltext">
+Users active in past 60 minutes:<br /><a href="https://www.eevblog.com/forum/profile/?u=111767">TomS_</a>, <a href="https://www.eevblog.com/forum/profile/?u=112">Hero999</a>, <a href="https://www.eevblog.com/forum/profile/?u=11200">RoadRunner</a>, <a href="https://www.eevblog.com/forum/profile/?u=122214">Bicurico</a>, <a href="https://www.eevblog.com/forum/profile/?u=50606">Gromitt</a>, <a href="https://www.eevblog.com/forum/profile/?u=104527">Undweeber</a>, <a href="https://www.eevblog.com/forum/profile/?u=20699">fpliuzzi</a>, <a href="https://www.eevblog.com/forum/profile/?u=100736">Cyberdragon</a>, <a href="https://www.eevblog.com/forum/profile/?u=119362">jack_elec</a>, <a href="https://www.eevblog.com/forum/profile/?u=127216">capt bullshot</a>, <a href="https://www.eevblog.com/forum/profile/?u=26010">andyturk</a>, <a href="https://www.eevblog.com/forum/profile/?u=133559">groggen</a>, <a href="https://www.eevblog.com/forum/profile/?u=150540">Critycal</a>, <a href="https://www.eevblog.com/forum/profile/?u=117984">TechieTX</a>, <a href="https://www.eevblog.com/forum/profile/?u=98488">coppice</a>, <a href="https://www.eevblog.com/forum/profile/?u=99328">tggzzz</a>, <a href="https://www.eevblog.com/forum/profile/?u=101274">blueskull</a>, <a href="https://www.eevblog.com/forum/profile/?u=118880">rstofer</a>, <a href="https://www.eevblog.com/forum/profile/?u=88938">drtaylor</a>, <a href="https://www.eevblog.com/forum/profile/?u=121962">neo</a>, <a href="https://www.eevblog.com/forum/profile/?u=120847">jmgallag</a>, <a href="https://www.eevblog.com/forum/profile/?u=98046">Wolfram</a>, <a href="https://www.eevblog.com/forum/profile/?u=101996">helius</a>, <a href="https://www.eevblog.com/forum/profile/?u=146730">SMB784</a>, <a href="https://www.eevblog.com/forum/profile/?u=105679">Rog520</a>, <a href="https://www.eevblog.com/forum/profile/?u=138063">Inverted18650</a>, <a href="https://www.eevblog.com/forum/profile/?u=127889">rachaelp</a>, <a href="https://www.eevblog.com/forum/profile/?u=44457">morris6</a>, <a href="https://www.eevblog.com/forum/profile/?u=97552">langwadt</a>, <a href="https://www.eevblog.com/forum/profile/?u=155682">Gorp</a>, <a href="https://www.eevblog.com/forum/profile/?u=93050">cv007</a>, <a href="https://www.eevblog.com/forum/profile/?u=143428">glarsson</a>, <a href="https://www.eevblog.com/forum/profile/?u=102873">kerrsmith</a>, <a href="https://www.eevblog.com/forum/profile/?u=88216">Quarlo Klobrigney</a>, <a href="https://www.eevblog.com/forum/profile/?u=92796">tv84</a>, <a href="https://www.eevblog.com/forum/profile/?u=93315">nali</a>, <a href="https://www.eevblog.com/forum/profile/?u=119676">MasterTech</a>, <a href="https://www.eevblog.com/forum/profile/?u=11144">BravoV</a>, <a href="https://www.eevblog.com/forum/profile/?u=148360">carlz0r</a>, <a href="https://www.eevblog.com/forum/profile/?u=94116">balu</a>, <a href="https://www.eevblog.com/forum/profile/?u=83295">oilburner</a>, <a href="https://www.eevblog.com/forum/profile/?u=166795">1276-2449-1-ND</a>, <a href="https://www.eevblog.com/forum/profile/?u=86489">Kjelt</a>, <a href="https://www.eevblog.com/forum/profile/?u=2435">Fraser</a>, <a href="https://www.eevblog.com/forum/profile/?u=87821">dacrawf</a>, <a href="https://www.eevblog.com/forum/profile/?u=163462">usuthu65</a>, <a href="https://www.eevblog.com/forum/profile/?u=82">flolic</a>, <a href="https://www.eevblog.com/forum/profile/?u=99403">lukier</a>, <a href="https://www.eevblog.com/forum/profile/?u=2319">firehopper</a>, <a href="https://www.eevblog.com/forum/profile/?u=107643">Silveruser</a>, <a href="https://www.eevblog.com/forum/profile/?u=137478">geot51</a>, <a href="https://www.eevblog.com/forum/profile/?u=87951">Brutte</a>, <a href="https://www.eevblog.com/forum/profile/?u=162079">ikrase</a>, <a href="https://www.eevblog.com/forum/profile/?u=101256">janekivi</a>, <a href="https://www.eevblog.com/forum/profile/?u=123641">kokopelli</a>, <a href="https://www.eevblog.com/forum/profile/?u=102277">Red Squirrel</a>, <a href="https://www.eevblog.com/forum/profile/?u=103959">eanayo</a>, <a href="https://www.eevblog.com/forum/profile/?u=115848">screwbreaker</a>, <a href="https://www.eevblog.com/forum/profile/?u=148404">docmollo</a>, <a href="https://www.eevblog.com/forum/profile/?u=111180">Cerebus</a>, <a href="https://www.eevblog.com/forum/profile/?u=118386">ar__systems</a>, <a href="https://www.eevblog.com/forum/profile/?u=173295">ricktendo</a>, <a href="https://www.eevblog.com/forum/profile/?u=172284">TRN</a>, <a href="https://www.eevblog.com/forum/profile/?u=128695">abraxa</a>, <a href="https://www.eevblog.com/forum/profile/?u=173448">W2DML</a>, <a href="https://www.eevblog.com/forum/profile/?u=163816">hwti</a>, <a href="https://www.eevblog.com/forum/profile/?u=119355">niman2005</a>, <a href="https://www.eevblog.com/forum/profile/?u=25360">madires</a>, <a href="https://www.eevblog.com/forum/profile/?u=106693">mike_mike</a>, <a href="https://www.eevblog.com/forum/profile/?u=95339">Bud</a>, <a href="https://www.eevblog.com/forum/profile/?u=106585">paschulke2</a>, <a href="https://www.eevblog.com/forum/profile/?u=12046">kaz911</a>, <a href="https://www.eevblog.com/forum/profile/?u=101403">RLBennett</a>, <a href="https://www.eevblog.com/forum/profile/?u=149383">URI</a>, <a href="https://www.eevblog.com/forum/profile/?u=90351">georgd</a>, <a href="https://www.eevblog.com/forum/profile/?u=64734">wraper</a>, <a href="https://www.eevblog.com/forum/profile/?u=138717">0.01C</a>, <a href="https://www.eevblog.com/forum/profile/?u=123506">denverpilot</a>, <a href="https://www.eevblog.com/forum/profile/?u=86585">tocsa120ls</a>, <a href="https://www.eevblog.com/forum/profile/?u=99568">0xfede</a>, <a href="https://www.eevblog.com/forum/profile/?u=93167">Alex Eisenhut</a>, <a href="https://www.eevblog.com/forum/profile/?u=85750">gtroc71</a>, <a href="https://www.eevblog.com/forum/profile/?u=25342">cowana</a>, <a href="https://www.eevblog.com/forum/profile/?u=286">dfnr2</a>, <a href="https://www.eevblog.com/forum/profile/?u=113841">ChunkyPastaSauce</a>, <a href="https://www.eevblog.com/forum/profile/?u=125833">Spuddevans</a>, <a href="https://www.eevblog.com/forum/profile/?u=25330">ggchab</a>, <a href="https://www.eevblog.com/forum/profile/?u=118639">reject902</a>, <a href="https://www.eevblog.com/forum/profile/?u=123581">Altizachen</a>, <a href="https://www.eevblog.com/forum/profile/?u=121786">droffsite</a>, <a href="https://www.eevblog.com/forum/profile/?u=113791">Buriedcode</a>, <a href="https://www.eevblog.com/forum/profile/?u=118845">lundmar</a>, <a href="https://www.eevblog.com/forum/profile/?u=96586">slowertech</a>, <a href="https://www.eevblog.com/forum/profile/?u=24271">HKJ</a>, <a href="https://www.eevblog.com/forum/profile/?u=57729">Towger</a>, <a href="https://www.eevblog.com/forum/profile/?u=123663">embeddedIO</a>, <a href="https://www.eevblog.com/forum/profile/?u=153774">paulca</a>, <a href="https://www.eevblog.com/forum/profile/?u=97783">awde</a>, <a href="https://www.eevblog.com/forum/profile/?u=162408">Magnificent Bastard</a>, <a href="https://www.eevblog.com/forum/profile/?u=141980">Flip-Flop</a>, <a href="https://www.eevblog.com/forum/profile/?u=151187">Edison</a>, <a href="https://www.eevblog.com/forum/profile/?u=148530">6PTsocket</a>, <a href="https://www.eevblog.com/forum/profile/?u=19254">Dazed+Confused</a>, <a href="https://www.eevblog.com/forum/profile/?u=152776">JPlocher</a>, <a href="https://www.eevblog.com/forum/profile/?u=25375">max-bit</a>, <a href="https://www.eevblog.com/forum/profile/?u=139928">treez</a>, <a href="https://www.eevblog.com/forum/profile/?u=119983">Signal32</a>, <a href="https://www.eevblog.com/forum/profile/?u=71493">Electro Fan</a>, <a href="https://www.eevblog.com/forum/profile/?u=131538">Muffins</a>, <a href="https://www.eevblog.com/forum/profile/?u=105857">lem_ix</a>, <a href="https://www.eevblog.com/forum/profile/?u=144930">Bratster</a>, <a href="https://www.eevblog.com/forum/profile/?u=99134">classical</a>, <a href="https://www.eevblog.com/forum/profile/?u=127584">hackertom</a>, <a href="https://www.eevblog.com/forum/profile/?u=159016">krazatchu</a>, <a href="https://www.eevblog.com/forum/profile/?u=108853">TheSteve</a>, <a href="https://www.eevblog.com/forum/profile/?u=145486">evgen.05</a>, <a href="https://www.eevblog.com/forum/profile/?u=160350">SiliconWizard</a>, <a href="https://www.eevblog.com/forum/profile/?u=27531">daveshah</a>, <a href="https://www.eevblog.com/forum/profile/?u=116741">Cursed</a>, <a href="https://www.eevblog.com/forum/profile/?u=114130">Emo</a>, <a href="https://www.eevblog.com/forum/profile/?u=83">dexters_lab</a>, <a href="https://www.eevblog.com/forum/profile/?u=97473">jmctech</a>, <a href="https://www.eevblog.com/forum/profile/?u=94354">theatrus</a>, <a href="https://www.eevblog.com/forum/profile/?u=112202">Alex Nikitin</a>, <a href="https://www.eevblog.com/forum/profile/?u=58" style="color: #0000FF;">Simon</a>, <a href="https://www.eevblog.com/forum/profile/?u=100956">ddcc</a>, <a href="https://www.eevblog.com/forum/profile/?u=120229">simone.pignatti</a>, <a href="https://www.eevblog.com/forum/profile/?u=11258">trevwhite</a>, <a href="https://www.eevblog.com/forum/profile/?u=138180">jmp246</a>, <a href="https://www.eevblog.com/forum/profile/?u=120986">Twoflower</a>, <a href="https://www.eevblog.com/forum/profile/?u=133167">alm</a>, <a href="https://www.eevblog.com/forum/profile/?u=115826">LazyJack</a>, <a href="https://www.eevblog.com/forum/profile/?u=121930">silverdulcet</a>, <a href="https://www.eevblog.com/forum/profile/?u=105713">MattHollands</a>, <a href="https://www.eevblog.com/forum/profile/?u=27739">mottihoresh</a>, <a href="https://www.eevblog.com/forum/profile/?u=83428">Andy Watson</a>, <a href="https://www.eevblog.com/forum/profile/?u=53234">KJDS</a>, <a href="https://www.eevblog.com/forum/profile/?u=98169">StefanHamminga</a>, <a href="https://www.eevblog.com/forum/profile/?u=83392">Andreas</a>, <a href="https://www.eevblog.com/forum/profile/?u=26364">AndyC_772</a>, <a href="https://www.eevblog.com/forum/profile/?u=119192">imidis</a>, <a href="https://www.eevblog.com/forum/profile/?u=163348">mpmansell</a>, <a href="https://www.eevblog.com/forum/profile/?u=110128">Johnny10</a>, <a href="https://www.eevblog.com/forum/profile/?u=152312">jthomas</a>, <a href="https://www.eevblog.com/forum/profile/?u=92375">riyadh144</a>, <a href="https://www.eevblog.com/forum/profile/?u=26003">perdrix</a>, <a href="https://www.eevblog.com/forum/profile/?u=114001">ace1903</a>, <a href="https://www.eevblog.com/forum/profile/?u=106815">Kleinstein</a>, <a href="https://www.eevblog.com/forum/profile/?u=164224">hussamaldean</a>, <a href="https://www.eevblog.com/forum/profile/?u=83396">ChristopherN</a>, <a href="https://www.eevblog.com/forum/profile/?u=96708">asgard20032</a>, <a href="https://www.eevblog.com/forum/profile/?u=124255">Wimberleytech</a>, <a href="https://www.eevblog.com/forum/profile/?u=119501">iAleks</a>, <a href="https://www.eevblog.com/forum/profile/?u=2826">Neganur</a>, <a href="https://www.eevblog.com/forum/profile/?u=146756">Squiddaddy</a>, <a href="https://www.eevblog.com/forum/profile/?u=120221">krho</a>, <a href="https://www.eevblog.com/forum/profile/?u=106833">bin10</a>, <a href="https://www.eevblog.com/forum/profile/?u=110298">bitseeker</a>, <a href="https://www.eevblog.com/forum/profile/?u=140893">sstepane</a>, <a href="https://www.eevblog.com/forum/profile/?u=27306">jancumps</a>, <a href="https://www.eevblog.com/forum/profile/?u=133477">TK</a>, <a href="https://www.eevblog.com/forum/profile/?u=102457">Theboel</a>, <a href="https://www.eevblog.com/forum/profile/?u=102128">MarkF</a>, <a href="https://www.eevblog.com/forum/profile/?u=141447">bojanh</a>, <a href="https://www.eevblog.com/forum/profile/?u=104257">chris_leyson</a>, <a href="https://www.eevblog.com/forum/profile/?u=60230">MarkL</a>, <a href="https://www.eevblog.com/forum/profile/?u=99417">rx8pilot</a>, <a href="https://www.eevblog.com/forum/profile/?u=130183">Nusa</a>, <a href="https://www.eevblog.com/forum/profile/?u=126458">jimiz</a>, <a href="https://www.eevblog.com/forum/profile/?u=51">jimmc</a>, <a href="https://www.eevblog.com/forum/profile/?u=88031">AF6LJ</a>, <a href="https://www.eevblog.com/forum/profile/?u=114698">Karlo_Moharic</a>, <a href="https://www.eevblog.com/forum/profile/?u=97361">Cnoob</a>, <a href="https://www.eevblog.com/forum/profile/?u=112569">kutte</a>, <a href="https://www.eevblog.com/forum/profile/?u=121634">2N3055</a>, <a href="https://www.eevblog.com/forum/profile/?u=83527">Vgkid</a>, <a href="https://www.eevblog.com/forum/profile/?u=121623">Fire Doger</a>, <a href="https://www.eevblog.com/forum/profile/?u=155604">imo</a>, <a href="https://www.eevblog.com/forum/profile/?u=139753">mikroel</a>, <a href="https://www.eevblog.com/forum/profile/?u=171441">JayNi</a>, <a href="https://www.eevblog.com/forum/profile/?u=134900">nicklinn</a>, <a href="https://www.eevblog.com/forum/profile/?u=11664">swixo</a>, <a href="https://www.eevblog.com/forum/profile/?u=2298">Kremmen</a>, <a href="https://www.eevblog.com/forum/profile/?u=171721">lavardera</a>, <a href="https://www.eevblog.com/forum/profile/?u=161133">kosthala1</a>, <a href="https://www.eevblog.com/forum/profile/?u=154038">dtorner</a>, <a href="https://www.eevblog.com/forum/profile/?u=3548">Pinkus</a>, <a href="https://www.eevblog.com/forum/profile/?u=112927">RoGeorge</a>, <a href="https://www.eevblog.com/forum/profile/?u=137674">RParrott</a>, <a href="https://www.eevblog.com/forum/profile/?u=109644">illusive</a>, <a href="https://www.eevblog.com/forum/profile/?u=63849">alank2</a>, <a href="https://www.eevblog.com/forum/profile/?u=86412">samofab</a>, <a href="https://www.eevblog.com/forum/profile/?u=24775">PChi</a>, <a href="https://www.eevblog.com/forum/profile/?u=99980">drummerdimitri</a>, <a href="https://www.eevblog.com/forum/profile/?u=112468">gamalot</a>, <a href="https://www.eevblog.com/forum/profile/?u=41713">Finder</a>, <a href="https://www.eevblog.com/forum/profile/?u=96903">radhaz</a>, <a href="https://www.eevblog.com/forum/profile/?u=125717">NorthGuy</a>, <a href="https://www.eevblog.com/forum/profile/?u=109874">fergch</a>, <a href="https://www.eevblog.com/forum/profile/?u=99755">evb149</a>, <a href="https://www.eevblog.com/forum/profile/?u=106802">Gyro</a>, <a href="https://www.eevblog.com/forum/profile/?u=127200">Vtile</a>, <a href="https://www.eevblog.com/forum/profile/?u=21125">rolycat</a>, <a href="https://www.eevblog.com/forum/profile/?u=151339">AutogolazzoJr</a>, <a href="https://www.eevblog.com/forum/profile/?u=3305">darrylp</a>, <a href="https://www.eevblog.com/forum/profile/?u=173424">jstooksberry</a>, <a href="https://www.eevblog.com/forum/profile/?u=15682">grumpydoc</a>, <a href="https://www.eevblog.com/forum/profile/?u=89230">bandgap</a>, <a href="https://www.eevblog.com/forum/profile/?u=58363">mtdoc</a>, <a href="https://www.eevblog.com/forum/profile/?u=116467">luma</a>, <a href="https://www.eevblog.com/forum/profile/?u=173451">Surfsixten</a>, <a href="https://www.eevblog.com/forum/profile/?u=93700">eecook</a>, <a href="https://www.eevblog.com/forum/profile/?u=109000">smithnerd</a>, <a href="https://www.eevblog.com/forum/profile/?u=104179">Siwastaja</a>, <a href="https://www.eevblog.com/forum/profile/?u=173877">Sleepy2000</a>, <a href="https://www.eevblog.com/forum/profile/?u=95709">Loboscope</a>, <a href="https://www.eevblog.com/forum/profile/?u=84696">ovnr</a>, <a href="https://www.eevblog.com/forum/profile/?u=132946">asmi</a>, <a href="https://www.eevblog.com/forum/profile/?u=133709">SparkMark</a>, <a href="https://www.eevblog.com/forum/profile/?u=64610">owiecc</a>, <a href="https://www.eevblog.com/forum/profile/?u=83925">calmtron</a>, <a href="https://www.eevblog.com/forum/profile/?u=22592">Codemonkey</a>, <a href="https://www.eevblog.com/forum/profile/?u=100828">welterde</a>, <a href="https://www.eevblog.com/forum/profile/?u=150217">precaud</a>, <a href="https://www.eevblog.com/forum/profile/?u=120286">Mr. Pete</a>, <a href="https://www.eevblog.com/forum/profile/?u=131780">todd_fuller</a>, <a href="https://www.eevblog.com/forum/profile/?u=127368">Chris56000</a>, <a href="https://www.eevblog.com/forum/profile/?u=92575">darrell</a>, <a href="https://www.eevblog.com/forum/profile/?u=104275">luciof</a>, <a href="https://www.eevblog.com/forum/profile/?u=91346">kado</a>, <a href="https://www.eevblog.com/forum/profile/?u=24938">jpb</a>, <a href="https://www.eevblog.com/forum/profile/?u=126745">Specmaster</a>, <a href="https://www.eevblog.com/forum/profile/?u=90401">niclasf</a>, <a href="https://www.eevblog.com/forum/profile/?u=120524">DLJ</a>, <a href="https://www.eevblog.com/forum/profile/?u=93015">Kalvin</a>, <a href="https://www.eevblog.com/forum/profile/?u=53982">rdl</a>, <a href="https://www.eevblog.com/forum/profile/?u=756">kcs</a>, <a href="https://www.eevblog.com/forum/profile/?u=141147">shtirka</a>, <a href="https://www.eevblog.com/forum/profile/?u=123245">DaJMasta</a>, <a href="https://www.eevblog.com/forum/profile/?u=26392">serafimsaudade</a>, <a href="https://www.eevblog.com/forum/profile/?u=86457">Marchello</a>, <a href="https://www.eevblog.com/forum/profile/?u=89715">cybermaus</a>, <a href="https://www.eevblog.com/forum/profile/?u=146769">lmaokore</a>, <a href="https://www.eevblog.com/forum/profile/?u=96165">Maureli</a>, <a href="https://www.eevblog.com/forum/profile/?u=122863">Safar</a>, <a href="https://www.eevblog.com/forum/profile/?u=139017">Gustof</a>, <a href="https://www.eevblog.com/forum/profile/?u=84678">TopLoser</a>, <a href="https://www.eevblog.com/forum/profile/?u=119877">Barbouri</a>, <a href="https://www.eevblog.com/forum/profile/?u=1137">NiHaoMike</a>, <a href="https://www.eevblog.com/forum/profile/?u=53397">Dr. Frank</a>, <a href="https://www.eevblog.com/forum/profile/?u=119785">JeffreyLatter</a>, <a href="https://www.eevblog.com/forum/profile/?u=110057">melkati</a>, <a href="https://www.eevblog.com/forum/profile/?u=85699">steverino</a>, <a href="https://www.eevblog.com/forum/profile/?u=101684">jmsc_02</a>, <a href="https://www.eevblog.com/forum/profile/?u=117394">elecman14</a>, <a href="https://www.eevblog.com/forum/profile/?u=101667">MapleLeaf</a>, <a href="https://www.eevblog.com/forum/profile/?u=114847">gnavigator1007</a>, <a href="https://www.eevblog.com/forum/profile/?u=25995">fcb</a>, <a href="https://www.eevblog.com/forum/profile/?u=120912">sd</a>, <a href="https://www.eevblog.com/forum/profile/?u=110526">rddube</a>, <a href="https://www.eevblog.com/forum/profile/?u=159869">HecticZA</a>, <a href="https://www.eevblog.com/forum/profile/?u=27552">DiligentMinds.com</a>, <a href="https://www.eevblog.com/forum/profile/?u=143907">MasterT</a>, <a href="https://www.eevblog.com/forum/profile/?u=156413">Hartomes</a>, <a href="https://www.eevblog.com/forum/profile/?u=154837">k0kkie</a>, <a href="https://www.eevblog.com/forum/profile/?u=18984">all_repair</a>, <a href="https://www.eevblog.com/forum/profile/?u=108133">ogden</a>, <a href="https://www.eevblog.com/forum/profile/?u=132945">VaZso</a>, <a href="https://www.eevblog.com/forum/profile/?u=105870">tooki</a>, <a href="https://www.eevblog.com/forum/profile/?u=12096">don.r</a>, <a href="https://www.eevblog.com/forum/profile/?u=147149">kPATm</a>, <a href="https://www.eevblog.com/forum/profile/?u=171380">Reckless</a>, <a href="https://www.eevblog.com/forum/profile/?u=84037">markce</a>, <a href="https://www.eevblog.com/forum/profile/?u=111542">ocw</a>, <a href="https://www.eevblog.com/forum/profile/?u=126156">Collat3ral</a>, <a href="https://www.eevblog.com/forum/profile/?u=114910">deepskyridge</a>, <a href="https://www.eevblog.com/forum/profile/?u=138905">labjr</a>, <a href="https://www.eevblog.com/forum/profile/?u=110523">Vespian</a>, <a href="https://www.eevblog.com/forum/profile/?u=90802">Jos_1986</a>, <a href="https://www.eevblog.com/forum/profile/?u=26235">adauphin</a>, <a href="https://www.eevblog.com/forum/profile/?u=94307">Gerhard_dk4xp</a>, <a href="https://www.eevblog.com/forum/profile/?u=114513">kj7e</a>, <a href="https://www.eevblog.com/forum/profile/?u=163691">DerKammi</a>, <a href="https://www.eevblog.com/forum/profile/?u=143772">bd139</a>, <a href="https://www.eevblog.com/forum/profile/?u=117509">pacAir</a>, <a href="https://www.eevblog.com/forum/profile/?u=103672">joeqsmith</a>, <a href="https://www.eevblog.com/forum/profile/?u=168344">JonnieCache</a>, <a href="https://www.eevblog.com/forum/profile/?u=125958">Benta</a>, <a href="https://www.eevblog.com/forum/profile/?u=6314">Anks</a>, <a href="https://www.eevblog.com/forum/profile/?u=164392">mlbenham</a>, <a href="https://www.eevblog.com/forum/profile/?u=1035">veryevil</a>, <a href="https://www.eevblog.com/forum/profile/?u=126280">mbless</a>, <a href="https://www.eevblog.com/forum/profile/?u=114587">fmarinai</a>, <a href="https://www.eevblog.com/forum/profile/?u=131090">PT_Dreamer</a>, <a href="https://www.eevblog.com/forum/profile/?u=108736">rfeecs</a>, <a href="https://www.eevblog.com/forum/profile/?u=123209">chriswebb</a>, <a href="https://www.eevblog.com/forum/profile/?u=136439">crouvean</a>, <a href="https://www.eevblog.com/forum/profile/?u=173685">Aligote</a>, <a href="https://www.eevblog.com/forum/profile/?u=67564">JDubU</a>, <a href="https://www.eevblog.com/forum/profile/?u=96921">Edwin G. Pettis</a>, <a href="https://www.eevblog.com/forum/profile/?u=142747">Beamin</a>, <a href="https://www.eevblog.com/forum/profile/?u=99201">texaspyro</a>, <a href="https://www.eevblog.com/forum/profile/?u=172797">bprosman</a>, <a href="https://www.eevblog.com/forum/profile/?u=117994">imett</a>, <a href="https://www.eevblog.com/forum/profile/?u=21323">sorenkir</a>, <a href="https://www.eevblog.com/forum/profile/?u=93967">1uk3</a>, <a href="https://www.eevblog.com/forum/profile/?u=145197">Zerim</a>, <a href="https://www.eevblog.com/forum/profile/?u=80485">Halfdead</a>, <a href="https://www.eevblog.com/forum/profile/?u=108955">sas999</a>, <a href="https://www.eevblog.com/forum/profile/?u=165364">Daniel_Maestre</a>, <a href="https://www.eevblog.com/forum/profile/?u=109069">et328</a>, <a href="https://www.eevblog.com/forum/profile/?u=127302">Ranayna</a>, <a href="https://www.eevblog.com/forum/profile/?u=106597">Radiohead</a>, <a href="https://www.eevblog.com/forum/profile/?u=102371">PTR_1275</a>, <a href="https://www.eevblog.com/forum/profile/?u=133102">tek2232</a>, <a href="https://www.eevblog.com/forum/profile/?u=132267">r.liszka89</a>, <a href="https://www.eevblog.com/forum/profile/?u=102259">wilhelm</a>, <a href="https://www.eevblog.com/forum/profile/?u=166088">David C</a>, <a href="https://www.eevblog.com/forum/profile/?u=120231">jjoonathan</a>, <a href="https://www.eevblog.com/forum/profile/?u=168792">AIRA_ViXer</a>, <a href="https://www.eevblog.com/forum/profile/?u=110152">Gregg</a>, <a href="https://www.eevblog.com/forum/profile/?u=156956">DC1MC</a>, <a href="https://www.eevblog.com/forum/profile/?u=142361">hermit</a>, <a href="https://www.eevblog.com/forum/profile/?u=126396">tpowell1830</a>, <a href="https://www.eevblog.com/forum/profile/?u=139058">istamov</a>, <a href="https://www.eevblog.com/forum/profile/?u=85975">cellularmitosis</a>
+</p>
+<p class="last smalltext">
+Most Online Today: <strong>2447</strong>.
+Most Online Ever: 6723 (October 23, 2014, 06:43:09 AM)
+</p>
+</div>
+</div></div>
+<span class="lowerframe"><span></span></span>
+<script type="text/javascript"><!-- // --><![CDATA[
+		var oInfoCenterToggle = new smc_Toggle({
+			bToggleEnabled: true,
+			bCurrentlyCollapsed: false,
+			aSwappableContainers: [
+				'upshrinkHeaderIC'
+			],
+			aSwapImages: [
+				{
+					sId: 'upshrink_ic',
+					srcExpanded: smf_images_url + '/collapse.gif',
+					altExpanded: 'Shrink or expand the header.',
+					srcCollapsed: smf_images_url + '/expand.gif',
+					altCollapsed: 'Shrink or expand the header.'
+				}
+			],
+			oThemeOptions: {
+				bUseThemeSettings: false,
+				sOptionName: 'collapse_header_ic',
+				sSessionVar: 'fd27872eb93',
+				sSessionId: '29135b53d3c7e3684b3451c21b16042b'
+			},
+			oCookieOptions: {
+				bUseCookie: true,
+				sCookieName: 'upshrinkIC'
+			}
+		});
+	// ]]></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-0894473037274043" data-ad-slot="3740877399"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br />
+<span class="clear upperframe"><span></span></span>
+<div class="roundframe"><div class="innerframe">
+<table border="0" cellspacing="2" cellpadding="2" width="100%">
+<tbody>
+<tr>
+<td><strong><font size="2" color="#d97b33"></font></strong></td>
+<td><strong><font size="2" color="#d97b33"></font></strong></td>
+<td><strong><font size="2" color="#d97b33"></font></strong></td>
+<td><strong><font size="2" color="#d97b33"></font></strong></td>
+<td><strong><font size="2" color="#d97b33"></font></strong></td>
+</tr>
+<tr>
+<td><a title="EEVblog Main Site" href="http://www.eevblog.com">EEVblog Main Site</a></td>
+<td><a title="EEVblog on Youtube" href="https://www.youtube.com/user/EEVblog">EEVblog on Youtube</a></td>
+<td><a title="EEVblog on Twitter" href="http://www.twitter.com/eevblog">EEVblog on Twitter</a></td>
+<td><a title="EEVblog on Facebook" href="http://www.facebook.com/EEVblog">EEVblog on Facebook</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span class="lowerframe"><span></span></span>
+</div>
+</div></div>
+<div id="footer_section"><div class="frame">
+<ul class="reset">
+<li class="copyright">
+<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="https://www.eevblog.com/forum/credits/" title="Simple Machines Forum" target="_blank" class="new_win">SMF 2.0.14</a> |
+<a href="http://www.simplemachines.org/about/smf/license.php" title="License" target="_blank" class="new_win">SMF &copy; 2017</a>, <a href="http://www.simplemachines.org" title="Simple Machines" target="_blank" class="new_win">Simple Machines</a><br /><a href="http://www.createaforum.com" target="_blank">Simple Audio Video Embedder</a><br /><span class="smalltext"><a href="http://www.smfads.com" target="_blank">SMFAds</a> for <a href="http://www.createaforum.com" title="Forum Hosting">Free Forums</a></span>
+</span></li>
+<li><a id="button_xhtml" href="http://validator.w3.org/check?uri=referer" target="_blank" class="new_win" title="Valid XHTML 1.0!"><span>XHTML</span></a></li>
+<li><a id="button_rss" href="https://www.eevblog.com/forum/.xml/?type=rss" class="new_win"><span>RSS</span></a></li>
+<li><a id="button_mobile" href="https://www.eevblog.com/forum/index.php?thememode=mobile;redirect=https%3A%2F%2Fwww.eevblog.com%2Fforum%2FThemes%2Fdefault%2Fimages%2Fflags%2F00.png" class="new_win"><span>Mobile</span></a></li><li class="last"><a id="button_wap2" href="https://www.eevblog.com/forum/index.php?wap2" class="new_win"><span>WAP2</span></a></li>
+</ul>
+</div></div>
+</div>
+</body></html>
