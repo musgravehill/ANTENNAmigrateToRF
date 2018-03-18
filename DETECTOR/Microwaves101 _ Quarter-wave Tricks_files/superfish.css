@@ -1,0 +1,50 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.navigation{position: relative;}
+.navigation .sf-menu{
+    position: relative;
+    overflow: visible;
+    clear: both;
+    height: auto !important;
+}
+  .navigation  .sf-menu.in{
+      height: auto !important;
+    }
+  .navigation .btn-sf-menu{
+    display: none;
+    float: left;
+  }
+  .navigation .select-menu{
+    width: 100%;
+    display: none;
+  }
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}

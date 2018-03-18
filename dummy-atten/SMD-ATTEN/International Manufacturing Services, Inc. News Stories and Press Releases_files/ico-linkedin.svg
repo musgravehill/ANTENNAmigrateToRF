@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="460px" height="452px" viewBox="0 0 460 452" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="linkedin" fill-rule="nonzero" fill="#FFFFFF">
+            <polygon id="Shape" points="3.675 147.275 96.459 146.118 96.459 449.949 3.675 451.127 3.675 147.276"></polygon>
+            <path d="M174.141,147.275 L262.799,146.149 L262.799,184.795 L262.82,195.742 C289.075,169.998 316.14,150.542 359.383,150.542 C410.399,150.542 459.745,171.923 459.745,241.576 L459.745,450.011 L369.745,451.352 L369.745,292.12 C369.745,257.017 360.949,234.387 319.026,234.387 C282.091,234.387 266.628,241.002 266.628,289.601 L266.628,450 L174.15,451.116 L174.15,147.275 L174.141,147.275 Z" id="Shape"></path>
+            <path d="M101.836,51.449 C101.836,79.5 79.096,102.239 51.046,102.239 C22.996,102.239 0.255,79.5 0.255,51.448 C0.255,23.397 22.994,0.657 51.046,0.657 C79.097,0.657 101.837,23.396 101.837,51.448 L101.836,51.449 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

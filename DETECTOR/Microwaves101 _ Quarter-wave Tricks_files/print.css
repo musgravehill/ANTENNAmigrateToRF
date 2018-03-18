@@ -1,0 +1,75 @@
+
+@media print {
+  
+  body {
+    background: #FFF;
+    width: 90%;
+    color: red!important;
+    font-family: "georgia", "times new roman", "times", serif;
+    font-size: 12pt;
+  }  
+  #top-row, #footer-wrapper,
+  .moduletable.follow-links,
+  .moduletable.newsletter,  
+  .moduletable.search-block,
+  #encyclopedia-home-search,
+  #acronyms-home-search {
+    display: none;
+  }
+  .moduletable {
+    display: block;
+    position: relative;   
+  }
+  .moduletable .mod-custom.spring-green-line {
+    padding-bottom: 40px;
+  }
+  .moduletable .mod-custom.turquoise-line:first-child {
+    margin-top: 40px;
+  }
+  .moduletable .mod-custom.spring-green-line > div:after {
+    display:block;
+    content: " ";
+    clear: both;
+    height: 2px;
+  }
+  .moduletable.span4.left-col .mod-custom:after,
+  .moduletable.span4.right-col .mod-custom:after,
+  #content-top3-row .moduletable #calendar_227:after,
+  .moduletable.span4.right-col a.twitter-timeline:after,
+  .span4.right-col.klatest:after {
+    display: none;
+  }
+  .moduletable.women-mw {
+    margin-top: -130px;
+  }
+  #content-row { 
+    width: 80%; 
+    margin: 1% 5%; 
+    padding: 0; 
+    border: 0; 
+    float: none !important; 
+    color: black; 
+    background: transparent none; 
+  }
+  
+  a:link, 
+  a:visited { 
+    color: #520; 
+    background: transparent; 
+    font-weight: bold; 
+    text-decoration: underline; 
+  }
+  a[href]:after {
+    display: none;
+  }  
+  p a {
+    word-wrap: break-word;
+  }
+  .mod-custom.mod-custom__span4.right-col p span {
+     position: relative!important;
+  }
+
+
+}
+  
+

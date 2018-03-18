@@ -1,0 +1,59 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 39px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*== 1200px and beyond ===================================================
+========================================================================*/
+/* Large desktop */
+@media (min-width: 1200px) {
+  
+}
+/*== Up to 1200px =====================================================
+========================================================================*/
+
+
+@media (max-width: 1200px) {
+/*#copyright-row .moduletable.ieee-logo.span2 { clear:both; margin-top:5px;}
+.moduletable.slogan { clear:both; margin-top:5px; text-align:left; float:none; padding-top:20px;}*/
+#sticker-sticky-wrapper #sticker { right:0px;}
+}
+
+/*#bottom-inside { min-height:500px;}*/
+#copyright-row { position:relative;}
+
+
+/*== Up to 480px ==================================================
+====================================================================*/
+/* Landscape phones and down */
+@media only screen and (max-device-width: 550px) and (min-device-width: 320px) {
+
+}
+/*== Up to 350px =====================================================
+========================================================================*/
+/* Portrait phones */
+@media (max-width: 360px) {
+  
+}
