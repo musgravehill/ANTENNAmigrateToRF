@@ -1,0 +1,126 @@
+/* based on the original design andreas01 (v3.0 - Apr 24, 2008) by Andreas Viklund.*/
+
+/* Main body */
+body {background:#f4f4f4 url(img/bg.gif) top center repeat-y; color:#404040; font:90% Verdana,Tahoma,Arial,sans-serif; margin:0 auto; padding:0;}
+
+#banner { position: fixed; width: 100%; height: 50px; top: 0; }
+#bannercontent { background:#eee; width: 100%; margin: 0 auto; padding: 10px; }
+
+/*#wrap {background:#fff; color:#404040; margin:0 auto; width:970px; padding:16px 0 0; margin-top: 50px;} */
+#wrap {background:#fff; color:#404040; margin:0 auto; width:100%; max-width: 970px; padding:16px 0 0; }
+
+/* Basic tags */
+a {background-color:inherit; color:#0096ff; font-weight:700; text-decoration:none;}
+a:hover {background-color:inherit; color:#0096ff; text-decoration:underline;}
+a img {border:0;}
+p {margin:0 0 1.4em;}
+
+/* Correctly stating the code and pre elements is the core principle.*/
+pre { font: 100% "courier new",courier,monospace; border: 1px solid #ccc; overflow: auto; width: 90%; padding: 1em; margin: 1em auto 2em auto; background: #f4f4f4; color: #880000; }
+code { font-size: 100%; }
+tt { font: 100% "courier new",courier,monospace; }
+
+/* Header */
+#header { margin: 10px 0 0; padding: 0 0 16px; font-family: "courier new", courier, monospace; color: #0096ff; background-color: white; } 
+/* #header h1 { margin:16px auto 0; text-align: center; width: 80%; font-size: 300%; font-weight: bold; color: white; background-color: #0096ff; } */
+#header h1 { margin:0 auto 0; text-align: left; width: 100%; font-size: 300%; font-weight: bold; }
+/*#header h1 a { background-color:inherit; color:#505050; text-decoration:none; }*/
+#header p { text-align: right; font-weight:700; font-size: 150%; line-height:1.3; margin:8px 0 0; }
+
+#frontphoto {width: 100%; border: 0; margin: 0 0 10px;}
+
+/*Left and right sidebar */
+#leftside {clear:left; float:left; margin:0 0 5px; padding:0; width:18%; word-wrap: break-word; }
+#rightside {float:right; line-height:1.4; margin:0 0 5px; padding:0; width:18%; word-wrap: break-word; }
+#leftside p,#leftside ul, #rightside p,#rightside ul {margin:0 0 16px; padding:0;}
+#leftside p, #rightside p {font-size:0.9em; line-height:1.4;}
+#leftside li, #rightside li {line-height:1.2; list-style:none; margin:0 0 6px; padding:0;}
+#leftside ul ul, #rightside ul ul {margin:6px 0 0 10px; padding:0;}
+#leftside ul ul li, #rightside ul ul li {margin:0 0 4px;}
+#leftside ul ul li a, #rightside ul ul li a {font-weight:400;}
+#leftside h2,#leftside h3, #rightside h2,#rightside h3 {color:#505050; font-size:1.2em; margin:0 0 8px; padding:0;}
+
+/* Main menu */
+#leftside ul.avmenu, #rightside ul.avmenu {display:block; list-style:none; margin:0 0 18px 0; padding:0; width:95%;}
+#leftside ul.avmenu li, #rightside ul.avmenu li {display:inline; line-height:1.4; padding:0; width:100%;}
+#leftside ul.avmenu li a, #rightside ul.avmenu li a {background-color:#f4f4f4; border-left:4px solid #ccc; color:#505050; float:left; font-weight:700; margin-bottom:5px; padding:5px 1px 5px 5px; text-decoration:none; width:100%;}
+#leftside ul.avmenu li a.current, #rightside ul.avmenu li a.current {background-color:#eaeaea; border-left:4px solid #0096ff; color:#505050;}
+#leftside ul.avmenu li a:hover, #rightside ul.avmenu li a:hover {background-color:#f0f0f0; border-left:4px solid #80cbff; color:#505050;}
+
+#leftside ul.avmenu ul, #rightside ul.avmenu ul {font-size:0.9em; margin:0 0 0 15%; padding:0 0 5px; width:85%;}
+#leftside ul.avmenu ul a, #rightside ul.avmenu ul a {font-weight:400; padding:3px 1px 3px 5px; width:100%;}
+
+
+/* Main content */
+#content {border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0; line-height:1.5; margin:0 19% 5px 19%; padding:0 10px;}
+#contentwide {border-left:1px solid #e0e0e0; line-height:1.5; margin:0 0 5px 19%; padding:0 0 0 10px;}
+#contentwide2 {border-right:1px solid #e0e0e0; line-height:1.5; margin:0 19% 5px 0; padding:0 10px 0 0;}
+#content h2,#contentwide h2,#contentwide2 h2 {font-size:1.6em; margin:0 0 10px;}
+#content h3,#contentwide h3,#contentwide2 h3 {font-size:1.3em; margin:0 0 8px;}
+#content img,#contentwide img,#contentwide2 img {background:#ccc; border:4px solid #f0f0f0; color:#303030; display:inline; padding:1px;}
+#content img.center,#contentwide img.center,#contentwide2 img.center {display: block; margin: 1em auto 1em; max-width: 80%;}
+
+#content img.center2,#contentwide img.center2,#contentwide2 img.center2 {display: inline; vertical-align: middle; margin: 1em 4% 1em; max-width: 35%;}
+
+
+#content img.inline,#contentwide img.inline,#contentwide2 img.inline {background:inherit ; border:none; vertical-align:middle; margin:auto;}
+#content img.eqn,#contentwide img.eqn,#contentwide2 img.eqn {display: block; background:inherit ; border:none; vertical-align:middle; margin: 1em 1em;}
+
+
+#content ul,#contentwide ul,#contentwide2 ul,#content ol,#contentwide ol,#contentwide2 ol {margin:0 0 16px 20px; padding:0;}
+#content li,#contentwide li,#contentwide2 li {margin:0; padding:0 0 0 5px;}
+#content ul ul,#contentwide ul ul,#contentwide2 ul ul,#content ol ol,#contentwide ol ol,#contentwide2 ol ol {margin:0 0 0 16px; padding:0;}
+#content hr,#contentwide hr,#contentwide2 hr {width: 50%;}
+
+/* Footer */
+#footer { background:#fff; border-top:2px solid #e0e0e0; clear:both; color:gray; margin:0 auto; padding:10px 1%; text-align:left; width:98%; line-height:1.5; font-size:1.0em; }
+#footer p { margin:0; padding:0; }
+#footer a { background-color:#fff; color:gray; font-weight:400; text-decoration:none; }
+#footer a:hover { text-decoration:underline; }
+#footer p.lastmod { font-size:0.8em; }
+
+/* Tables */
+/* this is adapted from http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/ */
+.table-np { margin: 0px 15px 15px 15px; text-align: left; border-collapse: collapse; border: 2px solid #006699; }
+.table-np th { padding: 12px 17px 12px 17px; font-weight: bold; color: #404040; background : #99D5FF; border: 1px solid #006699; }
+.table-np td { padding: 7px 17px 7px 17px; border : 1px solid #006699; color: #404040; }
+.table-np tbody tr:hover td { color: #000000; background: #66CCFF; }
+
+/* Additional classes */
+.left {float:left; margin:3px 10px 2px 0;}
+.right {float:right; margin:2px 0 2px 10px;}
+.textright {text-align:right; margin:5px 0;}
+.center {text-align:center;}
+.alignleft { float: left; }
+.alignright {float: right; }
+.small {font-size:0.8em;}
+.bold {font-weight:700;}
+.timestamp {font-size:1.2em; margin:-5px 0 15px 10px;}
+.timestamp a {font-weight:400;}
+.announce {background-color:#f4f4f4; border-left:4px solid #ccc; clear:left; color:#505050; font-size:0.9em; line-height:1.5; margin:10px 0 15px; padding:7px 5px 2px 5px; width:95%;}
+.announce p {margin:10px 0 0; padding:0;}
+.postinfo {background-color:#f4f4f4; border-left:4px solid #ccc; color:#606060; font-size:0.9em; line-height:1.4; margin:1px 0 20px; padding:8px 5px 8px 8px;}
+.clearing {clear:left; margin:0; padding:0; visibility:hidden;}
+.hide {display:none;}
+
+
+/* smartphone */
+@media screen and (max-width: 479px) {
+  #rightside {display: none} /* remove #rightside and make #content wide */
+  #frontphoto {display: none} /* remove top image */
+  #header p {display: none} /* remove header line text */
+  #content {border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0; line-height:1.5; margin:0 0 5px 19%; padding:0 10px;}
+  /* for forms with images */
+  #contentwide img.formimg { display: block; }
+}
+
+/* for forms with images */
+@media screen and (min-width: 479px) and (max-width: 800px) {
+  #contentwide img.formimg { display: block; }
+
+}
+
+@media screen and (min-width: 800px) {
+  /* specific CSS */
+  #contentwide img.formimg { float:right; }
+}
